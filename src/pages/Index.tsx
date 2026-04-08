@@ -1,16 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import Header from "@/components/common/Header";
+import Hero from "@/components/sections/Hero";
+import DashboardPreview from "@/components/sections/DashboardPreview";
+import TrustedBy from "@/components/sections/TrustedBy";
+import FeatureStats from "@/components/sections/FeatureStats";
+import SplitFeature from "@/components/sections/SplitFeature";
+import CTABanner from "@/components/sections/CTABanner";
+import Services from "@/components/sections/Services";
+import ProgressSection from "@/components/sections/ProgressSection";
+import GradientStrip from "@/components/sections/GradientStrip";
+import Analytics from "@/components/sections/Analytics";
+import BottomCTA from "@/components/sections/BottomCTA";
+import Footer from "@/components/common/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <AnnouncementBar />
+      <Header />
+      <Hero />
+      <DashboardPreview />
+      <TrustedBy />
+      <FeatureStats />
+      <SplitFeature />
+      <CTABanner />
+      <Services />
+      <ProgressSection />
+      <GradientStrip />
+      <Analytics />
+      <BottomCTA />
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
