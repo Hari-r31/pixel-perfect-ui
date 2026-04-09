@@ -5,7 +5,7 @@ const navItems = [
   { label: "Home", hasDropdown: true, href: "/" },
   { label: "About", hasDropdown: false, href: "/about" },
   { label: "Service", hasDropdown: true, href: "/service" },
-  { label: "Pages", hasDropdown: true, href: "/pages" },
+  { label: "Service Mobile", hasDropdown: true, href: "/service-mobile" },
   { label: "Contact", hasDropdown: false, href: "/contact" },
 ];
 
