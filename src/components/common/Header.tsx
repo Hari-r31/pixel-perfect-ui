@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const navItems = [
   { label: "Home", hasDropdown: true, href: "/" },
   { label: "About", hasDropdown: false, href: "/about" },
-  { label: "Service", hasDropdown: true, href: "#" },
-  { label: "Pages", hasDropdown: true, href: "#" },
-  { label: "Contact", hasDropdown: false, href: "#" },
+  { label: "Service", hasDropdown: true, href: "/service" },
+  { label: "Pages", hasDropdown: true, href: "/pages" },
+  { label: "Contact", hasDropdown: false, href: "/contact" },
 ];
 
 const Header = () => {
