@@ -1,12 +1,12 @@
 import { ChevronDown, ShoppingBag, ArrowRight, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", hasDropdown: true },
-  { label: "Service", hasDropdown: true },
-  { label: "Pages", hasDropdown: true },
-  { label: "Blog", hasDropdown: true },
-  { label: "Shop", hasDropdown: true },
-  { label: "Contact", hasDropdown: false },
+  { label: "Home", hasDropdown: true, href: "/" },
+  { label: "About", hasDropdown: false, href: "/about" },
+  { label: "Service", hasDropdown: true, href: "#" },
+  { label: "Pages", hasDropdown: true, href: "#" },
+  { label: "Contact", hasDropdown: false, href: "#" },
 ];
 
 const Header = () => {
@@ -24,14 +24,14 @@ const Header = () => {
         {/* Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href="#"
+              to={item.href}
               className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md"
             >
               {item.label}
               {item.hasDropdown && <ChevronDown size={14} className="text-muted-foreground" />}
-            </a>
+            </Link>
           ))}
         </nav>
 
