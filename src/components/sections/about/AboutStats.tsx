@@ -7,31 +7,26 @@ const stats = [
 
 const AboutStats = () => {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <section className="py-16 lg:py-24 bg-muted/30">
+      <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div>
-            <span className="inline-block border border-foreground/20 rounded-full px-4 py-1.5 text-xs font-medium text-foreground mb-4">
-              Company History
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <div className="sub-heading-pill mb-5 inline-flex">Company History</div>
+            <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-4 leading-tight">
               We Have More Than 35+ Years Tech Experience
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Sit et aliquet faucibus eros. Donec dignissim tempus consectetur aliquet tellus facilisis. Sit consectetur euismod laoreet dictum nisl egeti.
+            <p className="text-muted-foreground text-body leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur. Sit et aliquet faucibus eros. Donec dignissim tempus consectetur aliquet tellus facilisis.
             </p>
           </div>
 
           {/* Right stats grid */}
           <div className="grid grid-cols-2 gap-4">
             {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-background rounded-2xl p-6 text-center shadow-sm border border-border/50"
-              >
-                <p className="text-3xl lg:text-4xl font-bold text-foreground mb-1">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              <div key={stat.label} className="bg-card rounded-2xl p-6 shadow-card text-center">
+                <p className="font-heading font-bold text-h2 text-primary mb-2">{stat.value}</p>
+                <p className="text-body-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}
           </div>

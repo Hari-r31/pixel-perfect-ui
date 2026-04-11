@@ -13,42 +13,39 @@ const features = [
 
 const AboutProgress = () => {
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <section className="py-16 lg:py-24">
+      <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image collage */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-muted to-muted/50 overflow-hidden" />
-              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden mt-8" />
+              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-muted to-muted/50" />
+              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 mt-8" />
             </div>
-            {/* Floating stat */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background rounded-2xl shadow-lg p-4 flex items-center gap-4">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background rounded-2xl shadow-float p-4 flex items-center gap-4">
               <div className="relative w-16 h-16">
                 <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
                   <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--muted))" strokeWidth="8" />
                   <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--primary))" strokeWidth="8" strokeDasharray="213 38" strokeLinecap="round" />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm font-bold text-foreground">85%</span>
+                  <span className="font-heading text-body-sm font-bold text-foreground">85%</span>
                 </div>
               </div>
               <div>
-                <p className="text-sm font-semibold text-foreground">Growth Rate</p>
-                <p className="text-xs text-muted-foreground">Year over year</p>
+                <p className="font-heading text-body-sm font-semibold text-foreground">Growth Rate</p>
+                <p className="text-caption text-muted-foreground">Year over year</p>
               </div>
             </div>
           </div>
 
           {/* Right - Content */}
           <div>
-            <span className="inline-block border border-foreground/20 rounded-full px-4 py-1.5 text-xs font-medium text-foreground mb-4">
-              Our Progress
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <div className="sub-heading-pill mb-5 inline-flex">Our Progress</div>
+            <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-4 leading-tight">
               Intelligent Systems For Every Industry
             </h2>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-body mb-8 leading-relaxed">
               Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
 
@@ -59,8 +56,8 @@ const AboutProgress = () => {
                     <Check size={14} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                    <h4 className="font-heading font-semibold text-body text-foreground mb-1">{feature.title}</h4>
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}

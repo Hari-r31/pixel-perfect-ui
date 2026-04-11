@@ -1,70 +1,96 @@
-import { Check, Wifi, BarChart3 } from "lucide-react";
-
-const features = [
-  "Intelligent process automation",
-  "Seamless third-party integrations",
-  "Enterprise-grade security standards",
-];
+import { ArrowRight, Command, Zap } from "lucide-react";
 
 const ProgressSection = () => {
   return (
     <section className="py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left visual */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-primary/8 via-muted to-teknify-purple/8 rounded-3xl aspect-square flex items-center justify-center">
-              <div className="w-48 h-48 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-32 h-32 bg-primary/15 rounded-full flex items-center justify-center">
-                  <BarChart3 size={48} className="text-primary" />
-                </div>
-              </div>
-            </div>
+      <div className="section-container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left content */}
+          <div>
+            <div className="sub-heading-pill mb-5 inline-flex">How It Works</div>
+            <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-6 leading-tight">
+              Powering Progress Through
+              <br />
+              <span className="text-primary">Technology</span>
+            </h2>
+            <p className="text-muted-foreground text-body mb-10 leading-relaxed max-w-lg">
+              Lorem ipsum dolor sit dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.
+            </p>
 
-            {/* Floating stat - top right */}
-            <div className="absolute top-6 right-6 bg-card rounded-xl shadow-lg border border-border/60 p-3">
-              <div className="relative w-16 h-16">
-                <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--muted))" strokeWidth="3" />
-                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--primary))" strokeWidth="3" strokeDasharray="85, 100" strokeLinecap="round" />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs font-bold text-foreground">85%</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div>
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
+                  <Command size={22} className="text-accent" />
                 </div>
-              </div>
-            </div>
-
-            {/* Floating card - bottom left */}
-            <div className="absolute bottom-6 left-6 bg-card rounded-xl shadow-lg border border-border/60 p-3 flex items-center gap-2">
-              <div className="w-8 h-8 bg-teknify-purple/10 rounded-lg flex items-center justify-center">
-                <Wifi size={14} className="text-teknify-purple" />
+                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Cyber Solutions</h4>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">
+                  Lorem ipsum dolor sit consectetur adipiscing elit, sed do eiusmod tempor
+                </p>
               </div>
               <div>
-                <p className="text-[10px] text-muted-foreground">Connectivity</p>
-                <p className="text-xs font-bold text-foreground">98.9%</p>
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
+                  <Zap size={22} className="text-accent" />
+                </div>
+                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Digital Connectivity</h4>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">
+                  Lorem ipsum dolor sit consectetur adipiscing elit, sed do eiusmod tempor
+                </p>
               </div>
             </div>
+
+            <a href="#" className="btn-dark">
+              <ArrowRight size={16} />
+              Explore More
+            </a>
           </div>
 
-          {/* Right content */}
-          <div>
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">Our Progress</span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mt-3 mb-6 leading-tight">
-              Powering Progress Through Technology
-            </h2>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              Our platform continuously evolves, incorporating the latest advancements to deliver measurable results for every client.
-            </p>
-            <ul className="space-y-4">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check size={12} className="text-primary" />
+          {/* Right visual - composite image/chart area */}
+          <div className="relative">
+            <div className="bg-accent/10 rounded-3xl p-8 min-h-[500px] relative overflow-hidden">
+              {/* Decorative circles */}
+              <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full border border-accent/20" />
+              <div className="absolute top-1/3 right-1/3 w-[200px] h-[200px] rounded-full border border-accent/10" />
+
+              {/* Person placeholder */}
+              <div className="absolute top-4 right-4 w-48 h-64 bg-accent/20 rounded-2xl" />
+
+              {/* Chart card */}
+              <div className="absolute bottom-20 left-4 right-4 bg-card rounded-xl shadow-float p-5">
+                <p className="font-heading font-semibold text-body text-foreground mb-3">Track Your Daily Activity</p>
+                <div className="flex items-center gap-6">
+                  <div className="relative w-20 h-20">
+                    <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--muted))" strokeWidth="3" />
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--accent))" strokeWidth="3" strokeDasharray="60, 100" strokeLinecap="round" />
+                      <circle cx="18" cy="18" r="12" fill="none" stroke="hsl(var(--primary))" strokeWidth="3" strokeDasharray="40, 100" strokeLinecap="round" />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <span className="font-heading font-bold text-body-sm text-foreground">95%</span>
+                        <p className="text-[8px] text-muted-foreground">Solutions</p>
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-sm text-foreground/80">{feature}</span>
-                </li>
-              ))}
-            </ul>
+                  <div className="flex gap-4 text-caption">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span className="text-foreground">Marketing</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-accent" />
+                      <span className="text-foreground">Sales</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-primary/50" />
+                      <span className="text-foreground">Business</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Woman image placeholder */}
+              <div className="absolute bottom-0 left-1/4 w-40 h-56 bg-primary/20 rounded-t-2xl" />
+            </div>
           </div>
         </div>
       </div>
