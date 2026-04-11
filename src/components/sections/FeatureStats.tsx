@@ -1,75 +1,83 @@
-import { TrendingUp, Target, BarChart3 } from "lucide-react";
-
 const FeatureStats = () => {
   return (
     <section className="py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="section-container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider">What We Offer</span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mt-3 mb-4">
-            Driving Progress With Smart Technology
+          <div className="sub-heading-pill mb-4 inline-flex">Additional Services</div>
+          <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-4">
+            Driving Progress With <span className="text-primary">Smart</span> Technology
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            We deliver innovative solutions that empower businesses to achieve more with less effort.
-          </p>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Revenue card */}
-          <div className="bg-card rounded-2xl border border-border/60 p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-              <TrendingUp size={22} className="text-primary" />
+          {/* Balance card */}
+          <div className="bg-card rounded-2xl border border-border/60 p-6 shadow-card hover:shadow-card-hover transition-shadow">
+            <p className="text-body-sm text-muted-foreground mb-1">Your Balance</p>
+            <div className="flex items-baseline gap-2 mb-4">
+              <span className="font-heading text-h2 font-bold text-foreground">2564,00</span>
+              <span className="text-primary text-body-sm font-semibold">+152 ↑</span>
             </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Revenue Growth</h3>
-            <p className="text-sm text-muted-foreground mb-4">Track and optimize your revenue streams with real-time analytics.</p>
-            <div className="flex items-end gap-1 h-16">
-              {[30, 45, 35, 55, 40, 65, 50, 72, 58, 80].map((h, i) => (
+            <div className="flex items-end gap-1 h-20">
+              {[30, 50, 25, 45, 60, 35, 55, 70, 40, 65].map((h, i) => (
                 <div
                   key={i}
-                  className="flex-1 bg-primary/20 rounded-t hover:bg-primary/40 transition-colors"
+                  className={`flex-1 rounded-t ${i < 5 ? 'bg-primary/30' : 'bg-accent/30'}`}
                   style={{ height: `${h}%` }}
                 />
               ))}
             </div>
           </div>
 
-          {/* Circular progress card */}
-          <div className="bg-card rounded-2xl border border-border/60 p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-teknify-purple/10 rounded-xl flex items-center justify-center mb-4">
-              <Target size={22} className="text-teknify-purple" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Goal Completion</h3>
-            <p className="text-sm text-muted-foreground mb-4">Monitor your progress towards achieving milestones.</p>
-            <div className="flex items-center justify-center">
-              <div className="relative w-20 h-20">
-                <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--muted))" strokeWidth="2.5" />
-                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--accent))" strokeWidth="2.5" strokeDasharray="78, 100" strokeLinecap="round" />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm font-bold text-foreground">78%</span>
+          {/* Donut chart card */}
+          <div className="bg-accent/20 rounded-2xl p-6">
+            <div className="bg-card rounded-xl p-5 shadow-card">
+              <p className="text-body font-heading font-semibold text-foreground mb-4">Target Persent</p>
+              <div className="flex items-center gap-6">
+                <div className="relative w-24 h-24">
+                  <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--muted))" strokeWidth="3" />
+                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="hsl(var(--accent))" strokeWidth="3" strokeDasharray="82, 100" strokeLinecap="round" />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-heading font-bold text-body text-foreground">82%</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-sm bg-accent" />
+                    <span className="text-body-sm text-foreground">Finance</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-sm bg-primary" />
+                    <span className="text-body-sm text-foreground">Market</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-sm bg-muted-foreground" />
+                    <span className="text-body-sm text-foreground">Business</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bar chart card */}
-          <div className="bg-card rounded-2xl border border-border/60 p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
-              <BarChart3 size={22} className="text-green-500" />
+          {/* Analytics bar chart card */}
+          <div className="bg-card rounded-2xl border border-border/60 p-6 shadow-card hover:shadow-card-hover transition-shadow">
+            <p className="font-heading font-semibold text-body text-foreground mb-4">Analytics</p>
+            <div className="space-y-1 text-caption text-muted-foreground mb-2">
+              <div className="flex justify-between"><span>40K</span></div>
+              <div className="flex justify-between"><span>30K</span></div>
+              <div className="flex justify-between"><span>20K</span></div>
+              <div className="flex justify-between"><span>10K</span></div>
             </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Analytics Overview</h3>
-            <p className="text-sm text-muted-foreground mb-4">Comprehensive data insights for informed decision-making.</p>
-            <div className="flex items-end gap-2 h-16">
-              {[60, 40, 75, 50, 85, 65].map((h, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <div
-                    className="w-full bg-green-500/20 rounded-t"
-                    style={{ height: `${h}%` }}
-                  />
-                </div>
+            <div className="flex items-end gap-1.5 h-24">
+              {[50, 70, 40, 80, 60, 45, 75, 55, 65, 85].map((h, i) => (
+                <div
+                  key={i}
+                  className={`flex-1 rounded-t ${i % 3 === 0 ? 'bg-accent' : i % 3 === 1 ? 'bg-foreground/20' : 'bg-primary/20'}`}
+                  style={{ height: `${h}%` }}
+                />
               ))}
             </div>
           </div>
