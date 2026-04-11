@@ -14,7 +14,21 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        heading: ['Montserrat', 'system-ui', 'sans-serif'],
+        handwritten: ['Shantell Sans', 'cursive'],
+      },
+      fontSize: {
+        'display': ['64px', { lineHeight: '1.1', fontWeight: '700' }],
+        'h1': ['52px', { lineHeight: '1.15', fontWeight: '700' }],
+        'h2': ['42px', { lineHeight: '1.2', fontWeight: '700' }],
+        'h3': ['32px', { lineHeight: '1.25', fontWeight: '700' }],
+        'h4': ['24px', { lineHeight: '1.3', fontWeight: '600' }],
+        'h5': ['20px', { lineHeight: '1.4', fontWeight: '600' }],
+        'body-lg': ['18px', { lineHeight: '1.7', fontWeight: '400' }],
+        'body': ['16px', { lineHeight: '1.7', fontWeight: '400' }],
+        'body-sm': ['14px', { lineHeight: '1.6', fontWeight: '400' }],
+        'caption': ['12px', { lineHeight: '1.5', fontWeight: '500' }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -73,6 +87,19 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        '2xl': '1rem',
+        '3xl': '1.25rem',
+        '4xl': '1.5rem',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '30': '7.5rem',
+      },
+      boxShadow: {
+        'card': '0 2px 12px hsl(var(--foreground) / 0.04)',
+        'card-hover': '0 8px 30px hsl(var(--foreground) / 0.08)',
+        'float': '0 20px 60px hsl(var(--foreground) / 0.1)',
       },
       keyframes: {
         "accordion-down": {
