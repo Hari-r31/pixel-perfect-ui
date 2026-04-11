@@ -1,5 +1,6 @@
-import { ChevronDown, ShoppingBag, ArrowRight, Zap } from "lucide-react";
+import { ChevronDown, ShoppingBag, ArrowRight, Zap, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const navItems = [
   { label: "Home", hasDropdown: true, href: "/" },
@@ -10,24 +11,26 @@ const navItems = [
 ];
 
 const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className="w-full bg-background/80 backdrop-blur-md sticky top-0 z-50 border-b border-border/50">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between h-16 lg:h-20">
+      <div className="section-container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <Zap size={18} className="text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold text-foreground">Teknify</span>
-        </a>
+          <span className="text-xl font-heading font-bold text-foreground">Teknify</span>
+        </Link>
 
-        {/* Nav */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <Link
               key={item.label}
               to={item.href}
-              className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md"
+              className="flex items-center gap-1 px-3.5 py-2 text-body-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md"
             >
               {item.label}
               {item.hasDropdown && <ChevronDown size={14} className="text-muted-foreground" />}
@@ -43,14 +46,36 @@ const Header = () => {
               0
             </span>
           </button>
-          <a
-            href="#"
-            className="hidden md:flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-foreground/90 transition-colors"
+          <Link
+            to="/contact"
+            className="hidden md:inline-flex btn-dark"
           >
             Get Started <ArrowRight size={16} />
-          </a>
+          </Link>
+          <button
+            className="lg:hidden p-2 hover:bg-muted rounded-md"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Nav */}
+      {mobileOpen && (
+        <nav className="lg:hidden border-t border-border bg-background px-4 py-4 space-y-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              to={item.href}
+              onClick={() => setMobileOpen(false)}
+              className="block px-3 py-2.5 text-body font-medium text-foreground/80 hover:text-foreground rounded-md hover:bg-muted transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
 };
