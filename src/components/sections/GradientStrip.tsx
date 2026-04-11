@@ -1,40 +1,26 @@
-import { Monitor, Zap, Settings } from "lucide-react";
-
 const items = [
-  { icon: Monitor, title: "Digitalization", description: "Transform your operations with digital-first strategies." },
-  { icon: Zap, title: "Factors Driving Better", description: "Key elements that accelerate business performance." },
-  { icon: Settings, title: "Solutions That Simplify", description: "Making complex processes simple and efficient." },
+  { title: "Digital Evolution", description: "Lorem ipsum dolor sit amet consectetur. Dictum rutrum ultrices non purus est risus dignissim. Quam amet porttitor sed." },
+  { title: "Features Driving Better Connections", description: "Lorem ipsum dolor sit amet consectetur. Dictum rutrum ultrices non purus risus dignissim. Quam amet porttitor sed." },
+  { title: "Transforming Challenges Into Progress", description: "Lorem ipsum dolor sit amet consectetur. Dictum rutrum ultrices non purus risus dignissim. Quam amet porttitor sed." },
 ];
 
 const GradientStrip = () => {
   return (
-    <section className="py-16 lg:py-24 bg-foreground">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-background mb-4">
+    <section className="gradient-banner py-16 lg:py-20">
+      <div className="section-container">
+        <div className="text-center mb-10">
+          <h2 className="font-heading text-h2 lg:text-h1 text-primary-foreground mb-3">
             Transforming Challenges Into Opportunities
           </h2>
-          <p className="text-background/60 max-w-xl mx-auto">
-            We turn complex problems into streamlined solutions that drive real results.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {items.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="text-center p-6 rounded-2xl border border-background/10 hover:border-background/20 transition-colors"
-              >
-                <div className="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Icon size={24} className="text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-background mb-2">{item.title}</h3>
-                <p className="text-sm text-background/50 leading-relaxed">{item.description}</p>
-              </div>
-            );
-          })}
+          {items.map((item) => (
+            <div key={item.title} className="text-center lg:text-left">
+              <h3 className="font-heading font-bold text-h5 text-primary-foreground mb-3">{item.title}</h3>
+              <p className="text-body-sm text-primary-foreground/70 leading-relaxed">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
