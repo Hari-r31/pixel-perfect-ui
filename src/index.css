@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,36 +6,44 @@
 
 @layer base {
   :root {
+    /* Background & Surface */
     --background: 30 33% 98%;
-    --foreground: 240 17% 13%;
+    --foreground: 240 33% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 17% 13%;
+    --card-foreground: 240 33% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 17% 13%;
+    --popover-foreground: 240 33% 13%;
 
+    /* Primary — Teknify Orange */
     --primary: 16 78% 54%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 240 17% 13%;
+    /* Secondary — Light gray surface */
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 240 33% 13%;
 
-    --muted: 210 40% 96.1%;
+    /* Muted */
+    --muted: 220 20% 96%;
     --muted-foreground: 220 9% 46%;
 
+    /* Accent — Purple */
     --accent: 263 83% 58%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
     --ring: 16 78% 54%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Brand tokens */
     --teknify-orange: 16 78% 54%;
     --teknify-dark: 240 33% 13%;
     --teknify-navy: 240 33% 4%;
@@ -43,6 +51,11 @@
     --teknify-gray: 220 9% 46%;
     --teknify-purple: 263 83% 58%;
 
+    /* Gradient tokens */
+    --gradient-banner: linear-gradient(90deg, hsl(16 78% 54%), hsl(280 60% 55%));
+    --gradient-hero: radial-gradient(ellipse at center bottom, hsl(16 78% 54% / 0.08), transparent 60%);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -89,91 +102,46 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
   }
-}
-
-
-/* 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Caveat:wght@400;500;600;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
-
-    --primary: 220 20% 10%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 30 20% 96%;
-    --secondary-foreground: 220 20% 10%;
-
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 10% 46%;
-
-    --accent: 24 95% 53%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 24 95% 53%;
-
-    --radius: 0.5rem;
-
-    --hero-purple: 260 60% 75%;
-    --hero-purple-light: 260 50% 90%;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    --banner-from: 24 95% 53%;
-    --banner-to: 350 80% 60%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground font-sans;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
 @layer utilities {
-  .text-accent-orange {
-    color: hsl(var(--accent));
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
   }
-  .underline-orange {
-    text-decoration-color: hsl(var(--accent));
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    text-decoration-thickness: 3px;
-    text-decoration-style: wavy;
+  .font-body {
+    font-family: 'Outfit', sans-serif;
   }
-  .badge-outline {
-    @apply inline-block rounded-full border px-5 py-1.5 text-sm font-medium;
-    border-color: hsl(var(--foreground));
-    color: hsl(var(--foreground));
+  .font-handwritten {
+    font-family: 'Shantell Sans', cursive;
   }
-} */
+  .text-highlight {
+    color: hsl(var(--primary));
+  }
+  .gradient-banner {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--teknify-purple)));
+  }
+  .gradient-hero {
+    background: radial-gradient(ellipse at center bottom, hsl(var(--primary) / 0.08), transparent 60%);
+  }
+  .sub-heading-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-border px-5 py-2 text-sm font-medium;
+    font-family: 'Outfit', sans-serif;
+  }
+  .btn-dark {
+    @apply inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 text-sm font-semibold transition-colors hover:bg-foreground/90;
+    font-family: 'Outfit', sans-serif;
+  }
+  .btn-outline-light {
+    @apply inline-flex items-center gap-2 rounded-full border border-background/30 text-background px-7 py-3.5 text-sm font-semibold transition-colors hover:bg-background/10;
+    font-family: 'Outfit', sans-serif;
+  }
+  .section-container {
+    @apply mx-auto max-w-[1280px] px-4 lg:px-8;
+  }
+}
