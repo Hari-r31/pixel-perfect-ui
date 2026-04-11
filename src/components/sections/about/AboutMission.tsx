@@ -17,8 +17,8 @@ const features = [
 
 const AboutMission = () => {
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <section className="py-16 lg:py-24">
+      <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image placeholder */}
           <div className="relative">
@@ -31,34 +31,27 @@ const AboutMission = () => {
                 </div>
               </div>
             </div>
-            {/* Floating stat */}
-            <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-2xl p-4 shadow-lg">
-              <p className="text-3xl font-bold">15+</p>
-              <p className="text-xs opacity-80">Years Experience</p>
-            </div>
           </div>
 
-          {/* Right - Content */}
+          {/* Right content */}
           <div>
-            <span className="inline-block border border-foreground/20 rounded-full px-4 py-1.5 text-xs font-medium text-foreground mb-4">
-              Our Mission
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
-              Evolving Technologies, Empowering Lives
+            <div className="sub-heading-pill mb-5 inline-flex">Our Mission</div>
+            <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-6 leading-tight">
+              Empowering Growth Through <span className="text-primary">Innovation</span>
             </h2>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio lorem a aliquet vitae dolor risus vel fusce vitae et natoque amet
+            <p className="text-muted-foreground text-body mb-8 leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio lorem a aliquet vitae dolor risus vel.
             </p>
 
             <div className="space-y-5">
               {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check size={14} className="text-primary" />
+                <div key={feature.title} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full border border-muted-foreground/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check size={12} className="text-muted-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                    <h4 className="font-heading font-semibold text-body text-foreground mb-1">{feature.title}</h4>
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
