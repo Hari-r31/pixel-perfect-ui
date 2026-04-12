@@ -55,68 +55,129 @@ const ServicePage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative mx-auto max-w-[1280px] px-6 py-12 md:py-20">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-          {/* Left - Image */}
-          <div className="relative flex justify-center">
-            <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-hero-purple/40 md:h-[500px] md:w-[500px]" />
-            <div className="absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-muted md:h-[540px] md:w-[540px]" />
+      <section className="relative overflow-hidden">
+        {/* Subtle purple gradient on right */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teknify-purple/5 to-transparent pointer-events-none" />
 
-            <div className="absolute -top-2 left-1/2 -translate-x-1/4 md:left-[55%]">
-              <p className="font-handwritten text-xl leading-snug text-foreground md:text-2xl" style={{ transform: "rotate(-8deg)" }}>
-                Goal-Oriented<br />
-                Solutions With Innovation
+        <div className="relative mx-auto max-w-[1280px] px-6 py-14 md:py-20">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+            {/* Left - Image with arch */}
+            <div className="relative flex justify-center lg:justify-start">
+              {/* Gray arch border (outer) */}
+              <div
+                className="absolute left-1/2 lg:left-[45%] -translate-x-1/2 bottom-0 w-[340px] h-[460px] md:w-[400px] md:h-[540px] rounded-t-[200px] border-2 border-border"
+              />
+
+              {/* Purple gradient arch (inner) */}
+              <div
+                className="absolute left-1/2 lg:left-[45%] -translate-x-1/2 bottom-0 w-[310px] h-[440px] md:w-[370px] md:h-[520px] rounded-t-[185px] overflow-hidden"
+                style={{
+                  background: "linear-gradient(180deg, hsl(263 83% 65%) 0%, hsl(263 83% 58%) 30%, hsl(340 70% 60%) 70%, hsl(16 78% 54%) 100%)",
+                }}
+              />
+
+              {/* Handwritten text */}
+              <div className="absolute -top-2 left-[52%] lg:left-[48%] z-20">
+                <p
+                  className="font-handwritten text-lg leading-snug text-foreground md:text-xl"
+                  style={{ transform: "rotate(-8deg)" }}
+                >
+                  Goal-Oriented
+                  <br />
+                  Solutions With Innovation
+                </p>
+                <svg
+                  width="50"
+                  height="45"
+                  viewBox="0 0 60 50"
+                  fill="none"
+                  className="ml-2 mt-0.5"
+                >
+                  <path
+                    d="M30 0 C25 20, 15 35, 20 48 M20 48 L14 40 M20 48 L28 42"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+
+              {/* Hero image */}
+              <img
+                src={heroWoman}
+                alt="Woman pointing up"
+                className="relative z-10 h-[380px] w-auto object-contain md:h-[500px]"
+                width={640}
+                height={800}
+              />
+
+              {/* Floating card */}
+              <div className="absolute bottom-6 right-4 z-20 rounded-2xl bg-card p-5 shadow-card md:right-0 lg:-right-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary/20">
+                    <Zap className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xl font-bold font-heading text-card-foreground">85%</p>
+                    <p className="text-body-sm text-muted-foreground">Team Activities</p>
+                  </div>
+                </div>
+                <div className="mt-3 flex -space-x-2">
+                  {avatars.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt=""
+                      className="h-9 w-9 rounded-full border-2 border-card object-cover"
+                      loading="lazy"
+                      width={36}
+                      height={36}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Text */}
+            <div>
+              <div className="sub-heading-pill mb-6 inline-flex">Our Services</div>
+
+              <h1 className="font-heading text-h1 lg:text-display leading-tight mb-6">
+                Discover The Power Of Technology That{" "}
+                <span className="relative inline-block">
+                  <span className="text-primary italic">Delivers</span>
+                  {/* Orange underline decoration */}
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full"
+                    viewBox="0 0 200 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 8C30 3 70 2 100 5C130 8 170 10 198 6"
+                      stroke="hsl(var(--primary))"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      fill="none"
+                    />
+                  </svg>
+                </span>
+              </h1>
+
+              <p className="text-body text-muted-foreground mb-8 max-w-md leading-relaxed">
+                Commodo nulla mattis volutpat egestas euismod a velit ac. ornare
+                feugiat enim feugiat urna odio. laculis et morbi enim nunc a.
               </p>
-              <svg width="60" height="50" viewBox="0 0 60 50" fill="none" className="ml-4 mt-1">
-                <path d="M30 0 C25 20, 15 35, 20 48 M20 48 L14 40 M20 48 L28 42" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
-            </div>
 
-            <img
-              src={heroWoman}
-              alt="Woman pointing up"
-              className="relative z-10 h-[400px] w-auto object-contain md:h-[520px]"
-              width={640}
-              height={800}
-            />
-
-            <div className="absolute bottom-4 right-0 z-20 rounded-2xl bg-card p-5 shadow-lg md:right-8">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10">
-                  <Zap className="h-5 w-5 text-accent" />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-card-foreground">85%</p>
-                  <p className="text-sm text-muted-foreground">Team Activities</p>
-                </div>
+              <div className="flex flex-wrap items-center gap-6">
+                <button className="btn-dark">
+                  <ArrowRight className="h-4 w-4" />
+                  Get Started
+                </button>
+                <p className="text-body-sm font-semibold text-foreground">
+                  Support: (888)123 4567
+                </p>
               </div>
-              <div className="mt-3 flex -space-x-2">
-                {avatars.map((src, i) => (
-                  <img key={i} src={src} alt="" className="h-9 w-9 rounded-full border-2 border-card object-cover" loading="lazy" width={36} height={36} />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right - Text */}
-          <div>
-            <span className="badge-outline">Our Services</span>
-
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight md:text-[56px] md:leading-[1.1]">
-              Discover The Power Of Technology That{" "}
-              <span className="text-accent-orange underline-orange">Delivers</span>
-            </h1>
-
-            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
-              Commodo nulla mattis volutpat egestas euismod a velit ac. ornare feugiat enim feugiat urna odio. laculis et morbi enim nunc a.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <button className="flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-foreground/90">
-                <ArrowRight className="h-4 w-4" />
-                Get Started
-              </button>
-              <p className="text-sm font-semibold text-foreground">Support: (888)123 4567</p>
             </div>
           </div>
         </div>
@@ -125,15 +186,34 @@ const ServicePage = () => {
       {/* Experience Section */}
       <section className="bg-secondary py-16 md:py-24">
         <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <span className="badge-outline">Our Exprience</span>
+          <div className="sub-heading-pill mb-6 inline-flex">Our Exprience</div>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight md:text-5xl">
-            Experience The Difference Of<br />
-            <span className="text-accent-orange underline-orange">Technology</span>-Driven Success
+          <h2 className="font-heading text-h2 lg:text-h1 leading-tight mb-6">
+            Experience The Difference Of
+            <br />
+            <span className="relative inline-block">
+              <span className="text-primary italic">Technology</span>
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 200 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 8C30 3 70 2 100 5C130 8 170 10 198 6"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
+            -Driven Success
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground">
-            Lorem ipsum dolor sit amet consectetur. Ut montes suscipit pellentesque augue amet ullamcorper viverra nulla. In lectus viverra.
+          <p className="mx-auto mt-4 max-w-2xl text-body text-muted-foreground">
+            Lorem ipsum dolor sit amet consectetur. Ut montes suscipit
+            pellentesque augue amet ullamcorper viverra nulla. In lectus viverra.
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -142,18 +222,30 @@ const ServicePage = () => {
               return (
                 <div
                   key={i}
-                  className={`group rounded-2xl p-8 text-left transition-all hover:shadow-lg ${
+                  className={`group rounded-2xl p-8 text-left transition-all hover:shadow-card-hover ${
                     card.featured
-                      ? "border-2 border-accent bg-card shadow-md"
+                      ? "border-2 border-accent bg-card shadow-card"
                       : "border border-border bg-card"
                   }`}
                 >
-                  <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${card.featured ? "bg-accent/10" : "bg-hero-purple-light"}`}>
-                    <Icon className={`h-6 w-6 ${card.featured ? "text-accent" : "text-hero-purple"}`} />
+                  <div
+                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${
+                      card.featured ? "bg-accent/10" : "bg-muted"
+                    }`}
+                  >
+                    <Icon
+                      className={`h-6 w-6 ${
+                        card.featured ? "text-accent" : "text-accent"
+                      }`}
+                    />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-card-foreground">{card.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{card.description}</p>
-                  <button className="mt-5 flex items-center gap-1 text-sm font-semibold text-foreground transition-colors group-hover:text-accent">
+                  <h3 className="mb-2 font-heading text-h5 font-bold text-card-foreground">
+                    {card.title}
+                  </h3>
+                  <p className="text-body-sm leading-relaxed text-muted-foreground">
+                    {card.description}
+                  </p>
+                  <button className="mt-5 flex items-center gap-1 text-body-sm font-semibold text-foreground transition-colors group-hover:text-primary">
                     Learn More <ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>
