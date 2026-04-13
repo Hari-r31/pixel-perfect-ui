@@ -12,6 +12,15 @@ const navItems = [
   { label: "Contact",  href: "/contact" },
 ];
 
+const desktopNavLinkClass =
+  "group relative flex items-center gap-1 px-3.5 py-2 text-body-md font-medium " +
+  "text-foreground/80 transition-colors rounded-md hover:text-foreground " +
+  "after:absolute after:left-1/2 after:bottom-1 after:h-0.5 after:w-[calc(100%-1.75rem)] " +
+  "after:-translate-x-1/2 after:origin-center after:scale-x-0 after:rounded-full " +
+  "after:bg-gradient-to-r after:from-orange-500 after:via-white after:to-orange-500 " +
+  "after:transition-transform after:duration-300 after:ease-out " +
+  "hover:after:scale-x-100";
+
 /* ── Services dropdown panel ─────────────────────────────────────────── */
 const ServicesDropdown = ({ onClose }: { onClose: () => void }) => (
   <div
@@ -103,8 +112,7 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="flex items-center gap-1 px-3.5 py-2 text-body-md font-medium
-                             text-foreground/80 hover:text-foreground transition-colors rounded-md"
+                  className={desktopNavLinkClass}
                 >
                   {item.label}
                 </Link>
@@ -122,10 +130,9 @@ const Header = () => {
                 {/* Click → /services   |   Hover → dropdown */}
                 <button
                   onClick={() => { navigate("/services"); setDropdownOpen(false); }}
-                  className={`flex items-center gap-1 px-3.5 py-2 text-body-md font-medium
-                              rounded-md transition-colors
+                  className={`${desktopNavLinkClass}
                               ${dropdownOpen
-                                ? "text-primary bg-primary/5"
+                                ? "text-primary after:scale-x-100"
                                 : "text-foreground/80 hover:text-foreground"}`}
                 >
                   Services

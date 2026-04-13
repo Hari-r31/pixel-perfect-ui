@@ -1,9 +1,11 @@
+const announcementText = "Free IT Consultation — Book a session with our experts today!";
+
 const AnnouncementBar = () => {
   return (
-    <div className="w-full gradient-banner py-2.5 px-4">
-      <div className="section-container flex items-center justify-center gap-4">
-        <p className="text-primary-foreground text-body-sm font-medium">
-          Free IT Consultation — Book a session with our experts today!
+    <div className="w-full gradient-banner py-2.5 px-4 overflow-hidden">
+      <div className="relative h-6">
+        <p className="absolute left-0 top-1/2 whitespace-nowrap text-body-sm font-medium text-primary-foreground animate-announcement-loop">
+          {announcementText}
         </p>
       </div>
     </div>

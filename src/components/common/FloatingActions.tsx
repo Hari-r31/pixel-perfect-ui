@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 
 const WHATSAPP_NUMBER = "61403499150";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+const WHATSAPP_MESSAGE = encodeURIComponent(
+  "Hi TechGigz, I'm interested in your services and would like to discuss my project."
+);
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 const WhatsAppIcon = () => (
   <svg
