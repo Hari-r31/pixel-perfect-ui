@@ -121,7 +121,7 @@ const Header = () => {
                 {/* Click → /services   |   Hover → dropdown */}
                 <button
                   onClick={() => { navigate("/services"); setDropdownOpen(false); }}
-                  className={`flex items-center gap-1 px-3.5 py-2 text-body-sm font-medium
+                  className={`flex items-center gap-1 px-3.5 py-2 text-body-md font-medium
                               rounded-md transition-colors
                               ${dropdownOpen
                                 ? "text-primary bg-primary/5"
