@@ -54,10 +54,16 @@ const HeroSection = () => {
             />
 
             {/* AVG Order Value floating card - bottom left */}
-            <div className="absolute bottom-16 left-0 lg:-left-4 z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4">
-              <p className="text-sm font-medium text-muted-foreground">AVG Order Value</p>
-              <p className="text-accent text-sm font-semibold">↑ 3.48</p>
-              <p className="text-xl font-bold text-foreground mt-1">$21,450</p>
+            <div className="absolute bottom-16 left-0 lg:-left-4 z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4 flex items-center gap-3">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">AVG Order Value</p>
+                <p className="text-accent text-sm font-semibold">↑ 3.48</p>
+                <p className="text-xl font-bold text-foreground mt-1">$21,450</p>
+              </div>
+              <svg width="80" height="40" viewBox="0 0 80 40" fill="none" className="opacity-60">
+                <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
+                <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10 V40 H0 Z" fill="hsl(var(--primary) / 0.08)" />
+              </svg>
             </div>
           </div>
 
