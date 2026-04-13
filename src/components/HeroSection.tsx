@@ -3,32 +3,45 @@ import phoneMockup from "@/assets/phone-mockup.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full overflow-hidden px-6 lg:px-16 pb-0 lg:pb-0">
+    <section className="relative w-full overflow-hidden">
       {/* Orange gradient blob - bottom right */}
-      <div 
+      <div
         className="absolute -bottom-20 right-0 w-[700px] h-[600px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 70% 70%, hsl(20 90% 55% / 0.18) 0%, hsl(25 90% 60% / 0.08) 35%, transparent 65%)',
+          background:
+            "radial-gradient(ellipse at 70% 70%, hsl(20 90% 55% / 0.18) 0%, hsl(25 90% 60% / 0.08) 35%, transparent 65%)",
         }}
       />
 
-      <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-8 min-h-[calc(100vh-80px)]">
+      <div className="mx-auto max-w-[1280px] px-6 lg:px-16 py-10 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-end gap-8 lg:gap-12">
           {/* Left - Phone Mockup */}
-          <div className="relative w-full lg:w-[45%] flex justify-center lg:justify-start animate-slide-in-left self-center lg:self-end">
+          <div className="relative flex justify-center lg:justify-start">
             {/* Floating Stats Card */}
-            <div className="absolute -top-8 right-0 lg:-top-4 lg:right-[2%] z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4 flex items-center gap-4 animate-float-up">
+            <div className="absolute top-0 left-[35%] z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4 flex items-center gap-4">
               <div>
                 <p className="text-xl font-bold text-accent">15.52%</p>
-                <p className="text-sm text-muted-foreground font-medium">Your Account Reports</p>
+                <p className="text-sm text-muted-foreground font-medium">
+                  Your Account Reports
+                </p>
               </div>
-              <div className="w-14 h-14 rounded-full overflow-hidden" style={{ backgroundColor: 'hsl(40 80% 70%)' }}>
+              <div
+                className="w-14 h-14 rounded-full overflow-hidden"
+                style={{ backgroundColor: "hsl(40 80% 70%)" }}
+              >
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
                   alt="User avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
+            </div>
+
+            {/* "Expands As You Succeed" pill */}
+            <div className="absolute top-20 right-0 lg:right-[-5%] z-10">
+              <span className="inline-block px-5 py-2.5 rounded-full border border-border text-sm font-medium text-foreground">
+                Expands As You Succeed
+              </span>
             </div>
 
             {/* Phone Image */}
@@ -39,21 +52,28 @@ const HeroSection = () => {
               width={800}
               height={1200}
             />
+
+            {/* AVG Order Value floating card - bottom left */}
+            <div className="absolute bottom-16 left-0 lg:-left-4 z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4 flex items-center gap-3">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">AVG Order Value</p>
+                <p className="text-accent text-sm font-semibold">↑ 3.48</p>
+                <p className="text-xl font-bold text-foreground mt-1">$21,450</p>
+              </div>
+              <svg width="80" height="40" viewBox="0 0 80 40" fill="none" className="opacity-60">
+                <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
+                <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10 V40 H0 Z" fill="hsl(var(--primary) / 0.08)" />
+              </svg>
+            </div>
           </div>
 
           {/* Right - Content */}
-          <div className="w-full lg:w-[55%] flex flex-col items-start gap-5 pb-16 lg:pb-0 lg:self-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            {/* Badge */}
-            <span className="inline-block px-5 py-2.5 rounded-full border border-border text-sm font-medium text-foreground">
-              Expands As You Succeed
-            </span>
-
+          <div className="flex flex-col items-start gap-5 pb-8 lg:pb-16">
             {/* Heading */}
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.12] text-foreground tracking-tight">
-              Fueling The Next Wave Of Innovation Through{" "}
+              Innovation Through{" "}
               <span className="relative inline-block text-accent">
                 Advanced
-                {/* Hand-drawn underline SVG */}
                 <svg
                   className="absolute -bottom-1 left-0 w-full h-3"
                   viewBox="0 0 200 12"
@@ -75,7 +95,9 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-muted-foreground text-base max-w-[520px] leading-[1.7]">
-              Lorem ipsum dolor sit amet consectetur. Mus in rutrum ornare quam. Sed sed tempus mauris ultricies dignissim ultrices eget dui facilisiles nibh donec egesta.
+              Lorem ipsum dolor sit amet consectetur. Mus in rutrum ornare quam.
+              Sed sed tempus mauris ultricies dignissim ultrices eget dui
+              facilisiles nibh donec egesta.
             </p>
 
             {/* CTA Buttons */}
