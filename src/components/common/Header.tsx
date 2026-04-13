@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const navItems = [
-  { label: "Home", hasDropdown: true, href: "/" },
+  { label: "Home", hasDropdown: false, href: "/" },
   { label: "About", hasDropdown: false, href: "/about" },
-  { label: "Service", hasDropdown: true, href: "/service" },
-  { label: "Service Mobile", hasDropdown: true, href: "/service-mobile" },
+  { label: "Services", hasDropdown: true, href: "/services" },
+  { label: "Projects", hasDropdown: false, href: "/projects" },
   { label: "Contact", hasDropdown: false, href: "/contact" },
 ];
 
