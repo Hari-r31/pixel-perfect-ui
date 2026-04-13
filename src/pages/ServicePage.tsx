@@ -13,6 +13,7 @@ import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import usePageTitle from "@/hooks/usePageTitle";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 const serviceCards = [
   {
@@ -178,10 +179,12 @@ const ServicePage = () => {
               </p>
 
               <div className="flex flex-wrap items-center gap-6">
-                <button className="btn-dark">
-                  <ArrowRight className="h-4 w-4" />
-                  Get a Free Quote
-                </button>
+                <CraftButton>
+                  <CraftButtonLabel>Get a Free Quote</CraftButtonLabel>
+                  <CraftButtonIcon>
+                    <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                  </CraftButtonIcon>
+                </CraftButton>
                 <p className="text-body-sm font-semibold text-foreground">
                   Call Us: (08) 6383 9983
                 </p>

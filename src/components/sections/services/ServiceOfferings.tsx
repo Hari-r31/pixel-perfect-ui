@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { ServiceOffering } from "@/data/serviceCategories";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 interface ServiceOfferingsProps {
   offerings: ServiceOffering[];
@@ -47,8 +48,13 @@ const ServiceOfferings = ({ offerings, categoryTitle }: ServiceOfferingsProps) =
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/contact" className="btn-dark">
-            <ArrowRight className="h-4 w-4" /> Discuss Your Project
+          <Link to="/contact">
+            <CraftButton>
+              <CraftButtonLabel>Discuss Your Project</CraftButtonLabel>
+              <CraftButtonIcon>
+                <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+              </CraftButtonIcon>
+            </CraftButton>
           </Link>
         </div>
       </div>

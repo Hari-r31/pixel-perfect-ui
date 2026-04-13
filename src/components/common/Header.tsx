@@ -2,6 +2,7 @@ import { ChevronDown, ShoppingBag, ArrowRight, Zap, Menu, X } from "lucide-react
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import { serviceCategories } from "@/data/serviceCategories";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 const navItems = [
   { label: "Home",     href: "/" },
@@ -147,8 +148,13 @@ const Header = () => {
         {/* Right actions */}
         <div className="flex items-center gap-4">
 
-          <Link to="/contact" className="hidden md:inline-flex btn-dark">
-            Get Started <ArrowRight size={16} />
+          <Link to="/contact" className="hidden md:inline-flex">
+            <CraftButton className="rounded-full">
+              <CraftButtonLabel>Get Started</CraftButtonLabel>
+              <CraftButtonIcon>
+                <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+              </CraftButtonIcon>
+            </CraftButton>
           </Link>
           <button
             className="lg:hidden p-2 hover:bg-muted rounded-md"

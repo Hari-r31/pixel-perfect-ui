@@ -1,11 +1,73 @@
 import { TrendingUp, Users, BarChart3, PieChart } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { prefersReducedMotion } from "@/lib/animations";
+import { useRef } from "react";
 
 const DashboardPreview = () => {
+  const shouldReduceMotion = prefersReducedMotion();
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "center center"],
+  });
+
+  // Map scroll progress to rotation angles
+  // Start: rotateX(60°) - Device tilted back like opening book with pronounced perspective
+  // End: rotateX(0°) - Device flat/facing viewer
+  // SkewY creates slanted edges for perspective effect
+  const rotateX = useTransform(scrollYProgress, [0, 1], [60, 0]);
+  const skewY = useTransform(scrollYProgress, [0, 0], [0, 0]); // Slanted edges effect
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [80, 0]); // Moves up as it opens
+
   return (
-    <section className="relative pb-16 lg:pb-24">
-      <div className="max-w-6xl mx-auto px-4 lg:px-8">
-        {/* Device frame */}
-        <div className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border border-border/60 overflow-hidden">
+    <section className="relative pb-20 lg:pb-32" ref={containerRef}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
+        {/* Floating label - Top Left with curved arrow */}
+        <motion.div
+          className="absolute -top-20 left-4 lg:left-0 z-20 w-40"
+          initial={{ opacity: 0, y: -20, x: -20 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          
+        </motion.div>
+
+        {/* Floating label - Top Right with curved arrow */}
+        <motion.div
+          className="absolute -top-12 right-4 lg:right-0 z-20 w-40"
+          initial={{ opacity: 0, y: -20, x: 20 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          
+        </motion.div>
+
+        {/* Floating label - Bottom Right with curved arrow */}
+        <motion.div
+          className="absolute -bottom-16 right-4 lg:right-0 z-20 w-40"
+          initial={{ opacity: 0, y: 20, x: 20 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+         
+        </motion.div>
+        {/* Device frame - Scroll-linked 3D rotation */}
+        <motion.div
+          className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border border-border/60 overflow-hidden"
+          style={shouldReduceMotion ? {} : {
+            rotateX,
+            skewY,
+            scaleY,
+            translateY,
+            transformPerspective: "800px",
+            transformStyle: "preserve-3d",
+            transformOrigin: "center top",
+          }}
+        >
           {/* Browser bar */}
           <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-muted/30">
             <div className="flex gap-1.5">
@@ -36,10 +98,32 @@ const DashboardPreview = () => {
               ))}
             </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {/* Stats grid - Staggered reveals */}
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={shouldReduceMotion ? undefined : {
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                    delayChildren: 0.3,
+                  },
+                },
+              }}
+            >
               {/* AVG Order Value */}
-              <div className="bg-muted/50 rounded-xl p-4">
+              <motion.div
+                className="bg-muted/50 rounded-xl p-4"
+                variants={shouldReduceMotion ? undefined : {
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                     <TrendingUp size={16} className="text-primary" />
@@ -48,10 +132,17 @@ const DashboardPreview = () => {
                 </div>
                 <p className="text-2xl font-bold text-foreground">$18,200</p>
                 <span className="text-xs text-green-500 font-medium">+12.5%</span>
-              </div>
+              </motion.div>
 
               {/* Growth stat */}
-              <div className="bg-muted/50 rounded-xl p-4">
+              <motion.div
+                className="bg-muted/50 rounded-xl p-4"
+                variants={shouldReduceMotion ? undefined : {
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 bg-teknify-purple/10 rounded-lg flex items-center justify-center">
                     <BarChart3 size={16} className="text-teknify-purple" />
@@ -60,10 +151,17 @@ const DashboardPreview = () => {
                 </div>
                 <p className="text-2xl font-bold text-foreground">20.59%</p>
                 <span className="text-xs text-green-500 font-medium">+3.2%</span>
-              </div>
+              </motion.div>
 
               {/* Accuracy */}
-              <div className="bg-muted/50 rounded-xl p-4">
+              <motion.div
+                className="bg-muted/50 rounded-xl p-4"
+                variants={shouldReduceMotion ? undefined : {
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center">
                     <PieChart size={16} className="text-green-500" />
@@ -72,10 +170,17 @@ const DashboardPreview = () => {
                 </div>
                 <p className="text-2xl font-bold text-foreground">99%</p>
                 <span className="text-xs text-green-500 font-medium">Verified</span>
-              </div>
+              </motion.div>
 
               {/* Team */}
-              <div className="bg-muted/50 rounded-xl p-4">
+              <motion.div
+                className="bg-muted/50 rounded-xl p-4"
+                variants={shouldReduceMotion ? undefined : {
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center">
                     <Users size={16} className="text-blue-500" />
@@ -84,13 +189,35 @@ const DashboardPreview = () => {
                 </div>
                 <p className="text-2xl font-bold text-foreground">48</p>
                 <span className="text-xs text-muted-foreground">Active</span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            {/* Chart area */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Chart area - Staggered reveals */}
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-3 gap-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={shouldReduceMotion ? undefined : {
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.15,
+                    delayChildren: 0.5,
+                  },
+                },
+              }}
+            >
               {/* Line chart */}
-              <div className="lg:col-span-2 bg-muted/30 rounded-xl p-4">
+              <motion.div
+                className="lg:col-span-2 bg-muted/30 rounded-xl p-4"
+                variants={shouldReduceMotion ? undefined : {
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-sm font-semibold text-foreground">Digital Marketing Performance</h4>
                   <div className="flex gap-3">
@@ -117,10 +244,17 @@ const DashboardPreview = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Donut chart area */}
-              <div className="bg-muted/30 rounded-xl p-4">
+              <motion.div
+                className="bg-muted/30 rounded-xl p-4"
+                variants={shouldReduceMotion ? undefined : {
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
+              >
                 <h4 className="text-sm font-semibold text-foreground mb-4">IT System Uptime</h4>
                 <div className="flex items-center justify-center mb-3">
                   <div className="relative w-28 h-28">
@@ -155,10 +289,10 @@ const DashboardPreview = () => {
                     <span className="font-medium text-foreground">&lt;1%</span>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

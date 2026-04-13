@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { prefersReducedMotion } from "@/lib/animations";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 const Hero = () => {
   const shouldReduceMotion = prefersReducedMotion();
@@ -74,9 +75,13 @@ const Hero = () => {
             whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
             whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
           >
-            <Link to="/contact" className="btn-dark">
-              <ArrowRight size={16} />
-              Get a Free Consultation
+            <Link to="/contact">
+              <CraftButton>
+                <CraftButtonLabel>Get a Free Consultation</CraftButtonLabel>
+                <CraftButtonIcon>
+                  <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                </CraftButtonIcon>
+              </CraftButton>
             </Link>
           </motion.div>
         </motion.div>

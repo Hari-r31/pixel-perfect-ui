@@ -5,6 +5,7 @@ import { ArrowRight, Send, Phone, MapPin } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 const clientLogos = [
   "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081b9_8bbe7e09b28d0c4e7fee49b4081e95e2_client-01.svg",
@@ -289,9 +290,12 @@ const ContactPage = () => {
                   whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
                   whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
                 >
-                  <button type="submit" className="btn-dark">
-                    Inquire Now
-                  </button>
+                  <CraftButton type="submit">
+                    <CraftButtonLabel>Inquire Now</CraftButtonLabel>
+                    <CraftButtonIcon>
+                      <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                    </CraftButtonIcon>
+                  </CraftButton>
                 </motion.div>
               </form>
             </motion.div>
@@ -317,12 +321,12 @@ const ContactPage = () => {
                 Book a free consultation with our experts and discover how
                 TechGigz can streamline your operations and drive growth.
               </p>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary-foreground text-foreground rounded-full px-7 py-3.5 text-body-sm font-semibold hover:bg-primary-foreground/90 transition-colors"
-              >
-                <ArrowRight size={16} /> Book A Call
-              </a>
+              <CraftButton className="bg-primary-foreground text-foreground">
+                <CraftButtonLabel>Book A Call</CraftButtonLabel>
+                <CraftButtonIcon>
+                  <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                </CraftButtonIcon>
+              </CraftButton>
             </div>
           </div>
         </div>

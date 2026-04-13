@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { ServiceCategory } from "@/data/serviceCategories";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 interface ServiceCategoryHeroProps {
   category: ServiceCategory;
@@ -36,8 +37,13 @@ const ServiceCategoryHero = ({ category }: ServiceCategoryHeroProps) => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Link to="/contact" className="btn-dark">
-              <ArrowRight className="h-4 w-4" /> Get Started
+            <Link to="/contact">
+              <CraftButton>
+                <CraftButtonLabel>Get Started</CraftButtonLabel>
+                <CraftButtonIcon>
+                  <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                </CraftButtonIcon>
+              </CraftButton>
             </Link>
             <Link to="/services" className="inline-flex items-center gap-2 text-body-sm font-semibold text-foreground hover:text-primary transition-colors">
               View All Services <ArrowRight className="h-4 w-4" />

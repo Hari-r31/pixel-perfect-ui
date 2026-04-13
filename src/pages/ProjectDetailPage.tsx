@@ -8,6 +8,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -118,8 +119,13 @@ const ProjectDetailPage = () => {
                 whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
               >
-                <Link to="/contact" className="btn-dark">
-                  <ArrowRight className="h-4 w-4" /> Start Your Project
+                <Link to="/contact">
+                  <CraftButton>
+                    <CraftButtonLabel>Start Your Project</CraftButtonLabel>
+                    <CraftButtonIcon>
+                      <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                    </CraftButtonIcon>
+                  </CraftButton>
                 </Link>
               </motion.div>
             </motion.div>

@@ -1,4 +1,5 @@
 import { ArrowRight, Phone } from "lucide-react";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 interface CtaSectionProps {
   heading?: string;
@@ -31,14 +32,18 @@ const CtaSection = ({
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <button className="flex items-center gap-2 rounded-full border-2 border-primary-foreground/30 bg-transparent px-7 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
-            <Phone className="h-4 w-4" />
-            {primaryButton}
-          </button>
-          <button className="flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-primary-foreground/90">
-            <ArrowRight className="h-4 w-4" />
-            {secondaryButton}
-          </button>
+          <CraftButton className="border-2 border-primary-foreground/30 bg-transparent text-primary-foreground">
+            <CraftButtonLabel>{primaryButton}</CraftButtonLabel>
+            <CraftButtonIcon>
+              <Phone className="size-4 stroke-2" />
+            </CraftButtonIcon>
+          </CraftButton>
+          <CraftButton className="bg-primary-foreground text-foreground">
+            <CraftButtonLabel>{secondaryButton}</CraftButtonLabel>
+            <CraftButtonIcon>
+              <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+            </CraftButtonIcon>
+          </CraftButton>
         </div>
       </div>
     </section>
