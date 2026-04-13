@@ -257,6 +257,47 @@ const ServicePage = () => {
         </div>
       </section>
 
+      {/* Service Categories */}
+      <section className="py-16 md:py-24">
+        <div className="section-container">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="sub-heading-pill mb-6 inline-flex">Explore</div>
+            <h2 className="font-heading text-h2 lg:text-h1 leading-tight mb-4">
+              Browse By{" "}
+              <span className="relative inline-block">
+                <span className="text-primary italic">Category</span>
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 8C30 3 70 2 100 5C130 8 170 10 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" fill="none" />
+                </svg>
+              </span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {serviceCategories.map((cat) => {
+              const Icon = cat.icon;
+              return (
+                <Link
+                  key={cat.slug}
+                  to={`/services/${cat.slug}`}
+                  className="group rounded-2xl border border-border bg-card p-6 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-left"
+                >
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary transition-colors">
+                    <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <h3 className="font-heading text-body font-bold text-card-foreground mb-1 group-hover:text-primary transition-colors">
+                    {cat.shortTitle}
+                  </h3>
+                  <p className="text-body-sm text-muted-foreground leading-relaxed line-clamp-2">{cat.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-body-sm font-semibold text-foreground group-hover:text-primary group-hover:gap-2 transition-all">
+                    Learn More <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Business Progress */}
       <BusinessProgress />
 
