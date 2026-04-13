@@ -6,9 +6,12 @@ import CtaSection from "@/components/sections/shared/CtaSection";
 import { projects } from "@/data/projects";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import usePageTitle from "@/hooks/usePageTitle";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 
 const ProjectsPage = () => {
   usePageTitle("Projects");
+  const shouldReduceMotion = prefersReducedMotion();
   return (
     <div className="min-h-screen bg-background">
                   <AnnouncementBar />
@@ -20,9 +23,38 @@ const ProjectsPage = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-primary/5 -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
-        <div className="section-container relative text-center">
-          <div className="sub-heading-pill mb-6 inline-flex">Our Projects</div>
-          <h1 className="font-heading text-h1 lg:text-display leading-tight mb-6 max-w-3xl mx-auto">
+        <motion.div
+          className="section-container relative text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+              },
+            },
+          }}
+        >
+          <motion.div
+            className="sub-heading-pill mb-6 inline-flex"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Our Projects
+          </motion.div>
+          <motion.h1
+            className="font-heading text-h1 lg:text-display leading-tight mb-6 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             Showcasing Our{" "}
             <span className="relative inline-block">
               <span className="text-primary italic">Best Work</span>
@@ -30,23 +62,40 @@ const ProjectsPage = () => {
                 <path d="M2 8C30 3 70 2 100 5C130 8 170 10 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" fill="none" />
               </svg>
             </span>
-          </h1>
-          <p className="text-body text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p
+            className="text-body text-muted-foreground max-w-xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Explore our portfolio of successful projects spanning web development, mobile apps, digital marketing, and more.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </section>
 
       {/* Projects Grid */}
       <section className="pb-16 md:pb-24">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={shouldReduceMotion ? undefined : containerVariants}
+          >
             {projects.map((project) => (
-              <Link
+              <motion.div
                 key={project.id}
-                to={`/projects/${project.id}`}
-                className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+                variants={shouldReduceMotion ? undefined : itemVariants}
+                whileHover={shouldReduceMotion ? undefined : { y: -8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 block h-full"
+                >
                 <div className="relative overflow-hidden aspect-[16/10]">
                   <img
                     src={project.image}
@@ -78,8 +127,9 @@ const ProjectsPage = () => {
                   </span>
                 </div>
               </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

@@ -3,6 +3,8 @@ import Footer from "@/components/common/Footer";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import { ArrowRight, Send, Phone, MapPin } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 
 const clientLogos = [
   "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081b9_8bbe7e09b28d0c4e7fee49b4081e95e2_client-01.svg",
@@ -14,6 +16,7 @@ const clientLogos = [
 
 const ContactPage = () => {
   usePageTitle("Contact Us");
+  const shouldReduceMotion = prefersReducedMotion();
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
@@ -24,10 +27,24 @@ const ContactPage = () => {
         <div className="section-container">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left Side */}
-            <div className="pt-2">
-              <div className="sub-heading-pill mb-6 inline-flex">Get In Touch</div>
+            <motion.div
+              className="pt-2"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={shouldReduceMotion ? undefined : containerVariants}
+            >
+              <motion.div
+                className="sub-heading-pill mb-6 inline-flex"
+                variants={shouldReduceMotion ? undefined : itemVariants}
+              >
+                Get In Touch
+              </motion.div>
 
-              <h1 className="font-heading text-h1 lg:text-display leading-tight mb-6">
+              <motion.h1
+                className="font-heading text-h1 lg:text-display leading-tight mb-6"
+                variants={shouldReduceMotion ? undefined : itemVariants}
+              >
                 <span className="relative inline-block">
                   <span className="text-primary">Contact</span>
                   {/* Orange underline decoration */}
@@ -47,16 +64,30 @@ const ContactPage = () => {
                   </svg>
                 </span>{" "}
                 Us Easily
-              </h1>
+              </motion.h1>
 
-              <p className="text-body text-muted-foreground mb-12 max-w-[440px] leading-relaxed">
+              <motion.p
+                className="text-body text-muted-foreground mb-12 max-w-[440px] leading-relaxed"
+                variants={shouldReduceMotion ? undefined : itemVariants}
+              >
                 Have a project in mind or need IT support? Our team is ready to
                 help. Reach out and we'll get back to you within one business day.
-              </p>
+              </motion.p>
 
               {/* Contact Info */}
-              <div className="space-y-8">
-                <div className="flex items-center gap-5">
+              <motion.div
+                className="space-y-8"
+                variants={shouldReduceMotion ? undefined : containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  className="flex items-center gap-5"
+                  variants={shouldReduceMotion ? undefined : itemVariants}
+                  whileHover={shouldReduceMotion ? undefined : { x: 8 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                >
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-muted">
                     <Send className="h-5 w-5 text-foreground" />
                   </div>
@@ -66,9 +97,14 @@ const ContactPage = () => {
                       solutions@techgigz.com.au
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-5">
+                <motion.div
+                  className="flex items-center gap-5"
+                  variants={shouldReduceMotion ? undefined : itemVariants}
+                  whileHover={shouldReduceMotion ? undefined : { x: 8 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                >
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-muted">
                     <Phone className="h-5 w-5 text-foreground" />
                   </div>
@@ -78,9 +114,14 @@ const ContactPage = () => {
                       (08) 6383 9983 / +61 403 499 150
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-5">
+                <motion.div
+                  className="flex items-center gap-5"
+                  variants={shouldReduceMotion ? undefined : itemVariants}
+                  whileHover={shouldReduceMotion ? undefined : { x: 8 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                >
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-muted">
                     <MapPin className="h-5 w-5 text-foreground" />
                   </div>
@@ -90,81 +131,170 @@ const ContactPage = () => {
                       Unit 7/4 Queen St, Bentley WA 6102
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Side - Form */}
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-card lg:p-10">
-              <h2 className="font-heading text-h4 font-bold text-card-foreground mb-8">
+            <motion.div
+              className="rounded-2xl border border-border bg-card p-8 shadow-card lg:p-10"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.h2
+                className="font-heading text-h4 font-bold text-card-foreground mb-8"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 Send A Message
-              </h2>
+              </motion.h2>
 
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div>
+                <motion.div
+                  className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.08,
+                        delayChildren: 0.35,
+                      },
+                    },
+                  }}
+                >
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <label className="mb-2 block text-body-sm font-medium text-card-foreground">
                       First Name
                     </label>
-                    <input
+                    <motion.input
                       type="text"
                       placeholder="Jason"
                       className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <label className="mb-2 block text-body-sm font-medium text-card-foreground">
                       Last Name
                     </label>
-                    <input
+                    <motion.input
                       type="text"
                       placeholder="Parker"
                       className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div>
+                <motion.div
+                  className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.08,
+                        delayChildren: 0.5,
+                      },
+                    },
+                  }}
+                >
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <label className="mb-2 block text-body-sm font-medium text-card-foreground">
                       Email
                     </label>
-                    <input
+                    <motion.input
                       type="email"
                       placeholder="your@email.com"
                       className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <label className="mb-2 block text-body-sm font-medium text-card-foreground">
                       Phone
                     </label>
-                    <input
+                    <motion.input
                       type="tel"
                       placeholder="+61 4XX XXX XXX"
                       className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.58 }}
+                >
                   <label className="mb-2 block text-body-sm font-medium text-card-foreground">
                     Message
                   </label>
-                  <textarea
+                  <motion.textarea
                     rows={5}
                     placeholder="Type your text here......."
                     className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   />
-                </div>
+                </motion.div>
 
-                <div className="flex justify-center pt-2">
+                <motion.div
+                  className="flex justify-center pt-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.66 }}
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
+                  whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+                >
                   <button type="submit" className="btn-dark">
                     Inquire Now
                   </button>
-                </div>
+                </motion.div>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

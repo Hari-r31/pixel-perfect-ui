@@ -11,6 +11,8 @@ import heroWoman from "@/assets/service-hero-woman.png";
 import { serviceCategories } from "@/data/serviceCategories";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import usePageTitle from "@/hooks/usePageTitle";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 
 const serviceCards = [
   {
@@ -55,6 +57,7 @@ const avatars = [
 
 const ServicePage = () => {
   usePageTitle("Services");
+  const shouldReduceMotion = prefersReducedMotion();
   return (
     <div className="min-h-screen bg-background">
             <AnnouncementBar />
@@ -191,9 +194,23 @@ const ServicePage = () => {
       {/* Experience Section */}
       <section className="bg-secondary py-16 md:py-24">
         <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <div className="sub-heading-pill mb-6 inline-flex">Our Exprience</div>
+          <motion.div
+            className="sub-heading-pill mb-6 inline-flex"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Our Exprience
+          </motion.div>
 
-          <h2 className="font-heading text-h2 lg:text-h1 leading-tight mb-6">
+          <motion.h2
+            className="font-heading text-h2 lg:text-h1 leading-tight mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             Our Core Services —{" "}
             <span className="relative inline-block">
               <span className="text-primary italic">Purpose-Built</span>
@@ -213,18 +230,31 @@ const ServicePage = () => {
               </svg>
             </span>{" "}
             For Growth
-          </h2>
+          </motion.h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-body text-muted-foreground">
+          <motion.p
+            className="mx-auto mt-4 max-w-2xl text-body text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Whether you need a custom application, a managed IT partner, or a digital marketing team — TechGigz brings the expertise and dedication to make it happen.
-          </p>
+          </motion.p>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={shouldReduceMotion ? undefined : containerVariants}
+          >
             {serviceCards.map((card, i) => {
               const Icon = card.icon;
               return (
-                <div
+                <motion.div
                   key={i}
+                  variants={shouldReduceMotion ? undefined : itemVariants}
                   className={`group rounded-2xl p-8 text-left transition-all hover:shadow-card-hover ${
                     card.featured
                       ? "border-2 border-accent bg-card shadow-card"
@@ -251,19 +281,48 @@ const ServicePage = () => {
                   <button className="mt-5 flex items-center gap-1 text-body-sm font-semibold text-foreground transition-colors group-hover:text-primary">
                     Learn More <ArrowRight className="h-3.5 w-3.5" />
                   </button>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Service Categories */}
       <section className="py-16 md:py-24">
         <div className="section-container">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="sub-heading-pill mb-6 inline-flex">All Services</div>
-            <h2 className="font-heading text-h2 lg:text-h1 leading-tight mb-4">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0,
+                },
+              },
+            }}
+          >
+            <motion.div
+              className="sub-heading-pill mb-6 inline-flex"
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              All Services
+            </motion.div>
+            <motion.h2
+              className="font-heading text-h2 lg:text-h1 leading-tight mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Explore By{" "}
               <span className="relative inline-block">
                 <span className="text-primary italic">Service Area</span>
@@ -271,17 +330,28 @@ const ServicePage = () => {
                   <path d="M2 8C30 3 70 2 100 5C130 8 170 10 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" fill="none" />
                 </svg>
               </span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            </motion.h2>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={shouldReduceMotion ? undefined : containerVariants}
+          >
             {serviceCategories.map((cat) => {
               const Icon = cat.icon;
               return (
-                <Link
+                <motion.div
                   key={cat.slug}
-                  to={`/services/${cat.slug}`}
-                  className="group rounded-2xl border border-border bg-card p-6 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-left"
+                  variants={shouldReduceMotion ? undefined : itemVariants}
+                  whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >
+                  <Link
+                    to={`/services/${cat.slug}`}
+                    className="group rounded-2xl border border-border bg-card p-6 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-left block h-full"
+                  >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary transition-colors">
                     <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
@@ -289,13 +359,14 @@ const ServicePage = () => {
                     {cat.shortTitle}
                   </h3>
                   <p className="text-body-sm text-muted-foreground leading-relaxed line-clamp-2">{cat.description}</p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-body-sm font-semibold text-foreground group-hover:text-primary group-hover:gap-2 transition-all">
-                    Learn More <ArrowRight className="h-3.5 w-3.5" />
-                  </span>
-                </Link>
+                    <span className="mt-3 inline-flex items-center gap-1 text-body-sm font-semibold text-foreground group-hover:text-primary group-hover:gap-2 transition-all">
+                      Learn More <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </Link>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 

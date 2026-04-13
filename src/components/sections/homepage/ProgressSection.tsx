@@ -1,14 +1,32 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Command, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 
 const ProgressSection = () => {
+  const shouldReduceMotion = prefersReducedMotion();
+
   return (
     <section className="py-16 lg:py-24">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={shouldReduceMotion ? undefined : containerVariants}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
+        >
           {/* Left content */}
-          <div>
-            <div className="sub-heading-pill mb-5 inline-flex">How It Works</div>
+          <motion.div variants={shouldReduceMotion ? undefined : itemVariants}>
+            <motion.div
+              className="sub-heading-pill mb-5 inline-flex"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              How It Works
+            </motion.div>
             <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-6 leading-tight">
               Our Proven Process For
               <br />
@@ -18,32 +36,46 @@ const ProgressSection = () => {
               We begin by understanding your business inside-out, then build solutions aligned to your goals — and measure every outcome to ensure continued growth.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-              <div>
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
-                  <Command size={22} className="text-accent" />
-                </div>
-                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Business Understanding & Planning</h4>
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  We analyse your objectives, workflows, and market position to create a tailored technology roadmap.
-                </p>
-              </div>
-              <div>
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
-                  <Zap size={22} className="text-accent" />
-                </div>
-                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Digital Growth & SEO</h4>
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  We promote your brand through targeted digital marketing strategies that drive qualified traffic and conversions.
-                </p>
-              </div>
-            </div>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={containerVariants}
+            >
+              {[
+                { icon: Command, title: "Business Understanding & Planning", desc: "We analyse your objectives, workflows, and market position to create a tailored technology roadmap." },
+                { icon: Zap, title: "Digital Growth & SEO", desc: "We promote your brand through targeted digital marketing strategies that drive qualified traffic and conversions." },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div key={i} variants={itemVariants}>
+                    <motion.div
+                      className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3"
+                      whileHover={shouldReduceMotion ? undefined : { scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Icon size={22} className="text-accent" />
+                    </motion.div>
+                    <h4 className="font-heading font-semibold text-body text-foreground mb-2">{item.title}</h4>
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
 
-            <Link to="/services" className="btn-dark">
-              <ArrowRight size={16} />
-              Explore More
-            </Link>
-          </div>
+            <motion.div
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+            >
+              <Link to="/services" className="btn-dark">
+                <ArrowRight size={16} />
+                Explore More
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* Right visual - composite image/chart area */}
           <div className="relative">
