@@ -1,0 +1,71 @@
+import { useParams, Navigate } from "react-router-dom";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import ServiceCategoryHero from "@/components/sections/ServiceCategoryHero";
+import ServiceOfferings from "@/components/sections/ServiceOfferings";
+import Testimonials from "@/components/sections/Testimonials";
+import CtaSection from "@/components/sections/CtaSection";
+import { serviceCategories } from "@/data/serviceCategories";
+
+const ServiceCategoryPage = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const category = serviceCategories.find((c) => c.slug === slug);
+
+  if (!category) return <Navigate to="/services" replace />;
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <ServiceCategoryHero category={category} />
+      <ServiceOfferings offerings={category.offerings} categoryTitle={category.title} />
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24">
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="sub-heading-pill mb-6 inline-flex">Why Choose Us</div>
+              <h2 className="font-heading text-h2 leading-tight mb-6">
+                Delivering Excellence In{" "}
+                <span className="text-primary italic">{category.shortTitle}</span>
+              </h2>
+              <p className="text-body text-muted-foreground leading-relaxed mb-8">
+                {category.description} Our team of experts brings years of experience and a proven track record of delivering results that exceed expectations.
+              </p>
+              <div className="space-y-4">
+                {["Dedicated expert team", "Proven methodology", "On-time delivery", "24/7 support"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                    </div>
+                    <span className="text-body font-medium text-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden border border-border">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
+                  alt="Our team at work"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute -bottom-4 -left-4 rounded-2xl bg-card border border-border p-5 shadow-card">
+                <p className="text-h3 font-heading font-bold text-primary">98%</p>
+                <p className="text-body-sm text-muted-foreground">Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Testimonials />
+      <CtaSection />
+      <Footer />
+    </div>
+  );
+};
+
+export default ServiceCategoryPage;
