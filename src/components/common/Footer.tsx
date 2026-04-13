@@ -11,10 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Zap size={18} className="text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-background">TechGigz</span>
+              <span className="text-xl font-bold text-background">TechGigz<span className="text-primary">.</span></span>
             </a>
             <p className="text-background/50 text-sm leading-relaxed mb-4">
               TechGigz is a Perth-based IT consulting firm delivering software development, digital marketing, and managed IT services since 2018.
