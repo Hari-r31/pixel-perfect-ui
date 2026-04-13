@@ -18,7 +18,7 @@ const HeroSection = () => {
           {/* Left - Phone Mockup */}
           <div className="relative flex justify-center lg:justify-start">
             {/* Floating Stats Card */}
-            <div className="absolute -top-4 right-0 lg:right-[5%] z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4 flex items-center gap-4">
+            <div className="absolute top-0 left-[35%] z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-5 py-4 flex items-center gap-4">
               <div>
                 <p className="text-xl font-bold text-accent">15.52%</p>
                 <p className="text-sm text-muted-foreground font-medium">
@@ -37,8 +37,8 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* "Expands As You Succeed" pill positioned near top-right of phone area */}
-            <div className="absolute top-8 right-0 lg:right-[-10%] z-10">
+            {/* "Expands As You Succeed" pill */}
+            <div className="absolute top-20 right-0 lg:right-[-5%] z-10">
               <span className="inline-block px-5 py-2.5 rounded-full border border-border text-sm font-medium text-foreground">
                 Expands As You Succeed
               </span>
