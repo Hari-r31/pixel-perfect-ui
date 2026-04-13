@@ -6,7 +6,9 @@ import StrategySection from "@/components/sections/StrategySection";
 import Testimonials from "@/components/sections/Testimonials";
 import CtaSection from "@/components/sections/CtaSection";
 import { ArrowRight, Zap, Star, Shield, BarChart3, Cpu, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroWoman from "@/assets/service-hero-woman.png";
+import { serviceCategories } from "@/data/serviceCategories";
 
 const serviceCards = [
   {
