@@ -9,8 +9,10 @@ import AboutCTA from "@/components/sections/about/AboutCTA";
 import AboutProgress from "@/components/sections/about/AboutProgress";
 import AboutTestimonials from "@/components/sections/about/AboutTestimonials";
 import AboutBottomCTA from "@/components/sections/about/AboutBottomCTA";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const About = () => {
+  usePageTitle("About Us");
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />

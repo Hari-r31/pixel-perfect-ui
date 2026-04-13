@@ -5,8 +5,10 @@ import Footer from "@/components/common/Footer";
 import CtaSection from "@/components/sections/shared/CtaSection";
 import { projects } from "@/data/projects";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const ProjectsPage = () => {
+  usePageTitle("Projects");
   return (
     <div className="min-h-screen bg-background">
                   <AnnouncementBar />

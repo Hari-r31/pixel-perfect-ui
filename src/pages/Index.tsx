@@ -12,8 +12,10 @@ import GradientStrip from "@/components/sections/homepage/GradientStrip";
 import Analytics from "@/components/sections/homepage/Analytics";
 import BottomCTA from "@/components/sections/homepage/BottomCTA";
 import Footer from "@/components/common/Footer";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const Index = () => {
+  usePageTitle("Home");
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />

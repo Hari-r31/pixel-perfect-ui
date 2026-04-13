@@ -6,6 +6,8 @@ import ServiceOfferings from "@/components/sections/services/ServiceOfferings";
 import Testimonials from "@/components/sections/shared/Testimonials";
 import CtaSection from "@/components/sections/shared/CtaSection";
 import { serviceCategories } from "@/data/serviceCategories";
+import usePageTitle from "@/hooks/usePageTitle";
+import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 
 const ServiceCategoryPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,8 +15,11 @@ const ServiceCategoryPage = () => {
 
   if (!category) return <Navigate to="/services" replace />;
 
+  usePageTitle(category.shortTitle);
+
   return (
     <div className="min-h-screen bg-background">
+            <AnnouncementBar />
       <Header />
       <ServiceCategoryHero category={category} />
       <ServiceOfferings offerings={category.offerings} categoryTitle={category.title} />

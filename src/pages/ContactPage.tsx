@@ -2,6 +2,7 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import { ArrowRight, Send, Phone, MapPin } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const clientLogos = [
   "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081b9_8bbe7e09b28d0c4e7fee49b4081e95e2_client-01.svg",
@@ -12,6 +13,7 @@ const clientLogos = [
 ];
 
 const ContactPage = () => {
+  usePageTitle("Contact Us");
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />

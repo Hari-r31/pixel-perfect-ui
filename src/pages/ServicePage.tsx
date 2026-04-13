@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import heroWoman from "@/assets/service-hero-woman.png";
 import { serviceCategories } from "@/data/serviceCategories";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const serviceCards = [
   {
@@ -53,6 +54,7 @@ const avatars = [
 ];
 
 const ServicePage = () => {
+  usePageTitle("Services");
   return (
     <div className="min-h-screen bg-background">
             <AnnouncementBar />
