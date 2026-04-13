@@ -125,7 +125,7 @@ const ProgressSection = () => {
               <div className="absolute bottom-0 left-1/4 w-40 h-56 bg-primary/20 rounded-t-2xl" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

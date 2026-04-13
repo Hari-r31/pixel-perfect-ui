@@ -5,7 +5,6 @@ const AnnouncementBar = () => {
         <p className="text-primary-foreground text-body-sm font-medium">
           Free IT Consultation — Book a session with our experts today!
         </p>
-
       </div>
     </div>
   );

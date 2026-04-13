@@ -287,4 +287,12 @@ const ProjectDetailPage = () => {
             ))}
           </div>
         </div>
-      </s
+      </section>
+
+      <CtaSection />
+      <Footer />
+    </div>
+  );
+};
+
+export default ProjectDetailPage;
