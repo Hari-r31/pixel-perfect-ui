@@ -145,3 +145,35 @@
     @apply mx-auto max-w-[1280px] px-4 lg:px-8;
   }
 }
+
+/* WhatsApp pulse-ring animation */
+@keyframes wa-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80%, 100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.animate-wa-ping {
+  animation: wa-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Subtle entrance for both floating buttons */
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-in {
+  animation: float-in 0.35s ease-out forwards;
+}

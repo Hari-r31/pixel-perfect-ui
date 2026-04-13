@@ -2,16 +2,16 @@ import { Check } from "lucide-react";
 
 const features = [
   {
-    title: "Real-Time Updates",
-    description: "Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio lorem a aliquet vitae dolor risus vel.",
+    title: "Custom Solutions For Every Business",
+    description: "We don't believe in one-size-fits-all. Every solution — from CRM to cloud — is purpose-built to meet your specific business needs and objectives.",
   },
   {
-    title: "Align Your Money & Goals",
-    description: "Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio lorem a aliquet vitae dolor risus vel.",
+    title: "Scalability Built In From Day One",
+    description: "Whether you're a small business or scaling enterprise, our software and IT solutions are architected to grow with you without requiring a full rebuild.",
   },
   {
-    title: "Quietly Powerful",
-    description: "Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio lorem a aliquet vitae dolor risus vel.",
+    title: "Reliability You Can Depend On",
+    description: "Proactive monitoring, regular maintenance, and rapid response ensure your systems are always running — so you can focus on running your business.",
   },
 ];
 
@@ -37,10 +37,10 @@ const AboutMission = () => {
           <div>
             <div className="sub-heading-pill mb-5 inline-flex">Our Mission</div>
             <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-6 leading-tight">
-              Empowering Growth Through <span className="text-primary">Innovation</span>
+              Empowering Businesses Through <span className="text-primary">Smart Technology</span>
             </h2>
             <p className="text-muted-foreground text-body mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio lorem a aliquet vitae dolor risus vel.
+              TechGigz is a team of creative, collaborative consultants who work side-by-side with your business — crafting IT strategy, developing software, and managing the infrastructure that keeps you moving forward.
             </p>
 
             <div className="space-y-5">

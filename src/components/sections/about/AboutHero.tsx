@@ -12,21 +12,20 @@ const AboutHero = () => {
 
         {/* Heading */}
         <h1 className="font-heading text-display leading-tight max-w-4xl mx-auto mb-6">
-          Achieving Business Goals Through Smart{" "}
-          <span className="text-primary italic">Tech Solutions</span>
+          We Are TechGigz — Your Trusted{" "}
+          <span className="text-primary italic">IT & Digital Partner</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-muted-foreground text-body max-w-2xl mx-auto mb-12 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur. Purus id accumsan et eget. Commodo odio
-          lorem a aliquet vitae dolor risus vel fusce vitae et natoque amet necsit.
+          TechGigz is a Perth-based IT consulting firm specialising in custom software development, digital marketing, and managed IT services. Since 2018, we've helped businesses grow smarter with scalable, reliable technology solutions.
         </p>
 
         {/* Decorative text */}
         <div className="absolute right-8 lg:right-20 top-1/3 hidden lg:block">
           <p className="font-handwritten text-body font-medium text-foreground/80 rotate-[-15deg] leading-snug">
-            Unlock Growth<br />
-            With Smart Thinking
+            Built in Perth,<br />
+            Serving All Of Australia
           </p>
           <svg className="w-8 h-12 mt-1 ml-8" viewBox="0 0 30 50" fill="none">
             <path d="M15 0 C15 30, 25 35, 25 45" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
@@ -38,10 +37,10 @@ const AboutHero = () => {
         <div className="relative max-w-5xl mx-auto mt-4">
           {/* Left floating card - Real Time Users */}
           <div className="absolute -left-4 lg:-left-12 top-8 bg-background rounded-2xl shadow-float p-5 z-10 w-56 hidden md:block">
-            <p className="font-heading font-semibold text-body-sm text-foreground mb-1">Real Time Users</p>
+            <p className="font-heading font-semibold text-body-sm text-foreground mb-1">Projects Delivered</p>
             <div className="flex items-baseline gap-3 mb-3">
-              <span className="font-heading text-h4 font-bold text-foreground">3.569+</span>
-              <span className="text-body-sm font-semibold text-green-500">+30%</span>
+              <span className="font-heading text-h4 font-bold text-foreground">200+</span>
+              <span className="text-body-sm font-semibold text-green-500">Since 2018</span>
             </div>
             <svg viewBox="0 0 200 60" className="w-full h-12">
               <path d="M0 45 Q25 30 50 35 T100 20 T150 30 T200 15" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.3" />
@@ -73,7 +72,7 @@ const AboutHero = () => {
 
           {/* Right floating card - Project Management */}
           <div className="absolute -right-2 lg:-right-8 top-28 bg-background rounded-2xl shadow-float p-5 z-10 w-56 hidden md:block">
-            <p className="font-heading text-body-sm font-semibold text-foreground mb-3">Project Management</p>
+            <p className="font-heading text-body-sm font-semibold text-foreground mb-3">Client Satisfaction</p>
             <div className="relative w-32 h-32 mx-auto">
               <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
                 <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--muted))" strokeWidth="12" />
@@ -81,7 +80,7 @@ const AboutHero = () => {
                 <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--primary))" strokeWidth="12" strokeDasharray="0 184 42 25" strokeLinecap="round" />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-heading text-h5 font-bold text-foreground">92%</span>
+                <span className="font-heading text-h5 font-bold text-foreground">96%</span>
               </div>
             </div>
           </div>
@@ -89,23 +88,23 @@ const AboutHero = () => {
           {/* Bottom left floating card */}
           <div className="absolute -left-4 lg:-left-12 bottom-0 bg-foreground rounded-2xl shadow-float p-5 z-10 w-60 hidden md:block">
             <p className="font-heading text-body-sm font-semibold text-background mb-4">
-              Easy Project Management<br />That Helps You Win
+              Our Service Delivery<br />Performance
             </p>
             <div className="space-y-3">
               <div>
                 <div className="flex justify-between text-caption text-background/60 mb-1">
-                  <span>Engineering</span><span>89%</span>
+                  <span>Software Dev</span><span>98%</span>
                 </div>
                 <div className="h-2 bg-background/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: "89%" }} />
+                  <div className="h-full bg-blue-500 rounded-full" style={{ width: "98%" }} />
                 </div>
               </div>
               <div>
                 <div className="flex justify-between text-caption text-background/60 mb-1">
-                  <span>Business</span><span>78%</span>
+                  <span>IT Support</span><span>99%</span>
                 </div>
                 <div className="h-2 bg-background/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-primary rounded-full" style={{ width: "78%" }} />
+                  <div className="h-full bg-primary rounded-full" style={{ width: "99%" }} />
                 </div>
               </div>
             </div>

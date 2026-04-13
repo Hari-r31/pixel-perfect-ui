@@ -95,9 +95,9 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-muted-foreground text-base max-w-[520px] leading-[1.7]">
-              Lorem ipsum dolor sit amet consectetur. Mus in rutrum ornare quam.
-              Sed sed tempus mauris ultricies dignissim ultrices eget dui
-              facilisiles nibh donec egesta.
+              TechGigz delivers end-to-end technology solutions — from custom
+              software and digital marketing to IT consulting and managed
+              support — empowering Perth businesses to scale with confidence.
             </p>
 
             {/* CTA Buttons */}

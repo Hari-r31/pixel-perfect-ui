@@ -22,13 +22,13 @@ const MissionSection = () => (
       <div className="w-full lg:w-1/2 space-y-6">
         <span className="inline-block px-5 py-2.5 rounded-full border border-border text-sm font-medium text-foreground">Our Mission</span>
         <h2 className="font-heading text-3xl sm:text-4xl font-bold leading-tight text-foreground">
-          Powerful SaaS Solutions For Modern <AccentUnderline>Businesses</AccentUnderline>
+          Technology Solutions Built For Perth <AccentUnderline>Businesses</AccentUnderline>
         </h2>
-        <p className="text-muted-foreground leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore magna aliqua.</p>
+        <p className="text-muted-foreground leading-relaxed">Our mission is simple: help local businesses grow through smart, reliable technology. We deliver tailored IT solutions that reduce costs, increase efficiency, and keep your systems running.</p>
         <div className="space-y-4 pt-2">
           {[
-            { icon: TrendingUp, title: "Empowering Career Growth" },
-            { icon: BarChart3, title: "Monitor Success Effortlessly" },
+            { icon: TrendingUp, title: "Driving Business Growth" },
+            { icon: BarChart3, title: "Data-Driven Decision Making" },
           ].map((item) => (
             <div key={item.title} className="flex items-start gap-4 p-4 rounded-xl bg-secondary">
               <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center shrink-0">
@@ -36,7 +36,7 @@ const MissionSection = () => (
               </div>
               <div>
                 <h4 className="font-semibold text-foreground">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt magna aliqua.</p>
+                <p className="text-sm text-muted-foreground">We combine deep technical expertise with a genuine understanding of your business to deliver outcomes that matter.</p>
               </div>
             </div>
           ))}

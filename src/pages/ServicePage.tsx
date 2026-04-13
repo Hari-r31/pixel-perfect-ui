@@ -9,38 +9,39 @@ import { ArrowRight, Zap, Star, Shield, BarChart3, Cpu, Globe } from "lucide-rea
 import { Link } from "react-router-dom";
 import heroWoman from "@/assets/service-hero-woman.png";
 import { serviceCategories } from "@/data/serviceCategories";
+import AnnouncementBar from "@/components/sections/AnnouncementBar";
 
 const serviceCards = [
   {
-    icon: Star,
-    title: "Data Intelligence",
-    description: "Lorem ipsum dolor sit amet consectetur. Nisl eu id hendrerit nunc nibh. Commodo turpis non magna pharetra.",
+    icon: Globe,
+    title: "Web & App Development",
+    description: "Custom-built websites, web applications, and mobile apps designed for performance, scalability, and seamless user experience.",
   },
   {
     icon: BarChart3,
-    title: "Data Analytics",
-    description: "Lorem ipsum dolor sit amet consectetur. Nisl eu id hendrerit nunc nibh. Commodo turpis non magna pharetra.",
+    title: "Data & Analytics",
+    description: "Live KPI dashboards, custom reports, and data visualisation tools that help you make faster, smarter business decisions.",
     featured: true,
   },
   {
     icon: Cpu,
-    title: "AI Efficiency",
-    description: "Lorem ipsum dolor sit amet consectetur. Nisl eu id hendrerit nunc nibh. Commodo turpis non magna pharetra.",
+    title: "Custom CRM Systems",
+    description: "Purpose-built CRM platforms that map your customer journey, automate sales pipelines, and unify your business data.",
   },
   {
     icon: Shield,
-    title: "Digital Ecosystem",
-    description: "Lorem ipsum dolor sit amet consectetur. Nisl eu id hendrerit nunc nibh. Commodo turpis non magna pharetra.",
+    title: "IT Security & Backup",
+    description: "Multi-layered security, antivirus management, automated backups, and disaster recovery to keep your data safe.",
   },
   {
-    icon: Globe,
-    title: "Tech Leadership",
-    description: "Lorem ipsum dolor sit amet consectetur. Nisl eu id hendrerit nunc nibh. Commodo turpis non magna pharetra.",
+    icon: Star,
+    title: "Digital Marketing",
+    description: "SEO, SEM, CRO, social media, and content marketing strategies that grow your brand and generate qualified leads.",
   },
   {
     icon: Zap,
-    title: "Virtual Reality",
-    description: "Lorem ipsum dolor sit amet consectetur. Nisl eu id hendrerit nunc nibh. Commodo turpis non magna pharetra.",
+    title: "System Integration",
+    description: "Connect your CRM, email platform, financial tools, and business apps into one automated, error-free workflow.",
   },
 ];
 
@@ -54,6 +55,7 @@ const avatars = [
 const ServicePage = () => {
   return (
     <div className="min-h-screen bg-background">
+            <AnnouncementBar />
       <Header />
 
       {/* Hero Section */}
@@ -84,9 +86,9 @@ const ServicePage = () => {
                   className="font-handwritten text-lg leading-snug text-foreground md:text-xl"
                   style={{ transform: "rotate(-8deg)" }}
                 >
-                  Goal-Oriented
+                  Reliable IT
                   <br />
-                  Solutions With Innovation
+                  Built Around You
                 </p>
                 <svg
                   width="50"
@@ -145,9 +147,9 @@ const ServicePage = () => {
               <div className="sub-heading-pill mb-6 inline-flex">Our Services</div>
 
               <h1 className="font-heading text-h1 lg:text-display leading-tight mb-6">
-                Discover The Power Of Technology That{" "}
+                Technology Services That{" "}
                 <span className="relative inline-block">
-                  <span className="text-primary italic">Delivers</span>
+                  <span className="text-primary italic">Deliver</span>
                   {/* Orange underline decoration */}
                   <svg
                     className="absolute -bottom-2 left-0 w-full"
@@ -167,17 +169,16 @@ const ServicePage = () => {
               </h1>
 
               <p className="text-body text-muted-foreground mb-8 max-w-md leading-relaxed">
-                Commodo nulla mattis volutpat egestas euismod a velit ac. ornare
-                feugiat enim feugiat urna odio. laculis et morbi enim nunc a.
+                From custom software and managed IT to data-driven digital marketing — TechGigz provides the complete technology stack your business needs to scale with confidence.
               </p>
 
               <div className="flex flex-wrap items-center gap-6">
                 <button className="btn-dark">
                   <ArrowRight className="h-4 w-4" />
-                  Get Started
+                  Get a Free Quote
                 </button>
                 <p className="text-body-sm font-semibold text-foreground">
-                  Support: (888)123 4567
+                  Call Us: (08) 6383 9983
                 </p>
               </div>
             </div>
@@ -191,10 +192,9 @@ const ServicePage = () => {
           <div className="sub-heading-pill mb-6 inline-flex">Our Exprience</div>
 
           <h2 className="font-heading text-h2 lg:text-h1 leading-tight mb-6">
-            Experience The Difference Of
-            <br />
+            Our Core Services —{" "}
             <span className="relative inline-block">
-              <span className="text-primary italic">Technology</span>
+              <span className="text-primary italic">Purpose-Built</span>
               <svg
                 className="absolute -bottom-2 left-0 w-full"
                 viewBox="0 0 200 12"
@@ -209,13 +209,12 @@ const ServicePage = () => {
                   fill="none"
                 />
               </svg>
-            </span>
-            -Driven Success
+            </span>{" "}
+            For Growth
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-body text-muted-foreground">
-            Lorem ipsum dolor sit amet consectetur. Ut montes suscipit
-            pellentesque augue amet ullamcorper viverra nulla. In lectus viverra.
+            Whether you need a custom application, a managed IT partner, or a digital marketing team — TechGigz brings the expertise and dedication to make it happen.
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -261,11 +260,11 @@ const ServicePage = () => {
       <section className="py-16 md:py-24">
         <div className="section-container">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="sub-heading-pill mb-6 inline-flex">Explore</div>
+            <div className="sub-heading-pill mb-6 inline-flex">All Services</div>
             <h2 className="font-heading text-h2 lg:text-h1 leading-tight mb-4">
-              Browse By{" "}
+              Explore By{" "}
               <span className="relative inline-block">
-                <span className="text-primary italic">Category</span>
+                <span className="text-primary italic">Service Area</span>
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                   <path d="M2 8C30 3 70 2 100 5C130 8 170 10 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" fill="none" />
                 </svg>

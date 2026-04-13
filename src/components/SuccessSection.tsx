@@ -10,9 +10,9 @@ const AccentUnderline = ({ children }: { children: React.ReactNode }) => (
 );
 
 const items = [
-  { icon: Aperture, title: "Unlocking Smarter Ways To Work" },
-  { icon: Command, title: "Advancing The Future With AI" },
-  { icon: Globe, title: "Simplifying Digital Adoption" },
+  { icon: Aperture, title: "Streamlining Operations" },
+  { icon: Command, title: "Automation & Integration" },
+  { icon: Globe, title: "Digital Transformation" },
 ];
 
 const SuccessSection = () => (
@@ -23,7 +23,7 @@ const SuccessSection = () => (
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-4">
           Reimagining Digital<br />Experiences <AccentUnderline>Worldwide</AccentUnderline>
         </h2>
-        <p className="text-muted-foreground max-w-lg">Lorem ipsum dolor sit amet consectetur adipiscing eiusmod tempor incididunt ut labore et dolore magna.</p>
+        <p className="text-muted-foreground max-w-lg">Since 2018, TechGigz has helped over 200 businesses across Perth reduce costs, improve efficiency, and stay ahead with the right technology.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item) => (
@@ -32,7 +32,7 @@ const SuccessSection = () => (
               <item.icon className="w-7 h-7 text-foreground" />
             </div>
             <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et</p>
+            <p className="text-muted-foreground text-sm leading-relaxed">Proven delivery across software development, IT infrastructure, digital marketing, and ongoing managed support.</p>
           </div>
         ))}
       </div>

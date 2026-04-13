@@ -2,22 +2,22 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    title: "Fueling Innovation And Growth Daily",
-    quote: "Lorem ipsum dolor sit amet consectetur. Euismodcorper habitant cras pharetra interdum urna dolor.",
-    name: "Corina Franklin",
-    role: "Financial Manager",
+    title: "Seamless Cloud Migration With Zero Downtime",
+    quote: "After our first discussion with TechGigz, we felt at ease. Jayshal and the team planned our entire cloud migration and it was seamless. Thank you Team TechGigz.",
+    name: "Mohith R.",
+    role: "Business Owner",
   },
   {
-    title: "Empowering Our Startup Like Never Before",
-    quote: "Lorem ipsum dolor sit amet consectetur. Euismodcorper habitant cras pharetra interdum urna dolor.",
-    name: "Alvin Frey",
-    role: "Strategy Consultant",
+    title: "Outstanding Digital Marketing Results",
+    quote: "Super impressed with the quality and professionalism. Amazing ideas for the best marketing message. I can't thank you enough for your help with the project. You're the best!",
+    name: "Nick D.",
+    role: "Owner, DD Carpet Cleaning",
   },
   {
-    title: "A Revolutionary Solution For Our Startup",
-    quote: "Lorem ipsum dolor sit amet consectetur. Euismodcorper habitant cras pharetra interdum urna dolor.",
-    name: "James Hoff",
-    role: "Management Consultant",
+    title: "Reliable IT Partner That Goes Above & Beyond",
+    quote: "We trust TechGigz to manage all our IT infrastructure. No more downtime or tech issues — just reliable, personalised support that understands our business.",
+    name: "Sarah T.",
+    role: "Operations Manager",
   },
 ];
 

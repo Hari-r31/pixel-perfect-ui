@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const BottomCTA = () => {
@@ -9,10 +10,10 @@ const BottomCTA = () => {
             {/* Left content */}
             <div className="p-8 lg:p-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-background mb-4 leading-tight">
-                Delivering Impact Through Smart Tools
+                Partner With TechGigz To Grow Smarter
               </h2>
               <p className="text-background/60 mb-8 leading-relaxed">
-                Join thousands of businesses that trust our platform to drive growth and efficiency.
+                Join businesses across Australia that trust TechGigz for custom software, digital marketing, and managed IT services that deliver real outcomes.
               </p>
 
               {/* Avatars */}
@@ -32,17 +33,17 @@ const BottomCTA = () => {
                   ))}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-background">2,000+ Users</p>
-                  <p className="text-xs text-background/50">Trusted worldwide</p>
+                  <p className="text-sm font-semibold text-background">200+ Clients Served</p>
+                  <p className="text-xs text-background/50">Trusted across Australia</p>
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors"
               >
                 Get Started Now <ArrowRight size={16} />
-              </a>
+              </Link>
             </div>
 
             {/* Right stat card */}

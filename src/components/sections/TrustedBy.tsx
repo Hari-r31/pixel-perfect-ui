@@ -1,9 +1,9 @@
 const logos = [
-  { name: "ZenoTech", subtitle: "Tech Solutions" },
-  { name: "FutureEdge", subtitle: "Digital Realm" },
-  { name: "InnoByte", subtitle: "Digital Solutions" },
-  { name: "CloudStack", subtitle: "Cloud Platform" },
-  { name: "DataSync", subtitle: "Data Services" },
+  { name: "DD Carpet Cleaning", subtitle: "Digital Marketing" },
+  { name: "Retail Client", subtitle: "Web Development" },
+  { name: "SME Partner", subtitle: "Managed IT" },
+  { name: "Healthcare Client", subtitle: "App Development" },
+  { name: "Startup Partner", subtitle: "Cloud Migration" },
 ];
 
 const TrustedBy = () => {
@@ -11,7 +11,7 @@ const TrustedBy = () => {
     <section className="py-12 lg:py-16">
       <div className="section-container">
         <p className="text-center text-body-sm font-semibold text-foreground mb-10">
-          15k+ Customers Trust Us
+          Trusted By Businesses Across Australia Since 2018
         </p>
         <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
           {logos.map((logo) => (

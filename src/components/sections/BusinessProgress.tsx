@@ -4,15 +4,15 @@ import businessImg from "@/assets/business-progress.jpg";
 const steps = [
   {
     number: "01",
-    title: "Innovative Technology",
+    title: "Business Understanding & Planning",
     description:
-      "Maecenas varius sem dui. Vestibulum semper ante a viverra posuere. Maecenas eleifend fermentum tristique eros.",
+      "We start by listening. Our team analyses your goals, workflows, and pain points to design a tailored IT and software strategy aligned with your objectives.",
   },
   {
     number: "02",
-    title: "Advanced Automation",
+    title: "Application Development & Deployment",
     description:
-      "Aecenas varius sem dui. Vestibulum semper ante a viverra posuere. Maecenas eleifend fermentum tristique eros.",
+      "We build web apps, mobile apps, CRM systems, and integrations with precision — embedding your business logic and ensuring quality at every module.",
   },
 ];
 
@@ -37,12 +37,12 @@ const BusinessProgress = () => {
           <span className="badge-outline">Business Progress</span>
 
           <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight md:text-[44px] md:leading-[1.15]">
-            Discover The Power Of Technology That{" "}
-            <span className="text-accent-orange underline-orange">Delivers</span>
+            Our Process Turns Your Ideas Into Technology That{" "}
+            <span className="text-accent-orange underline-orange">Works</span>
           </h2>
 
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-            Lorem ipsum dolor sit amet consectetur. Et enim metus massa elementum. Ornare fermentum viverra tincidunt ultrices vel rhoncus massa quis.
+            From the first conversation to go-live and beyond — TechGigz follows a structured, transparent process to deliver solutions that meet your exact business needs.
           </p>
 
           <div className="mt-8 space-y-6">

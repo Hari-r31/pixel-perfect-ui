@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, Command, Zap } from "lucide-react";
 
 const ProgressSection = () => {
@@ -9,12 +10,12 @@ const ProgressSection = () => {
           <div>
             <div className="sub-heading-pill mb-5 inline-flex">How It Works</div>
             <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-6 leading-tight">
-              Powering Progress Through
+              Our Proven Process For
               <br />
-              <span className="text-primary">Technology</span>
+              <span className="text-primary">Delivering Results</span>
             </h2>
             <p className="text-muted-foreground text-body mb-10 leading-relaxed max-w-lg">
-              Lorem ipsum dolor sit dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.
+              We begin by understanding your business inside-out, then build solutions aligned to your goals — and measure every outcome to ensure continued growth.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -22,26 +23,26 @@ const ProgressSection = () => {
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
                   <Command size={22} className="text-accent" />
                 </div>
-                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Cyber Solutions</h4>
+                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Business Understanding & Planning</h4>
                 <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  Lorem ipsum dolor sit consectetur adipiscing elit, sed do eiusmod tempor
+                  We analyse your objectives, workflows, and market position to create a tailored technology roadmap.
                 </p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
                   <Zap size={22} className="text-accent" />
                 </div>
-                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Digital Connectivity</h4>
+                <h4 className="font-heading font-semibold text-body text-foreground mb-2">Digital Growth & SEO</h4>
                 <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  Lorem ipsum dolor sit consectetur adipiscing elit, sed do eiusmod tempor
+                  We promote your brand through targeted digital marketing strategies that drive qualified traffic and conversions.
                 </p>
               </div>
             </div>
 
-            <a href="#" className="btn-dark">
+            <Link to="/services" className="btn-dark">
               <ArrowRight size={16} />
               Explore More
-            </a>
+            </Link>
           </div>
 
           {/* Right visual - composite image/chart area */}
@@ -56,7 +57,7 @@ const ProgressSection = () => {
 
               {/* Chart card */}
               <div className="absolute bottom-20 left-4 right-4 bg-card rounded-xl shadow-float p-5">
-                <p className="font-heading font-semibold text-body text-foreground mb-3">Track Your Daily Activity</p>
+                <p className="font-heading font-semibold text-body text-foreground mb-3">Application Development Output</p>
                 <div className="flex items-center gap-6">
                   <div className="relative w-20 h-20">
                     <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
@@ -66,23 +67,23 @@ const ProgressSection = () => {
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <span className="font-heading font-bold text-body-sm text-foreground">95%</span>
-                        <p className="text-[8px] text-muted-foreground">Solutions</p>
+                        <span className="font-heading font-bold text-body-sm text-foreground">98%</span>
+                        <p className="text-[8px] text-muted-foreground">Delivered</p>
                       </div>
                     </div>
                   </div>
                   <div className="flex gap-4 text-caption">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span className="text-foreground">Marketing</span>
+                      <span className="text-foreground">Web Apps</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-accent" />
-                      <span className="text-foreground">Sales</span>
+                      <span className="text-foreground">Mobile</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-primary/50" />
-                      <span className="text-foreground">Business</span>
+                      <span className="text-foreground">CRM</span>
                     </div>
                   </div>
                 </div>

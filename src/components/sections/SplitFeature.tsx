@@ -1,9 +1,9 @@
 import { Check } from "lucide-react";
 
 const stats = [
-  { title: "Innovative Strategies", subtitle: "Yearly statistics", value: "+$290", color: "text-primary" },
-  { title: "Growth Catalyst", subtitle: "Monthly statistics", value: "+$180", color: "text-primary" },
-  { title: "Engaging Tactics", subtitle: "Yearly statistics", value: "+$190", color: "text-primary" },
+  { title: "SEO & Organic Growth", subtitle: "Ongoing campaigns", value: "+180%", color: "text-primary" },
+  { title: "App Deployment Rate", subtitle: "Projects delivered", value: "98%", color: "text-primary" },
+  { title: "Client Retention", subtitle: "Year over year", value: "+92%", color: "text-primary" },
 ];
 
 const SplitFeature = () => {
@@ -13,13 +13,13 @@ const SplitFeature = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left content */}
           <div>
-            <div className="sub-heading-pill mb-5 inline-flex">Evaluate Market</div>
+            <div className="sub-heading-pill mb-5 inline-flex">Why TechGigz</div>
             <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-6 leading-tight">
-              Building Smarter Systems For{" "}
-              <span className="text-primary">The Future</span>
+              Scalable Solutions Built For{" "}
+              <span className="text-primary">Your Business</span>
             </h2>
             <p className="text-muted-foreground text-body mb-8 leading-relaxed">
-              Facilisi et lectus tellus aliquam risus id viverra. Ultricies sed massa sagittis viverra tellus. Ornare auctor vitae feugiat tempor. Vitae.
+              We combine deep technical expertise with a client-centric approach — delivering custom software, strategic IT consulting, and results-driven digital marketing that scales with your growth.
             </p>
 
             <div className="space-y-6">
@@ -29,10 +29,10 @@ const SplitFeature = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-body text-foreground mb-1">
-                    Your Partner In Tech Evolution
+                    Reliability You Can Count On
                   </h4>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    Sit elementum massa arcu lectus egestas mauris ut et tincidunt. Porta at eget vestibulum magna sit. Id.
+                    No IT downtime, no messy tech maintenance. We proactively monitor and manage your infrastructure so you can focus on growing your business.
                   </p>
                 </div>
               </div>
@@ -43,10 +43,10 @@ const SplitFeature = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-body text-foreground mb-1">
-                    Powering The Digital Era
+                    Client-Centric Approach
                   </h4>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt magna aliqua.
+                    Every solution we build is tailored to your specific business needs — from custom CRM systems to automated marketing campaigns and cloud migrations.
                   </p>
                 </div>
               </div>
@@ -59,7 +59,7 @@ const SplitFeature = () => {
               <div className="bg-foreground rounded-xl p-4 mb-4">
                 <div className="flex items-center justify-between">
                   <p className="text-primary-foreground font-heading font-semibold text-body">
-                    Digital Transformation
+                    TechGigz Performance Dashboard
                   </p>
                   <div className="flex gap-1">
                     <div className="w-2 h-2 rounded-full bg-primary" />

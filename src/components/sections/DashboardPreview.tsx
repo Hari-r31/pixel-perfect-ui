@@ -22,7 +22,7 @@ const DashboardPreview = () => {
           <div className="p-4 lg:p-6 bg-card">
             {/* Tabs */}
             <div className="flex gap-2 mb-6">
-              {["Business Revenue", "Monthly Growth", "Branding"].map((tab, i) => (
+              {["Client Performance", "Digital Marketing", "IT Health"].map((tab, i) => (
                 <button
                   key={tab}
                   className={`px-4 py-2 rounded-full text-xs font-medium transition-colors ${
@@ -44,9 +44,9 @@ const DashboardPreview = () => {
                   <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                     <TrendingUp size={16} className="text-primary" />
                   </div>
-                  <span className="text-xs text-muted-foreground">AVG Order Value</span>
+                  <span className="text-xs text-muted-foreground">Avg Lead Value</span>
                 </div>
-                <p className="text-2xl font-bold text-foreground">$21,450</p>
+                <p className="text-2xl font-bold text-foreground">$18,200</p>
                 <span className="text-xs text-green-500 font-medium">+12.5%</span>
               </div>
 
@@ -92,12 +92,12 @@ const DashboardPreview = () => {
               {/* Line chart */}
               <div className="lg:col-span-2 bg-muted/30 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-sm font-semibold text-foreground">Revenue Overview</h4>
+                  <h4 className="text-sm font-semibold text-foreground">Digital Marketing Performance</h4>
                   <div className="flex gap-3">
                     {[
-                      { label: "Hotline", color: "bg-primary" },
-                      { label: "Balance", color: "bg-teknify-purple" },
-                      { label: "Total", color: "bg-green-500" },
+                      { label: "SEO", color: "bg-primary" },
+                      { label: "SEM", color: "bg-teknify-purple" },
+                      { label: "Social", color: "bg-green-500" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-center gap-1.5">
                         <div className={`w-2 h-2 rounded-full ${item.color}`} />
@@ -121,7 +121,7 @@ const DashboardPreview = () => {
 
               {/* Donut chart area */}
               <div className="bg-muted/30 rounded-xl p-4">
-                <h4 className="text-sm font-semibold text-foreground mb-4">Project Management</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-4">IT System Uptime</h4>
                 <div className="flex items-center justify-center mb-3">
                   <div className="relative w-28 h-28">
                     <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
@@ -147,12 +147,12 @@ const DashboardPreview = () => {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground">Completed</span>
-                    <span className="font-medium text-foreground">92%</span>
+                    <span className="text-muted-foreground">Systems Online</span>
+                    <span className="font-medium text-foreground">99%</span>
                   </div>
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground">In Progress</span>
-                    <span className="font-medium text-foreground">8%</span>
+                    <span className="text-muted-foreground">Incidents</span>
+                    <span className="font-medium text-foreground">&lt;1%</span>
                   </div>
                 </div>
               </div>

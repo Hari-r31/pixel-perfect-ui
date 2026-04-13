@@ -16,7 +16,7 @@ const AboutSection = () => (
       <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-4">
         Innovative Systems For<br />Seamless <AccentUnderline>Integration</AccentUnderline>
       </h2>
-      <p className="text-muted-foreground max-w-lg mb-8">Lorem ipsum dolor sit amet consectetur. Sit cursus elementum ut quis non. Sed enim habitant elit adipiscing in ultricies in. Quis sociis posuere.</p>
+      <p className="text-muted-foreground max-w-lg mb-8">Founded in 2018 and based in Bentley, WA, TechGigz Group partners with businesses across Perth to design, build, and maintain the technology systems that power their success.</p>
       <a href="#" className="flex items-center gap-3 pl-2 pr-8 py-2 rounded-full bg-foreground text-background text-sm font-semibold hover:opacity-90 transition-opacity mb-16">
         <span className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center">
           <ArrowRight className="w-4 h-4" />

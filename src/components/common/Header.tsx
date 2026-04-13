@@ -1,55 +1,153 @@
 import { ChevronDown, ShoppingBag, ArrowRight, Zap, Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
+import { serviceCategories } from "@/data/serviceCategories";
 
 const navItems = [
-  { label: "Home", hasDropdown: false, href: "/" },
-  { label: "About", hasDropdown: false, href: "/about" },
-  { label: "Services", hasDropdown: true, href: "/services" },
-  { label: "Projects", hasDropdown: false, href: "/projects" },
-  { label: "Contact", hasDropdown: false, href: "/contact" },
+  { label: "Home",     href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "About",    href: "/about" },
+  { label: "Contact",  href: "/contact" },
 ];
 
+/* ── Services dropdown panel ─────────────────────────────────────────── */
+const ServicesDropdown = ({ onClose }: { onClose: () => void }) => (
+  <div
+    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[680px] max-w-[95vw]
+               bg-background border border-border/60 rounded-2xl shadow-2xl
+               animate-float-in overflow-hidden z-50"
+  >
+    {/* header strip */}
+    <div className="px-6 py-4 border-b border-border/40 flex items-center justify-between">
+      <p className="text-sm font-semibold text-foreground">Our Services</p>
+      <Link
+        to="/services"
+        onClick={onClose}
+        className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+      >
+        View all <ArrowRight size={12} />
+      </Link>
+    </div>
+
+    {/* grid of service categories */}
+    <div className="grid grid-cols-2 gap-px bg-border/30 p-px">
+      {serviceCategories.map((cat) => {
+        const Icon = cat.icon;
+        return (
+          <Link
+            key={cat.slug}
+            to={`/services/${cat.slug}`}
+            onClick={onClose}
+            className="group flex items-start gap-3 bg-background px-5 py-4
+                       hover:bg-primary/5 transition-colors duration-150"
+          >
+            <div
+              className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center
+                         rounded-lg bg-primary/10 group-hover:bg-primary
+                         transition-colors duration-150"
+            >
+              <Icon
+                size={16}
+                className="text-primary group-hover:text-primary-foreground transition-colors duration-150"
+              />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary
+                            transition-colors duration-150 leading-snug">
+                {cat.shortTitle}
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mt-0.5 line-clamp-2">
+                {cat.description}
+              </p>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  </div>
+);
+
+/* ── Header ──────────────────────────────────────────────────────────── */
 const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen]       = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen]   = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const navigate = useNavigate();
+
+  /* Keep dropdown alive while the cursor moves between trigger and panel */
+  const handleMouseEnter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDropdownOpen(true);
+  };
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => setDropdownOpen(false), 120);
+  };
 
   return (
     <header className="w-full bg-background/80 backdrop-blur-md sticky top-0 z-50 border-b border-border/50">
       <div className="section-container flex items-center justify-between h-16 lg:h-20">
+
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <Zap size={18} className="text-primary-foreground" />
-          </div>
-          <span className="text-xl font-heading font-bold text-foreground">Teknify</span>
+          <span className="text-2xl font-heading font-bold text-foreground">TechGigz<span className="text-primary">.</span> </span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className="flex items-center gap-1 px-3.5 py-2 text-body-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md"
-            >
-              {item.label}
-              {item.hasDropdown && <ChevronDown size={14} className="text-muted-foreground" />}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            if (item.label !== "Services") {
+              return (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="flex items-center gap-1 px-3.5 py-2 text-body-md font-medium
+                             text-foreground/80 hover:text-foreground transition-colors rounded-md"
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
+            /* Services nav item with hover dropdown */
+            return (
+              <div
+                key="Services"
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                {/* Click → /services   |   Hover → dropdown */}
+                <button
+                  onClick={() => { navigate("/services"); setDropdownOpen(false); }}
+                  className={`flex items-center gap-1 px-3.5 py-2 text-body-sm font-medium
+                              rounded-md transition-colors
+                              ${dropdownOpen
+                                ? "text-primary bg-primary/5"
+                                : "text-foreground/80 hover:text-foreground"}`}
+                >
+                  Services
+                  <ChevronDown
+                    size={14}
+                    className={`text-muted-foreground transition-transform duration-200
+                                ${dropdownOpen ? "rotate-180 text-primary" : ""}`}
+                  />
+                </button>
+
+                {/* Dropdown panel */}
+                {dropdownOpen && (
+                  <ServicesDropdown onClose={() => setDropdownOpen(false)} />
+                )}
+              </div>
+            );
+          })}
         </nav>
 
-        {/* Right */}
+        {/* Right actions */}
         <div className="flex items-center gap-4">
-          <button className="relative p-2 hover:bg-muted rounded-md transition-colors">
-            <ShoppingBag size={20} className="text-foreground" />
-            <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center">
-              0
-            </span>
-          </button>
-          <Link
-            to="/contact"
-            className="hidden md:inline-flex btn-dark"
-          >
+
+          <Link to="/contact" className="hidden md:inline-flex btn-dark">
             Get Started <ArrowRight size={16} />
           </Link>
           <button
@@ -63,17 +161,73 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <nav className="lg:hidden border-t border-border bg-background px-4 py-4 space-y-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2.5 text-body font-medium text-foreground/80 hover:text-foreground rounded-md hover:bg-muted transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="lg:hidden border-t border-border bg-background px-4 py-3 space-y-0.5">
+          {navItems.map((item) => {
+            if (item.label !== "Services") {
+              return (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-3 py-2.5 text-body font-medium text-foreground/80
+                             hover:text-foreground rounded-md hover:bg-muted transition-colors"
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
+            /* Mobile Services: accordion */
+            return (
+              <div key="Services">
+                <div className="flex items-center">
+                  {/* tap label → navigate */}
+                  <Link
+                    to="/services"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex-1 px-3 py-2.5 text-body font-medium text-foreground/80
+                               hover:text-foreground rounded-md hover:bg-muted transition-colors"
+                  >
+                    Services
+                  </Link>
+                  {/* tap chevron → expand sub-list */}
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="p-2.5 text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="Toggle service sub-menu"
+                  >
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-200
+                                  ${mobileServicesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
+
+                {/* Sub-list */}
+                {mobileServicesOpen && (
+                  <div className="ml-4 mt-1 mb-2 border-l-2 border-primary/20 pl-3 space-y-0.5">
+                    {serviceCategories.map((cat) => {
+                      const Icon = cat.icon;
+                      return (
+                        <Link
+                          key={cat.slug}
+                          to={`/services/${cat.slug}`}
+                          onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
+                          className="flex items-center gap-2.5 px-2 py-2 rounded-md
+                                     text-sm text-foreground/70 hover:text-primary
+                                     hover:bg-primary/5 transition-colors"
+                        >
+                          <Icon size={14} className="text-primary shrink-0" />
+                          {cat.shortTitle}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
       )}
     </header>

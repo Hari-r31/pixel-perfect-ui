@@ -14,10 +14,10 @@ const Footer = () => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <Zap size={18} className="text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-background">Teknify</span>
+              <span className="text-xl font-bold text-background">TechGigz</span>
             </a>
             <p className="text-background/50 text-sm leading-relaxed mb-4">
-              Empowering businesses with innovative technology solutions that drive growth and efficiency.
+              TechGigz is a Perth-based IT consulting firm delivering software development, digital marketing, and managed IT services since 2018.
             </p>
             <div className="flex gap-3">
               {["X", "in", "f", "ig"].map((social) => (
@@ -62,22 +62,22 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
                 <Mail size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">hello@teknify.com</span>
+                <span className="text-sm text-background/50">solutions@techgigz.com.au</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">+1 (555) 123-4567</span>
+                <span className="text-sm text-background/50">(08) 6383 9983</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">123 Tech Avenue, San Francisco, CA 94102</span>
+                <span className="text-sm text-background/50">Unit 7/4 Queen St, Bentley WA 6102, Australia</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-background/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-background/40">© 2025 Teknify. All rights reserved.</p>
+          <p className="text-xs text-background/40">© 2025 TechGigz. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Privacy</a>
             <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Terms</a>

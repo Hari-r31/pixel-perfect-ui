@@ -6,10 +6,10 @@ const CTASection = () => (
       style={{ background: 'linear-gradient(135deg, hsl(220 20% 10%), hsl(220 20% 14%))' }}>
       <div className="flex-1 space-y-5">
         <h2 className="font-heading text-3xl sm:text-4xl font-bold leading-tight" style={{ color: 'hsl(30 33% 98%)' }}>
-          Discover Your Ideal SaaS Solution With Expert Advice
+          Ready to Modernise Your Business with Smarter IT?
         </h2>
         <p className="text-sm leading-relaxed" style={{ color: 'hsl(220 10% 60%)' }}>
-          Lorem ipsum dolor sit amet consectetur. Gravida fermentum amet aliquet ultrices nulla at ipsum consectetur. Aenean morbi nulla.
+          Book a free consultation with the TechGigz team and get a tailored technology plan that fits your goals and budget.
         </p>
       </div>
       <a href="#" className="flex items-center gap-3 pl-2 pr-8 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shrink-0"

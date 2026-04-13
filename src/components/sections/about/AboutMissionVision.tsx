@@ -1,15 +1,15 @@
 const items = [
   {
-    title: "Our Mission & Vision",
-    description: "Lorem ipsum dolor sit amet consectetur. Vitae non vitae quam enim id enim venenatis cras blandit libero vitae et nisl ornare.",
+    title: "Our Mission",
+    description: "To empower businesses of every size with reliable, scalable IT solutions and digital strategies that eliminate complexity, reduce downtime, and drive measurable growth.",
   },
   {
-    title: "Digital Advisors",
-    description: "Lorem ipsum dolor sit amet consectetur. Vitae non vitae quam enim id enim venenatis cras blandit libero vitae et nisl ornare.",
+    title: "Our Vision",
+    description: "To be the most trusted technology partner for Australian businesses — where every client benefits from a dedicated team that understands their goals and builds solutions that last.",
   },
   {
-    title: "Strategic Insights",
-    description: "Lorem ipsum dolor sit amet consectetur. Vitae non vitae quam enim id enim venenatis cras blandit libero vitae et nisl ornare.",
+    title: "Our Values",
+    description: "Reliability, transparency, and a genuine commitment to client success drive every project we take on. We go above and beyond to do exactly what we say we will do.",
   },
 ];
 

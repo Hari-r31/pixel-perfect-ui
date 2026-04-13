@@ -4,9 +4,9 @@ const FeatureStats = () => {
       <div className="section-container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="sub-heading-pill mb-4 inline-flex">Additional Services</div>
+          <div className="sub-heading-pill mb-4 inline-flex">Our Performance</div>
           <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-4">
-            Driving Progress With <span className="text-primary">Smart</span> Technology
+            Measurable Results With <span className="text-primary">Proven</span> Technology
           </h2>
         </div>
 

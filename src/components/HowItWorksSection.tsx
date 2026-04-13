@@ -10,10 +10,10 @@ const AccentUnderline = ({ children }: { children: React.ReactNode }) => (
 );
 
 const transactions = [
-  { icon: Bookmark, name: "Amazon Premium", date: "2nd jan 2022", amount: "-$150", color: "hsl(20 90% 55%)" },
-  { icon: LayoutGrid, name: "Skype Premium", date: "4th Apr 2022", amount: "+$290", color: "hsl(120 60% 45%)" },
-  { icon: AlignJustify, name: "Costa Premium", date: "15th oct 2022", amount: "-$180", color: "hsl(0 80% 55%)" },
-  { icon: SquareCode, name: "Automated Reports", date: "23rd jul 2022", amount: "+$190", color: "hsl(120 60% 45%)" },
+  { icon: Bookmark, name: "IT Consulting", date: "Strategy & roadmap", amount: "✓ Done", color: "hsl(20 90% 55%)" },
+  { icon: LayoutGrid, name: "Software Build", date: "Custom development", amount: "✓ Done", color: "hsl(120 60% 45%)" },
+  { icon: AlignJustify, name: "System Integration", date: "API & data linking", amount: "✓ Done", color: "hsl(120 60% 45%)" },
+  { icon: SquareCode, name: "Managed Support", date: "Ongoing IT support", amount: "Active", color: "hsl(20 90% 55%)" },
 ];
 
 const HowItWorksSection = () => (
@@ -52,7 +52,7 @@ const HowItWorksSection = () => (
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
           Simplifying <AccentUnderline>Workflows,</AccentUnderline><br />Amplifying Results
         </h2>
-        <p className="text-muted-foreground max-w-md leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore magna aliqua.</p>
+        <p className="text-muted-foreground max-w-md leading-relaxed">We consult, build, integrate, and support — giving your team one reliable technology partner for every stage of your business growth.</p>
         <a href="#" className="flex items-center gap-3 pl-2 pr-8 py-2 rounded-full bg-foreground text-background text-sm font-semibold hover:opacity-90 transition-opacity mt-2">
           <span className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center">
             <ArrowRight className="w-4 h-4" />

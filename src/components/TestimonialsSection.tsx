@@ -10,9 +10,9 @@ const AccentUnderline = ({ children }: { children: React.ReactNode }) => (
 );
 
 const testimonials = [
-  { title: "Fueling Innovation And Growth Daily", name: "Corina Franklin", role: "Financial Manager", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" },
-  { title: "Empowering Our Startup Like Never Before", name: "Alvin Frey", role: "Strategy Consultant", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" },
-  { title: "A Revolutionary Solution For Our Startup", name: "James Hoff", role: "Management Consultant", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" },
+  { title: "Transformed Our IT Infrastructure Completely", name: "Sarah Mitchell", role: "Operations Director, Perth", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face", quote: "TechGigz migrated our entire server setup to the cloud with zero downtime. Their team is knowledgeable, responsive, and genuinely care about outcomes." },
+  { title: "Our Go-To Technology Partner Since Day One", name: "David Nguyen", role: "CEO, WA SME", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face", quote: "From building our customer portal to ongoing IT support, TechGigz has been exceptional. They understand our business and always deliver on time." },
+  { title: "Outstanding Digital Marketing Results", name: "Emma Lawson", role: "Marketing Manager, Bentley", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face", quote: "Our online leads tripled within three months of TechGigz launching our new digital strategy. Highly recommend them to any Perth business." },
 ];
 
 const TestimonialsSection = () => (
@@ -23,7 +23,7 @@ const TestimonialsSection = () => (
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: 'hsl(30 33% 98%)' }}>
           Transforming Technology Into<br />Customer <AccentUnderline>Success</AccentUnderline>
         </h2>
-        <p className="max-w-lg" style={{ color: 'hsl(220 10% 60%)' }}>Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore magna aliqua.</p>
+        <p className="max-w-lg" style={{ color: 'hsl(220 10% 60%)' }}>Don't just take our word for it — here's what Perth businesses say about working with TechGigz.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((t) => (
@@ -34,7 +34,7 @@ const TestimonialsSection = () => (
               ))}
             </div>
             <h3 className="text-lg font-bold" style={{ color: 'hsl(30 33% 98%)' }}>{t.title}</h3>
-            <p className="text-sm leading-relaxed" style={{ color: 'hsl(220 10% 60%)' }}>"Lorem ipsum dolor sit amet consectetur. Euismodcorper habitant cras pharetra interdum urna dolor."</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'hsl(220 10% 60%)' }}>"{t.quote}"</p>
             <div className="flex items-center gap-3 mt-auto pt-4 border-t" style={{ borderColor: 'hsl(220 15% 20%)' }}>
               <img src={t.img} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
               <div>

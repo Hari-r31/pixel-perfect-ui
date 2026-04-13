@@ -8,10 +8,10 @@ interface CtaSectionProps {
 }
 
 const CtaSection = ({
-  heading = "Enhance Productivity And Efficiency With Expert SaaS Guidance You Can Trust",
-  description = "Lorem ipsum dolor sit amet consectetur. Gravida fermentum amet aliquet ultrices nulla at ipsum consectetur. Aenean morbi nulla.",
-  primaryButton = "Book A Call",
-  secondaryButton = "Get Started For Free",
+  heading = "Ready To Transform Your Business With Expert IT & Digital Solutions?",
+  description = "Get a free consultation with our team. Whether you need custom software, managed IT services, or a digital marketing strategy — TechGigz has you covered.",
+  primaryButton = "Call (08) 6383 9983",
+  secondaryButton = "Get a Free Quote",
 }: CtaSectionProps) => {
   return (
     <section className="mx-auto max-w-[1280px] px-6 py-16 md:py-20">

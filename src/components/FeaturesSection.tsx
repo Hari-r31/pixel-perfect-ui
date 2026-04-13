@@ -1,10 +1,10 @@
 import { ArrowRight, LayoutGrid, Zap, Users, Wrench } from "lucide-react";
 
 const features = [
-  { icon: LayoutGrid, title: "Innovative Ideas", highlighted: false },
-  { icon: Zap, title: "Data Management", highlighted: true },
-  { icon: Users, title: "Creative Minds", highlighted: false },
-  { icon: Wrench, title: "Online Support", highlighted: false },
+  { icon: LayoutGrid, title: "Custom Software", highlighted: false },
+  { icon: Zap, title: "Data & Analytics", highlighted: true },
+  { icon: Users, title: "IT Consulting", highlighted: false },
+  { icon: Wrench, title: "Managed Support", highlighted: false },
 ];
 
 const AccentUnderline = ({ children }: { children: React.ReactNode }) => (
@@ -24,7 +24,7 @@ const FeaturesSection = () => (
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: 'hsl(30 33% 98%)' }}>
           Advancing <AccentUnderline>Intelligence</AccentUnderline><br />Through Tech
         </h2>
-        <p className="text-muted-foreground max-w-lg">Lorem ipsum dolor sit amet consectetur adipiscing eiusmod tempor incididunt ut labore et dolore magna.</p>
+        <p className="text-muted-foreground max-w-lg">From bespoke applications to data-driven insights, TechGigz brings together the right expertise to accelerate your business goals.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {features.map((f) => (
@@ -39,7 +39,7 @@ const FeaturesSection = () => (
               <f.icon className="w-6 h-6" style={{ color: 'hsl(30 33% 98%)' }} />
             </div>
             <h3 className="text-xl font-bold">{f.title}</h3>
-            <p className="text-sm opacity-70 leading-relaxed">On the other we denounce with righteous indignation & dislike men beguiled.</p>
+            <p className="text-sm opacity-70 leading-relaxed">Tailored solutions built around your business needs, delivered by experienced Perth-based professionals.</p>
             <ArrowRight className="w-5 h-5 mt-auto opacity-60" />
           </div>
         ))}

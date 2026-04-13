@@ -2,12 +2,12 @@ import { Check } from "lucide-react";
 
 const features = [
   {
-    title: "Engaging Group Discussion",
-    description: "Amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Client-Centric Development",
+    description: "We involve you at every stage — from discovery workshops and wireframing through to development, testing, and post-launch support.",
   },
   {
-    title: "Customizable Workflow",
-    description: "Amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Scalable & Customisable Architecture",
+    description: "Every application and system we build is architected for long-term scalability, so your technology grows with your business without costly rebuilds.",
   },
 ];
 
@@ -43,10 +43,10 @@ const AboutProgress = () => {
           <div>
             <div className="sub-heading-pill mb-5 inline-flex">Our Progress</div>
             <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-4 leading-tight">
-              Intelligent Systems For Every Industry
+              Our Approach To Delivering Technology That Lasts
             </h2>
             <p className="text-muted-foreground text-body mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              At TechGigz, we believe great technology starts with truly understanding your business. Our process is collaborative, transparent, and focused on long-term value — not just quick fixes.
             </p>
 
             <div className="space-y-5">

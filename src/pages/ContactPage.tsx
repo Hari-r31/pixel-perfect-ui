@@ -48,9 +48,8 @@ const ContactPage = () => {
               </h1>
 
               <p className="text-body text-muted-foreground mb-12 max-w-[440px] leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id
-                magna malesuada tempor mitellus eget auctor parturient montes
-                dolor.
+                Have a project in mind or need IT support? Our team is ready to
+                help. Reach out and we'll get back to you within one business day.
               </p>
 
               {/* Contact Info */}
@@ -62,7 +61,7 @@ const ContactPage = () => {
                   <div>
                     <p className="text-body-sm text-muted-foreground mb-0.5">Email us:</p>
                     <p className="text-body font-semibold text-foreground">
-                      info@example.com
+                      solutions@techgigz.com.au
                     </p>
                   </div>
                 </div>
@@ -74,7 +73,7 @@ const ContactPage = () => {
                   <div>
                     <p className="text-body-sm text-muted-foreground mb-0.5">Call us:</p>
                     <p className="text-body font-semibold text-foreground">
-                      (888) 1234-5678 / (888) 5678-1234
+                      (08) 6383 9983 / +61 403 499 150
                     </p>
                   </div>
                 </div>
@@ -86,7 +85,7 @@ const ContactPage = () => {
                   <div>
                     <p className="text-body-sm text-muted-foreground mb-0.5">Find Us At</p>
                     <p className="text-body font-semibold text-foreground">
-                      410 Sandtown, California 94001, USA
+                      Unit 7/4 Queen St, Bentley WA 6102
                     </p>
                   </div>
                 </div>
@@ -130,7 +129,7 @@ const ContactPage = () => {
                     </label>
                     <input
                       type="email"
-                      placeholder="info@example.com"
+                      placeholder="your@email.com"
                       className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                   </div>
@@ -140,7 +139,7 @@ const ContactPage = () => {
                     </label>
                     <input
                       type="tel"
-                      placeholder="(888) 1234-5678"
+                      placeholder="+61 4XX XXX XXX"
                       className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                   </div>
@@ -179,12 +178,12 @@ const ContactPage = () => {
 
             <div className="relative z-10 text-center max-w-2xl mx-auto">
               <h2 className="font-heading text-h3 lg:text-h2 text-primary-foreground mb-4 leading-tight">
-                Discover Your Ideal SaaS Solution with{" "}
-                <span className="text-primary">Expert Advice</span>
+                Ready to Transform Your Business with{" "}
+                <span className="text-primary">Smart Technology?</span>
               </h2>
               <p className="text-primary-foreground/70 text-body-sm mb-8">
-                Lorem ipsum dolor sit amet consectetur. Gravida fermentum amet
-                aliquet ultrices nulla at ipsum consectetur. Aenean morbi nulla.
+                Book a free consultation with our experts and discover how
+                TechGigz can streamline your operations and drive growth.
               </p>
               <a
                 href="#"
@@ -203,7 +202,7 @@ const ContactPage = () => {
           {/* Title bar */}
           <div className="flex items-center gap-4 mb-8">
             <div className="text-h5 font-heading font-bold text-foreground whitespace-nowrap">
-              <span className="text-accent">15k+</span> customers trust us
+              <span className="text-accent">200+</span> businesses trust us
             </div>
             <div className="h-px flex-1 bg-border" />
           </div>
@@ -235,11 +234,11 @@ const ContactPage = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="max-w-xl">
                 <h3 className="font-heading text-h3 text-background leading-tight mb-3">
-                  Begin Your SaaS Journey with Expert Guidance
+                  Start Your Digital Transformation with TechGigz
                 </h3>
                 <p className="text-background/60 text-body-sm">
-                  Lorem ipsum dolor sit amet consectetur. Nullam integer nulla ut
-                  enim amet. Metus arcu tortor mauris nisi magnis elit.
+                  From custom software to managed IT support — we deliver
+                  end-to-end technology solutions tailored to your business.
                 </p>
               </div>
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-background/20 group-hover:bg-primary group-hover:border-primary transition-colors">

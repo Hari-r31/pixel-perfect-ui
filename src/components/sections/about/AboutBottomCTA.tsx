@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 
 const team = [
-  { name: "Philips Williams", role: "Creative Agency", status: "Active", statusBg: "bg-green-500/20", statusText: "text-green-400" },
-  { name: "Sara Miller", role: "Developer", status: "Pending", statusBg: "bg-primary/20", statusText: "text-primary" },
+  { name: "Jayshal Nanaval", role: "Project Coordinator", status: "Available", statusBg: "bg-green-500/20", statusText: "text-green-400" },
+  { name: "Rudhraksh V.", role: "Database Developer", status: "Active", statusBg: "bg-primary/20", statusText: "text-primary" },
 ];
 
 const AboutBottomCTA = () => {
@@ -19,13 +19,13 @@ const AboutBottomCTA = () => {
                 Get Started
               </div>
               <h2 className="font-heading text-h2 lg:text-h1 text-background mb-4 leading-tight">
-                Start Your Journey With Our Platform Today
+                Let's Build Something Great Together
               </h2>
               <p className="text-background/50 text-body mb-8 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor.
+                Whether you need a custom application, a managed IT partner, or a digital marketing team — TechGigz is ready to help. Get in touch for a free consultation today.
               </p>
               <a href="#" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-full text-body-sm font-semibold hover:bg-primary/90 transition-colors">
-                <ArrowRight size={16} /> Get Started For Free
+                <ArrowRight size={16} /> Contact Us Today
               </a>
             </div>
 
@@ -61,7 +61,7 @@ const AboutBottomCTA = () => {
                     />
                   ))}
                 </div>
-                <p className="text-caption text-primary mt-2">+18.2% vs last month</p>
+                <p className="text-caption text-primary mt-2">Growing year on year since 2018</p>
               </div>
             </div>
           </div>

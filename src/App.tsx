@@ -11,6 +11,8 @@ import ServiceCategoryPage from "./pages/ServiceCategoryPage";
 import ContactPage from "./pages/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import FloatingActions from "./components/common/FloatingActions";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -34,6 +37,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingActions />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -11,9 +11,9 @@ const AccentUnderline = ({ children }: { children: React.ReactNode }) => (
 );
 
 const items = [
-  { num: "01", title: "Project Management", desc: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt magna aliqua." },
-  { num: "02", title: "Process Development", desc: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt magna aliqua." },
-  { num: "03", title: "Strategic Planning", desc: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt magna aliqua." },
+  { num: "01", title: "End-to-End Delivery", desc: "From initial scoping through to deployment and ongoing support, we manage the full technology lifecycle so you can focus on your business." },
+  { num: "02", title: "Perth-Based Expertise", desc: "Our local team understands the Australian business landscape and provides responsive, on-the-ground support when you need it most." },
+  { num: "03", title: "Scalable Solutions", desc: "Whether you're a growing startup or an established enterprise, our technology solutions scale with your business at every stage." },
 ];
 
 const StrengthSection = () => {
@@ -26,7 +26,7 @@ const StrengthSection = () => {
           <h2 className="font-heading text-3xl sm:text-4xl font-bold leading-tight text-foreground">
             Inspiring Teamwork To Drive <AccentUnderline>Performance</AccentUnderline>
           </h2>
-          <p className="text-muted-foreground leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore magna aliqua.</p>
+          <p className="text-muted-foreground leading-relaxed">Our team brings together the right combination of technical skills and business acumen to solve complex challenges and deliver real results.</p>
           <a href="#" className="flex items-center gap-3 pl-2 pr-8 py-2 rounded-full bg-foreground text-background text-sm font-semibold hover:opacity-90 transition-opacity w-fit">
             <span className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center">
               <ArrowRight className="w-4 h-4" />

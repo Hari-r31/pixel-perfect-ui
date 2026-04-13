@@ -7,10 +7,10 @@ const AboutCTA = () => {
         <div className="gradient-banner rounded-3xl px-8 lg:px-16 py-12 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-heading text-h3 lg:text-h2 text-primary-foreground mb-2 max-w-lg leading-tight">
-              Start Your Journey To Seamless Efficiency With Our SaaS Solutions Today
+              Ready To Transform Your IT & Grow Your Business With TechGigz?
             </h2>
             <p className="text-primary-foreground/70 text-body-sm">
-              Lorem ipsum dolor sit amet consectetur adipiscing.
+              Contact us today for a free consultation and let's build something great together.
             </p>
           </div>
           <div className="flex gap-3">

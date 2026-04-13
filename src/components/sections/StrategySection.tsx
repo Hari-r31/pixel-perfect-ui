@@ -4,21 +4,21 @@ import strategyImg from "@/assets/strategy-section.jpg";
 const strategyCards = [
   {
     icon: Rocket,
-    title: "Tech-Driven Growth Strategies",
+    title: "Custom CRM & Business Automation",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Varius sed odio Condimentum eu elementum penatibus.",
+      "We build tailored CRM systems that map your customer journey, automate workflows, and connect every department for maximum efficiency.",
   },
   {
     icon: Brain,
-    title: "Harnessing The Power Of AI",
+    title: "IT Infrastructure & Security",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Varius sed odio Condimentum eu elementum penatibus.",
+      "We install, monitor, and maintain your IT environment — including antivirus, backups, cloud migration, and Microsoft 365 administration.",
   },
   {
     icon: Target,
-    title: "Tech Solutions That Deliver",
+    title: "Digital Marketing That Converts",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Varius sed odio Condimentum eu elementum penatibus.",
+      "From SEO and keyword research to social media and link building, we grow your online presence and deliver qualified traffic to your business.",
   },
 ];
 
@@ -31,12 +31,12 @@ const StrategySection = () => {
           <span className="badge-outline">Our Strategy</span>
 
           <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight md:text-[44px] md:leading-[1.15]">
-            Leading Innovation Through{" "}
-            <span className="text-accent-orange underline-orange">Technology</span> Strategy
+            What Sets TechGigz Apart — Our{" "}
+            <span className="text-accent-orange underline-orange">Core Capabilities</span>
           </h2>
 
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            We don't just consult — we build, manage, and grow alongside you. Our end-to-end capabilities mean you never have to juggle multiple vendors again.
           </p>
 
           <div className="mt-8 space-y-5">

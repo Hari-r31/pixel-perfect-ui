@@ -1,23 +1,23 @@
 import { Lightbulb, TrendingUp, Brain } from "lucide-react";
 
 const stats = [
-  { number: "84%", label: "Revenue Growth" },
-  { number: "78%", label: "Return Rate" },
-  { number: "65%", label: "Solutions" },
+  { number: "200+", label: "Projects Delivered" },
+  { number: "96%", label: "Client Satisfaction" },
+  { number: "7+", label: "Years In Business" },
 ];
 
 const growthCards = [
   {
     icon: Lightbulb,
-    title: "Next-Gen Tech Strategy",
+    title: "Custom IT Strategy & Roadmapping",
   },
   {
     icon: TrendingUp,
-    title: "Adapting To Tech Trends",
+    title: "Scalable Software & Infrastructure",
   },
   {
     icon: Brain,
-    title: "Advancing Business With AI",
+    title: "Data-Driven Digital Marketing",
   },
 ];
 
@@ -33,12 +33,12 @@ const GrowthStats = () => {
             </span>
 
             <h2 className="mt-6 text-3xl font-bold leading-tight md:text-[44px] md:leading-[1.15]">
-              Technology Solutions For{" "}
-              <span className="text-accent-orange underline-orange">Business</span> Impact
+              Proven Technology Solutions For{" "}
+              <span className="text-accent-orange underline-orange">Measurable</span> Impact
             </h2>
 
             <p className="mt-5 max-w-md text-base leading-relaxed text-primary-foreground/60">
-              Lorem ipsum dolor sit amet consectetur. Urna ultrices laoreet in in ut vel malesuada. Tortor purus orci posuere at augue aliquam.
+              Since 2018, TechGigz has helped businesses across Australia grow through custom software, strategic IT management, and digital marketing that drives real results.
             </p>
 
             {/* Stats */}
@@ -54,7 +54,7 @@ const GrowthStats = () => {
 
           {/* Right - Cards */}
           <div>
-            <p className="mb-6 text-lg font-semibold">Accelerate Your Growth</p>
+            <p className="mb-6 text-lg font-semibold">How We Help You Grow</p>
             <div className="space-y-4">
               {growthCards.map((card, i) => {
                 const Icon = card.icon;

@@ -4,11 +4,14 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import CtaSection from "@/components/sections/CtaSection";
 import { projects } from "@/data/projects";
+import AnnouncementBar from "@/components/sections/AnnouncementBar";
 
 const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-background">
+                  <AnnouncementBar />
       <Header />
+
 
       {/* Hero */}
       <section className="relative overflow-hidden py-16 md:py-24">

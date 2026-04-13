@@ -1,7 +1,7 @@
 const items = [
-  { title: "Digital Evolution", description: "Lorem ipsum dolor sit amet consectetur. Dictum rutrum ultrices non purus est risus dignissim. Quam amet porttitor sed." },
-  { title: "Features Driving Better Connections", description: "Lorem ipsum dolor sit amet consectetur. Dictum rutrum ultrices non purus risus dignissim. Quam amet porttitor sed." },
-  { title: "Transforming Challenges Into Progress", description: "Lorem ipsum dolor sit amet consectetur. Dictum rutrum ultrices non purus risus dignissim. Quam amet porttitor sed." },
+  { title: "Custom Software Development", description: "We build web apps, mobile apps, CRM systems, and integration platforms that automate your workflows and connect your business tools." },
+  { title: "Data-Driven Digital Marketing", description: "From SEO and keyword research to social media and link building — we grow your online presence and bring qualified leads to your door." },
+  { title: "Reliable Managed IT Services", description: "Security, backups, cloud migration, Microsoft 365, and 24/7 monitoring — we keep your IT infrastructure running without disruption." },
 ];
 
 const GradientStrip = () => {
@@ -10,7 +10,7 @@ const GradientStrip = () => {
       <div className="section-container">
         <div className="text-center mb-10">
           <h2 className="font-heading text-h2 lg:text-h1 text-primary-foreground mb-3">
-            Transforming Challenges Into Opportunities
+            Everything Your Business Needs, Under One Roof
           </h2>
         </div>
 

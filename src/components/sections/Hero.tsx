@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -10,26 +11,26 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           {/* Pill badge */}
           <div className="sub-heading-pill mb-6">
-            Technology For The Future
+            IT Consulting &amp; Digital Growth
           </div>
 
           {/* Heading */}
           <h1 className="font-heading text-display leading-tight mb-6">
-            Redefining{" "}
-            <span className="text-primary">Technology</span>{" "}
-            For A Better Tomorrow
+            Custom Software &amp;{" "}
+            <span className="text-primary">IT Solutions</span>{" "}
+            That Drive Real Results
           </h1>
 
           {/* Subtitle */}
           <p className="text-muted-foreground text-body-lg max-w-xl mb-8 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt Posuere semper ut donec vel..
+            TechGigz helps businesses grow through custom software development, data-driven digital marketing, and reliable managed IT services — all under one roof.
           </p>
 
           {/* CTA */}
-          <a href="#" className="btn-dark">
+          <Link to="/contact" className="btn-dark">
             <ArrowRight size={16} />
-            Get Started Today
-          </a>
+            Get a Free Consultation
+          </Link>
         </div>
       </div>
     </section>
