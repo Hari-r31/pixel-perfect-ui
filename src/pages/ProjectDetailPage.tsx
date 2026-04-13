@@ -2,7 +2,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import CtaSection from "@/components/sections/CtaSection";
+import CtaSection from "@/components/sections/shared/CtaSection";
 import { projects } from "@/data/projects";
 
 const ProjectDetailPage = () => {

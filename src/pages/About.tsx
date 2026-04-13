@@ -1,4 +1,4 @@
-import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import AboutHero from "@/components/sections/about/AboutHero";

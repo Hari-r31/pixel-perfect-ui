@@ -1,10 +1,10 @@
 import { useParams, Navigate } from "react-router-dom";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import ServiceCategoryHero from "@/components/sections/ServiceCategoryHero";
-import ServiceOfferings from "@/components/sections/ServiceOfferings";
-import Testimonials from "@/components/sections/Testimonials";
-import CtaSection from "@/components/sections/CtaSection";
+import ServiceCategoryHero from "@/components/sections/services/ServiceCategoryHero";
+import ServiceOfferings from "@/components/sections/services/ServiceOfferings";
+import Testimonials from "@/components/sections/shared/Testimonials";
+import CtaSection from "@/components/sections/shared/CtaSection";
 import { serviceCategories } from "@/data/serviceCategories";
 
 const ServiceCategoryPage = () => {

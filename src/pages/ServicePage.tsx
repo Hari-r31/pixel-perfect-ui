@@ -1,15 +1,15 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import BusinessProgress from "@/components/sections/BusinessProgress";
-import GrowthStats from "@/components/sections/GrowthStats";
-import StrategySection from "@/components/sections/StrategySection";
-import Testimonials from "@/components/sections/Testimonials";
-import CtaSection from "@/components/sections/CtaSection";
+import BusinessProgress from "@/components/sections/services/BusinessProgress";
+import GrowthStats from "@/components/sections/services/GrowthStats";
+import StrategySection from "@/components/sections/services/StrategySection";
+import Testimonials from "@/components/sections/shared/Testimonials";
+import CtaSection from "@/components/sections/shared/CtaSection";
 import { ArrowRight, Zap, Star, Shield, BarChart3, Cpu, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroWoman from "@/assets/service-hero-woman.png";
 import { serviceCategories } from "@/data/serviceCategories";
-import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 
 const serviceCards = [
   {
@@ -309,7 +309,7 @@ const ServicePage = () => {
       {/* Testimonials */}
       <Testimonials />
 
-      {/* CTA */}
+      {/* CTA Section */}
       <CtaSection />
 
       <Footer />

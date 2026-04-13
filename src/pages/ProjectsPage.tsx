@@ -2,9 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import CtaSection from "@/components/sections/CtaSection";
+import CtaSection from "@/components/sections/shared/CtaSection";
 import { projects } from "@/data/projects";
-import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 
 const ProjectsPage = () => {
   return (

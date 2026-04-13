@@ -1,6 +1,6 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import { ArrowRight, Send, Phone, MapPin } from "lucide-react";
 
 const clientLogos = [
