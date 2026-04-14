@@ -1,5 +1,12 @@
 import { ArrowRight } from "lucide-react";
 
+const team = [
+  { name: "Jayshal Nanaval", role: "Project Coordinator", status: "Available", statusBg: "bg-green-500/20", statusText: "text-green-400" },
+  { name: "Rudhraksh V.", role: "Database Developer", status: "Active", statusBg: "bg-primary/20", statusText: "text-primary" },
+];
+
+
+
 const AboutBottomCTA = () => {
   return (
     <section className="py-16 lg:py-24">
@@ -24,15 +31,22 @@ const AboutBottomCTA = () => {
               </a>
             </div>
 
-            {/* Right - Capability cards */}
+            {/* Right - Team cards + Revenue */}
             <div className="space-y-4">
-              {[
-                { title: "Website Design & Development", subtitle: "Custom websites, portals, and business platforms" },
-                { title: "Digital Marketing Support", subtitle: "SEO, campaigns, and content for business growth" },
-              ].map((item) => (
-                <div key={item.title} className="bg-card/5 border border-background/10 rounded-2xl p-5">
-                  <p className="font-heading font-semibold text-body text-background">{item.title}</p>
-                  <p className="text-caption text-background/50 mt-1">{item.subtitle}</p>
+              {team.map((member) => (
+                <div key={member.name} className="bg-card/5 border border-background/10 rounded-2xl p-5">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-primary/20" />
+                      <div>
+                        <p className="font-heading font-semibold text-body text-background">{member.name}</p>
+                        <p className="text-caption text-background/50">{member.role}</p>
+                      </div>
+                    </div>
+                    <span className={`text-caption font-medium ${member.statusBg} ${member.statusText} rounded-full px-3 py-1`}>
+                      {member.status}
+                    </span>
+                  </div>
                 </div>
               ))}
 

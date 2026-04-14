@@ -101,7 +101,8 @@ const Header = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-heading font-bold text-foreground">TechGigz<span className="text-primary">.</span> </span>
+        <img className="h-16 w-16" src="./logo.png" alt="" />
+          <span className="text-2xl font-heading font-bold text-foreground">TechGigz Solutions</span>
         </Link>
 
         {/* Desktop Nav */}
