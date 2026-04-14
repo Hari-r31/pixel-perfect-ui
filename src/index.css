@@ -7,99 +7,93 @@
 @layer base {
   :root {
     /* Background & Surface */
-    --background: 0 0% 98%;
-    --foreground: 240 10% 10%;
+    --background: 30 33% 98%;
+    --foreground: 240 33% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card-foreground: 240 33% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover-foreground: 240 33% 13%;
 
-    /* 🔴 Primary — Red */
-    --primary: 0 83% 58%;
+    /* Primary — Teknify Orange */
+    --primary: 16 78% 54%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary */
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 240 10% 10%;
+    /* Secondary — Light gray surface */
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 240 33% 13%;
 
     /* Muted */
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    /* Accent */
-    --accent: 0 70% 50%;
+    /* Accent — Purple */
+    --accent: 263 83% 58%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive */
-    --destructive: 0 85% 45%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders & Inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 83% 58%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 16 78% 54%;
 
     --radius: 0.75rem;
 
-    /* Brand Tokens */
-    --brand-primary: 0 83% 58%;
-    --brand-dark: 240 10% 10%;
-    --brand-gray: 0 0% 45%;
+    /* Brand tokens */
+    --teknify-orange: 16 78% 54%;
+    --teknify-dark: 240 33% 13%;
+    --teknify-navy: 240 33% 4%;
+    --teknify-warm-bg: 30 33% 98%;
+    --teknify-gray: 220 9% 46%;
+    --teknify-purple: 263 83% 58%;
 
-    /* Gradients */
-    --gradient-banner: linear-gradient(90deg, hsl(0 83% 58%), hsl(10 85% 55%));
-    --gradient-hero: radial-gradient(ellipse at center bottom, hsl(0 83% 58% / 0.12), transparent 60%);
+    /* Gradient tokens */
+    --gradient-banner: linear-gradient(90deg, hsl(16 78% 54%), hsl(280 60% 55%));
+    --gradient-hero: radial-gradient(ellipse at center bottom, hsl(16 78% 54% / 0.08), transparent 60%);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5% 25%;
-    --sidebar-primary: 0 83% 58%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 240 10% 10%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 83% 58%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 83% 58%;
+    --background: 240 33% 4%;
+    --foreground: 210 40% 98%;
+    --card: 240 33% 7%;
+    --card-foreground: 210 40% 98%;
+    --popover: 240 33% 7%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 16 78% 54%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 5% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 0 70% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 70% 35%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5% 15%;
-    --input: 240 5% 15%;
-    --ring: 0 83% 58%;
-
-    --sidebar-background: 240 10% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 83% 58%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 263 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 5% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 240 5% 15%;
-    --sidebar-ring: 0 83% 58%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -107,12 +101,10 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
     font-family: 'Outfit', sans-serif;
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
   }
@@ -122,53 +114,64 @@
   .font-heading {
     font-family: 'Montserrat', sans-serif;
   }
-
   .font-body {
     font-family: 'Outfit', sans-serif;
   }
-
+  .font-handwritten {
+    font-family: 'Shantell Sans', cursive;
+  }
   .text-highlight {
     color: hsl(var(--primary));
   }
-
   .gradient-banner {
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(10 85% 55%));
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--teknify-purple)));
   }
-
   .gradient-hero {
-    background: radial-gradient(ellipse at center bottom, hsl(var(--primary) / 0.12), transparent 60%);
+    background: radial-gradient(ellipse at center bottom, hsl(var(--primary) / 0.08), transparent 60%);
   }
-
   .sub-heading-pill {
     @apply inline-flex items-center gap-2 rounded-full border border-border px-5 py-2 text-sm font-medium;
+    font-family: 'Outfit', sans-serif;
   }
-
   .btn-dark {
     @apply inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 text-sm font-semibold transition-colors hover:bg-foreground/90;
+    font-family: 'Outfit', sans-serif;
   }
-
   .btn-outline-light {
     @apply inline-flex items-center gap-2 rounded-full border border-background/30 text-background px-7 py-3.5 text-sm font-semibold transition-colors hover:bg-background/10;
+    font-family: 'Outfit', sans-serif;
   }
-
   .section-container {
     @apply mx-auto max-w-[1280px] px-4 lg:px-8;
   }
 }
 
-/* Animations */
+/* WhatsApp pulse-ring animation */
 @keyframes wa-ping {
-  0% { transform: scale(1); opacity: 0.6; }
-  80%, 100% { transform: scale(1.9); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80%, 100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
 }
 
 .animate-wa-ping {
   animation: wa-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
+/* Subtle entrance for both floating buttons */
 @keyframes float-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-float-in {
@@ -176,8 +179,12 @@
 }
 
 @keyframes announcement-loop {
-  from { transform: translate3d(-100%, -50%, 0); }
-  to { transform: translate3d(100vw, -50%, 0); }
+  from {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  to {
+    transform: translate3d(100vw, -50%, 0);
+  }
 }
 
 .animate-announcement-loop {
