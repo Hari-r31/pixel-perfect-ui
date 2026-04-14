@@ -13,6 +13,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
+import HeroSection from "@/components/legacy/HeroSection";
 
 const serviceCards = [
   {
@@ -178,6 +179,7 @@ const ServicePage = () => {
         </div>
       </section>
 
+
       {/* Experience Section */}
       <section className="bg-secondary py-16 md:py-24">
         <div className="mx-auto max-w-[1280px] px-6 text-center">
@@ -274,6 +276,8 @@ const ServicePage = () => {
           </motion.div>
         </div>
       </section>
+
+                  <HeroSection />
 
       {/* Service Categories */}
       <section className="py-16 md:py-24">

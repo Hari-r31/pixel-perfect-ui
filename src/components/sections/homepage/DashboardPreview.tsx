@@ -1,15 +1,26 @@
 import { TrendingUp, Users, BarChart3, PieChart } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { prefersReducedMotion } from "@/lib/animations";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const DashboardPreview = () => {
   const shouldReduceMotion = prefersReducedMotion();
+  const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "center center"],
   });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const updateIsDesktop = () => setIsDesktop(mediaQuery.matches);
+
+    updateIsDesktop();
+    mediaQuery.addEventListener("change", updateIsDesktop);
+
+    return () => mediaQuery.removeEventListener("change", updateIsDesktop);
+  }, []);
 
   // Map scroll progress to rotation angles
   // Start: rotateX(60°) - Device tilted back like opening book with pronounced perspective
@@ -19,6 +30,7 @@ const DashboardPreview = () => {
   const skewY = useTransform(scrollYProgress, [0, 0], [0, 0]); // Slanted edges effect
   const scaleY = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const translateY = useTransform(scrollYProgress, [0, 1], [80, 0]); // Moves up as it opens
+  const enableMotion = isDesktop && !shouldReduceMotion;
 
   return (
     <section className="relative pb-20 lg:pb-32" ref={containerRef}>
@@ -26,8 +38,8 @@ const DashboardPreview = () => {
         {/* Floating label - Top Left with curved arrow */}
         <motion.div
           className="absolute -top-20 left-4 lg:left-0 z-20 w-40"
-          initial={{ opacity: 0, y: -20, x: -20 }}
-          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          initial={enableMotion ? { opacity: 0, y: -20, x: -20 } : false}
+          whileInView={enableMotion ? { opacity: 1, y: 0, x: 0 } : undefined}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
@@ -37,8 +49,8 @@ const DashboardPreview = () => {
         {/* Floating label - Top Right with curved arrow */}
         <motion.div
           className="absolute -top-12 right-4 lg:right-0 z-20 w-40"
-          initial={{ opacity: 0, y: -20, x: 20 }}
-          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          initial={enableMotion ? { opacity: 0, y: -20, x: 20 } : false}
+          whileInView={enableMotion ? { opacity: 1, y: 0, x: 0 } : undefined}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
@@ -48,8 +60,8 @@ const DashboardPreview = () => {
         {/* Floating label - Bottom Right with curved arrow */}
         <motion.div
           className="absolute -bottom-16 right-4 lg:right-0 z-20 w-40"
-          initial={{ opacity: 0, y: 20, x: 20 }}
-          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          initial={enableMotion ? { opacity: 0, y: 20, x: 20 } : false}
+          whileInView={enableMotion ? { opacity: 1, y: 0, x: 0 } : undefined}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
@@ -57,8 +69,8 @@ const DashboardPreview = () => {
         </motion.div>
         {/* Device frame - Scroll-linked 3D rotation */}
         <motion.div
-          className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border border-border/60 overflow-hidden"
-          style={shouldReduceMotion ? {} : {
+          className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border-4 border-black overflow-hidden"
+          style={enableMotion ? {
             rotateX,
             skewY,
             scaleY,
@@ -66,7 +78,7 @@ const DashboardPreview = () => {
             transformPerspective: "800px",
             transformStyle: "preserve-3d",
             transformOrigin: "center top",
-          }}
+          } : {}}
         >
           {/* Browser bar */}
           <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-muted/30">
@@ -81,7 +93,7 @@ const DashboardPreview = () => {
           </div>
 
           {/* Dashboard content */}
-          <div className="p-4 lg:p-6 bg-card">
+          <div className="m-3 rounded-2xl border border-border/60 bg-card p-4 lg:m-4 lg:rounded-[1.75rem] lg:p-6">
             {/* Tabs */}
             <div className="flex gap-2 mb-6">
               {["Client Performance", "Digital Marketing", "IT Health"].map((tab, i) => (
@@ -101,10 +113,10 @@ const DashboardPreview = () => {
             {/* Stats grid - Staggered reveals */}
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
-              initial="hidden"
-              whileInView="visible"
+              initial={enableMotion ? "hidden" : false}
+              whileInView={enableMotion ? "visible" : undefined}
               viewport={{ once: true }}
-              variants={shouldReduceMotion ? undefined : {
+              variants={enableMotion ? {
                 hidden: { opacity: 0 },
                 visible: {
                   opacity: 1,
@@ -113,15 +125,15 @@ const DashboardPreview = () => {
                     delayChildren: 0.3,
                   },
                 },
-              }}
+              } : undefined}
             >
               {/* AVG Order Value */}
               <motion.div
                 className="bg-muted/50 rounded-xl p-4"
-                variants={shouldReduceMotion ? undefined : {
+                variants={enableMotion ? {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
-                }}
+                } : undefined}
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -137,10 +149,10 @@ const DashboardPreview = () => {
               {/* Growth stat */}
               <motion.div
                 className="bg-muted/50 rounded-xl p-4"
-                variants={shouldReduceMotion ? undefined : {
+                variants={enableMotion ? {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
-                }}
+                } : undefined}
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -156,10 +168,10 @@ const DashboardPreview = () => {
               {/* Accuracy */}
               <motion.div
                 className="bg-muted/50 rounded-xl p-4"
-                variants={shouldReduceMotion ? undefined : {
+                variants={enableMotion ? {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
-                }}
+                } : undefined}
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -175,10 +187,10 @@ const DashboardPreview = () => {
               {/* Team */}
               <motion.div
                 className="bg-muted/50 rounded-xl p-4"
-                variants={shouldReduceMotion ? undefined : {
+                variants={enableMotion ? {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
-                }}
+                } : undefined}
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -195,10 +207,10 @@ const DashboardPreview = () => {
             {/* Chart area - Staggered reveals */}
             <motion.div
               className="grid grid-cols-1 lg:grid-cols-3 gap-4"
-              initial="hidden"
-              whileInView="visible"
+              initial={enableMotion ? "hidden" : false}
+              whileInView={enableMotion ? "visible" : undefined}
               viewport={{ once: true }}
-              variants={shouldReduceMotion ? undefined : {
+              variants={enableMotion ? {
                 hidden: { opacity: 0 },
                 visible: {
                   opacity: 1,
@@ -207,15 +219,15 @@ const DashboardPreview = () => {
                     delayChildren: 0.5,
                   },
                 },
-              }}
+              } : undefined}
             >
               {/* Line chart */}
               <motion.div
                 className="lg:col-span-2 bg-muted/30 rounded-xl p-4"
-                variants={shouldReduceMotion ? undefined : {
+                variants={enableMotion ? {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 },
-                }}
+                } : undefined}
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center justify-between mb-4">
@@ -249,10 +261,10 @@ const DashboardPreview = () => {
               {/* Donut chart area */}
               <motion.div
                 className="bg-muted/30 rounded-xl p-4"
-                variants={shouldReduceMotion ? undefined : {
+                variants={enableMotion ? {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 },
-                }}
+                } : undefined}
                 transition={{ duration: 0.6 }}
               >
                 <h4 className="text-sm font-semibold text-foreground mb-4">Service Coverage</h4>

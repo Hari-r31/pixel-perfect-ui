@@ -13,6 +13,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import FloatingActions from "./components/common/FloatingActions";
 import ScrollToTop from "./components/common/ScrollToTop";
+import Service_mobile_Page from "./pages/services_mobile";
 
 const queryClient = new QueryClient();
 
@@ -33,7 +34,6 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           {/* Legacy redirects */}
           <Route path="/service" element={<ServicePage />} />
-          <Route path="/service-mobile" element={<ServicePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
