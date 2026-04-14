@@ -34,7 +34,7 @@ const AboutProgress = () => {
               </div>
               <div>
                 <p className="font-heading text-body-sm font-semibold text-foreground">Growth Rate</p>
-                <p className="text-caption text-muted-foreground">Year over year</p>
+                <p className="text-caption text-muted-foreground">Structured, business-led delivery</p>
               </div>
             </div>
           </div>

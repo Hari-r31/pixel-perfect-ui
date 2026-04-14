@@ -1,9 +1,9 @@
 import { Check } from "lucide-react";
 
 const stats = [
-  { title: "SEO & Organic Growth", subtitle: "Ongoing campaigns", value: "+180%", color: "text-primary" },
-  { title: "App Deployment Rate", subtitle: "Projects delivered", value: "98%", color: "text-primary" },
-  { title: "Client Retention", subtitle: "Year over year", value: "+92%", color: "text-primary" },
+  { title: "SEO & Organic Growth", subtitle: "Campaign planning and search visibility", value: "Strategy-led", color: "text-primary" },
+  { title: "App Delivery", subtitle: "Web, mobile, and internal tools", value: "Custom-built", color: "text-primary" },
+  { title: "Ongoing Support", subtitle: "Maintenance, fixes, and improvements", value: "Long-term", color: "text-primary" },
 ];
 
 const SplitFeature = () => {
@@ -74,7 +74,7 @@ const SplitFeature = () => {
                   <div key={i} className="flex items-center justify-between bg-background rounded-lg p-3">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
-                        <span className="text-primary text-caption">📊</span>
+                        <span className="text-primary text-caption">TG</span>
                       </div>
                       <div>
                         <p className="font-heading font-semibold text-body-sm text-foreground">{stat.title}</p>

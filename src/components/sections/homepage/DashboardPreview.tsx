@@ -128,10 +128,10 @@ const DashboardPreview = () => {
                   <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                     <TrendingUp size={16} className="text-primary" />
                   </div>
-                  <span className="text-xs text-muted-foreground">Avg Lead Value</span>
+                  <span className="text-xs text-muted-foreground">Discovery & Planning</span>
                 </div>
-                <p className="text-2xl font-bold text-foreground">$18,200</p>
-                <span className="text-xs text-green-500 font-medium">+12.5%</span>
+                <p className="text-2xl font-bold text-foreground">Clear Scope</p>
+                <span className="text-xs text-green-500 font-medium">Business-first delivery</span>
               </motion.div>
 
               {/* Growth stat */}
@@ -147,10 +147,10 @@ const DashboardPreview = () => {
                   <div className="w-8 h-8 bg-teknify-purple/10 rounded-lg flex items-center justify-center">
                     <BarChart3 size={16} className="text-teknify-purple" />
                   </div>
-                  <span className="text-xs text-muted-foreground">Growth Rate</span>
+                  <span className="text-xs text-muted-foreground">Build & Launch</span>
                 </div>
-                <p className="text-2xl font-bold text-foreground">20.59%</p>
-                <span className="text-xs text-green-500 font-medium">+3.2%</span>
+                <p className="text-2xl font-bold text-foreground">Custom Fit</p>
+                <span className="text-xs text-green-500 font-medium">Aligned to your workflow</span>
               </motion.div>
 
               {/* Accuracy */}
@@ -166,10 +166,10 @@ const DashboardPreview = () => {
                   <div className="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center">
                     <PieChart size={16} className="text-green-500" />
                   </div>
-                  <span className="text-xs text-muted-foreground">Accurate Prediction</span>
+                  <span className="text-xs text-muted-foreground">Reporting & Insight</span>
                 </div>
-                <p className="text-2xl font-bold text-foreground">99%</p>
-                <span className="text-xs text-green-500 font-medium">Verified</span>
+                <p className="text-2xl font-bold text-foreground">Actionable</p>
+                <span className="text-xs text-green-500 font-medium">Easy to understand</span>
               </motion.div>
 
               {/* Team */}
@@ -185,10 +185,10 @@ const DashboardPreview = () => {
                   <div className="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center">
                     <Users size={16} className="text-blue-500" />
                   </div>
-                  <span className="text-xs text-muted-foreground">Team Members</span>
+                  <span className="text-xs text-muted-foreground">Ongoing Support</span>
                 </div>
-                <p className="text-2xl font-bold text-foreground">48</p>
-                <span className="text-xs text-muted-foreground">Active</span>
+                <p className="text-2xl font-bold text-foreground">Responsive</p>
+                <span className="text-xs text-muted-foreground">After launch and beyond</span>
               </motion.div>
             </motion.div>
 
@@ -255,7 +255,7 @@ const DashboardPreview = () => {
                 }}
                 transition={{ duration: 0.6 }}
               >
-                <h4 className="text-sm font-semibold text-foreground mb-4">IT System Uptime</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-4">Service Coverage</h4>
                 <div className="flex items-center justify-center mb-3">
                   <div className="relative w-28 h-28">
                     <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
@@ -275,18 +275,18 @@ const DashboardPreview = () => {
                       />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-lg font-bold text-foreground">92%</span>
+                      <span className="text-base font-bold text-foreground">Tailored</span>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground">Systems Online</span>
-                    <span className="font-medium text-foreground">99%</span>
+                    <span className="text-muted-foreground">Web & App Delivery</span>
+                    <span className="font-medium text-foreground">Custom built</span>
                   </div>
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground">Incidents</span>
-                    <span className="font-medium text-foreground">&lt;1%</span>
+                    <span className="text-muted-foreground">IT & Marketing Support</span>
+                    <span className="font-medium text-foreground">Ongoing</span>
                   </div>
                 </div>
               </motion.div>

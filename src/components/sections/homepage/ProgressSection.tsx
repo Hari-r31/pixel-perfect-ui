@@ -104,8 +104,8 @@ const ProgressSection = () => {
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <span className="font-heading font-bold text-body-sm text-foreground">98%</span>
-                        <p className="text-[8px] text-muted-foreground">Delivered</p>
+                        <span className="font-heading font-bold text-body-sm text-foreground">Built</span>
+                        <p className="text-[8px] text-muted-foreground">To fit your process</p>
                       </div>
                     </div>
                   </div>

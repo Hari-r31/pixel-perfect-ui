@@ -18,7 +18,7 @@ const AboutHero = () => {
 
         {/* Subtitle */}
         <p className="text-muted-foreground text-body max-w-2xl mx-auto mb-12 leading-relaxed">
-          TechGigz is a Perth-based IT consulting firm specialising in custom software development, digital marketing, and managed IT services. Since 2018, we've helped businesses grow smarter with scalable, reliable technology solutions.
+          TechGigz Solutions works with businesses across Western Australia on custom software, digital marketing, and dependable IT support built around real operational needs.
         </p>
 
         {/* Decorative text */}
@@ -37,10 +37,9 @@ const AboutHero = () => {
         <div className="relative max-w-5xl mx-auto mt-4">
           {/* Left floating card - Real Time Users */}
           <div className="absolute -left-4 lg:-left-12 top-8 bg-background rounded-2xl shadow-float p-5 z-10 w-56 hidden md:block">
-            <p className="font-heading font-semibold text-body-sm text-foreground mb-1">Projects Delivered</p>
+            <p className="font-heading font-semibold text-body-sm text-foreground mb-1">What We Deliver</p>
             <div className="flex items-baseline gap-3 mb-3">
-              <span className="font-heading text-h4 font-bold text-foreground">200+</span>
-              <span className="text-body-sm font-semibold text-green-500">Since 2018</span>
+              <span className="font-heading text-h5 font-bold text-foreground">Software, IT, Marketing</span>
             </div>
             <svg viewBox="0 0 200 60" className="w-full h-12">
               <path d="M0 45 Q25 30 50 35 T100 20 T150 30 T200 15" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.3" />
@@ -64,15 +63,15 @@ const AboutHero = () => {
 
           {/* Right floating card - John Anderson */}
           <div className="absolute -right-2 lg:-right-8 top-4 bg-background rounded-full shadow-float px-5 py-3 flex items-center gap-3 z-10 hidden md:flex">
-            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-caption font-bold text-primary">JA</div>
-            <span className="font-heading text-body-sm font-semibold text-foreground">John Anderson</span>
-            <span className="text-body-sm text-muted-foreground">26,058+</span>
+            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-caption font-bold text-primary">WA</div>
+            <span className="font-heading text-body-sm font-semibold text-foreground">Balcatta Office</span>
+            <span className="text-body-sm text-muted-foreground">Local support</span>
             <ArrowRight size={16} className="text-muted-foreground" />
           </div>
 
           {/* Right floating card - Project Management */}
           <div className="absolute -right-2 lg:-right-8 top-28 bg-background rounded-2xl shadow-float p-5 z-10 w-56 hidden md:block">
-            <p className="font-heading text-body-sm font-semibold text-foreground mb-3">Client Satisfaction</p>
+            <p className="font-heading text-body-sm font-semibold text-foreground mb-3">Support Focus</p>
             <div className="relative w-32 h-32 mx-auto">
               <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
                 <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--muted))" strokeWidth="12" />
@@ -80,7 +79,7 @@ const AboutHero = () => {
                 <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--primary))" strokeWidth="12" strokeDasharray="0 184 42 25" strokeLinecap="round" />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-heading text-h5 font-bold text-foreground">96%</span>
+                <span className="font-heading text-body font-bold text-foreground">Tailored</span>
               </div>
             </div>
           </div>
@@ -88,12 +87,12 @@ const AboutHero = () => {
           {/* Bottom left floating card */}
           <div className="absolute -left-4 lg:-left-12 bottom-0 bg-foreground rounded-2xl shadow-float p-5 z-10 w-60 hidden md:block">
             <p className="font-heading text-body-sm font-semibold text-background mb-4">
-              Our Service Delivery<br />Performance
+              Our Delivery<br />Approach
             </p>
             <div className="space-y-3">
               <div>
                 <div className="flex justify-between text-caption text-background/60 mb-1">
-                  <span>Software Dev</span><span>98%</span>
+                  <span>Discovery</span><span>Clear scope</span>
                 </div>
                 <div className="h-2 bg-background/10 rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500 rounded-full" style={{ width: "98%" }} />
@@ -101,7 +100,7 @@ const AboutHero = () => {
               </div>
               <div>
                 <div className="flex justify-between text-caption text-background/60 mb-1">
-                  <span>IT Support</span><span>99%</span>
+                  <span>Delivery</span><span>Ongoing support</span>
                 </div>
                 <div className="h-2 bg-background/10 rounded-full overflow-hidden">
                   <div className="h-full bg-primary rounded-full" style={{ width: "99%" }} />
@@ -112,16 +111,16 @@ const AboutHero = () => {
 
           {/* Bottom right card */}
           <div className="absolute -right-2 lg:-right-8 bottom-0 bg-background rounded-2xl shadow-float p-5 z-10 w-52 hidden md:block">
-            <p className="font-heading text-body-sm font-semibold text-foreground mb-3">Business Growth</p>
+            <p className="font-heading text-body-sm font-semibold text-foreground mb-3">Service Coverage</p>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-caption text-muted-foreground w-12">Finance</span>
+                <span className="text-caption text-muted-foreground w-16">Web</span>
                 <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full bg-primary rounded-full" style={{ width: "75%" }} />
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-caption text-muted-foreground w-12">Sales</span>
+                <span className="text-caption text-muted-foreground w-16">Systems</span>
                 <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500 rounded-full" style={{ width: "60%" }} />
                 </div>

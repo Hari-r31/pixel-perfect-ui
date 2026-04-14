@@ -3,7 +3,6 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import ServiceCategoryHero from "@/components/sections/services/ServiceCategoryHero";
 import ServiceOfferings from "@/components/sections/services/ServiceOfferings";
-import Testimonials from "@/components/sections/shared/Testimonials";
 import CtaSection from "@/components/sections/shared/CtaSection";
 import { serviceCategories } from "@/data/serviceCategories";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -35,10 +34,10 @@ const ServiceCategoryPage = () => {
                 <span className="text-primary italic">{category.shortTitle}</span>
               </h2>
               <p className="text-body text-muted-foreground leading-relaxed mb-8">
-                {category.description} Our team of experts brings years of experience and a proven track record of delivering results that exceed expectations.
+                {category.description} We focus on practical delivery, clear communication, and solutions that fit the way your business already works.
               </p>
               <div className="space-y-4">
-                {["Dedicated expert team", "Proven methodology", "On-time delivery", "24/7 support"].map((item) => (
+                {["Tailored implementation", "Clear project communication", "Business-first planning", "Ongoing technical support"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
                       <div className="h-2 w-2 rounded-full bg-primary" />
@@ -58,15 +57,14 @@ const ServiceCategoryPage = () => {
                 />
               </div>
               <div className="absolute -bottom-4 -left-4 rounded-2xl bg-card border border-border p-5 shadow-card">
-                <p className="text-h3 font-heading font-bold text-primary">98%</p>
-                <p className="text-body-sm text-muted-foreground">Client Satisfaction</p>
+                <p className="text-h5 font-heading font-bold text-primary">Business-focused</p>
+                <p className="text-body-sm text-muted-foreground">Built around your workflow and goals</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Testimonials />
       <CtaSection />
       <Footer />
     </div>

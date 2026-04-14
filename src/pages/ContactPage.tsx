@@ -7,14 +7,6 @@ import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
-const clientLogos = [
-  "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081b9_8bbe7e09b28d0c4e7fee49b4081e95e2_client-01.svg",
-  "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081ba_ffd6e85da61b39de0bca8f1f6aab9e89_client-02.svg",
-  "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081bb_bdd28d01d927e8894cd9d9e16e66f497_client-03.svg",
-  "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081bc_81f04d43a3e0cef62cf7d1d3ac2c8b1a_client-04.svg",
-  "https://cdn.prod.website-files.com/6760feb1dd836b3d80343455/678f23e317c1960451a081bd_client-05.svg",
-];
-
 const ContactPage = () => {
   usePageTitle("Contact Us");
   const shouldReduceMotion = prefersReducedMotion();
@@ -129,7 +121,7 @@ const ContactPage = () => {
                   <div>
                     <p className="text-body-sm text-muted-foreground mb-0.5">Find Us At</p>
                     <p className="text-body font-semibold text-foreground">
-                      Unit 7/4 Queen St, Bentley WA 6102
+                      Suite 11b/5 Cressall Rd, Balcatta WA 6021
                     </p>
                   </div>
                 </motion.div>
@@ -318,8 +310,7 @@ const ContactPage = () => {
                 <span className="text-primary">Smart Technology?</span>
               </h2>
               <p className="text-primary-foreground/70 text-body-sm mb-8">
-                Book a free consultation with our experts and discover how
-                TechGigz can streamline your operations and drive growth.
+                Book a consultation and discuss your website, software, marketing, or IT requirements with the TechGigz team.
               </p>
               <CraftButton className="bg-primary-foreground text-foreground">
                 <CraftButtonLabel>Book A Call</CraftButtonLabel>
@@ -327,34 +318,6 @@ const ContactPage = () => {
                   <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
                 </CraftButtonIcon>
               </CraftButton>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Client Trust / Logos Marquee */}
-      <section className="py-12 lg:py-16 overflow-hidden">
-        <div className="section-container">
-          {/* Title bar */}
-          <div className="flex items-center gap-4 mb-8">
-            <div className="text-h5 font-heading font-bold text-foreground whitespace-nowrap">
-              <span className="text-accent">200+</span> businesses trust us
-            </div>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-
-          {/* Marquee logos */}
-          <div className="relative">
-            <div className="flex gap-10 animate-marquee">
-              {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, i) => (
-                <img
-                  key={i}
-                  src={logo}
-                  alt="client-logo"
-                  className="h-16 w-auto shrink-0 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-                  loading="lazy"
-                />
-              ))}
             </div>
           </div>
         </div>

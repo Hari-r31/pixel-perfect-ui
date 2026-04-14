@@ -1,10 +1,5 @@
 import { ArrowRight } from "lucide-react";
 
-const team = [
-  { name: "Jayshal Nanaval", role: "Project Coordinator", status: "Available", statusBg: "bg-green-500/20", statusText: "text-green-400" },
-  { name: "Rudhraksh V.", role: "Database Developer", status: "Active", statusBg: "bg-primary/20", statusText: "text-primary" },
-];
-
 const AboutBottomCTA = () => {
   return (
     <section className="py-16 lg:py-24">
@@ -22,46 +17,35 @@ const AboutBottomCTA = () => {
                 Let's Build Something Great Together
               </h2>
               <p className="text-background/50 text-body mb-8 leading-relaxed">
-                Whether you need a custom application, a managed IT partner, or a digital marketing team — TechGigz is ready to help. Get in touch for a free consultation today.
+                Whether you need a new website, custom software, digital marketing, or day-to-day IT support, our team is ready to help you plan the next step.
               </p>
               <a href="#" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-full text-body-sm font-semibold hover:bg-primary/90 transition-colors">
                 <ArrowRight size={16} /> Contact Us Today
               </a>
             </div>
 
-            {/* Right - Team cards + Revenue */}
+            {/* Right - Capability cards */}
             <div className="space-y-4">
-              {team.map((member) => (
-                <div key={member.name} className="bg-card/5 border border-background/10 rounded-2xl p-5">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-primary/20" />
-                      <div>
-                        <p className="font-heading font-semibold text-body text-background">{member.name}</p>
-                        <p className="text-caption text-background/50">{member.role}</p>
-                      </div>
-                    </div>
-                    <span className={`text-caption font-medium ${member.statusBg} ${member.statusText} rounded-full px-3 py-1`}>
-                      {member.status}
-                    </span>
-                  </div>
+              {[
+                { title: "Website Design & Development", subtitle: "Custom websites, portals, and business platforms" },
+                { title: "Digital Marketing Support", subtitle: "SEO, campaigns, and content for business growth" },
+              ].map((item) => (
+                <div key={item.title} className="bg-card/5 border border-background/10 rounded-2xl p-5">
+                  <p className="font-heading font-semibold text-body text-background">{item.title}</p>
+                  <p className="text-caption text-background/50 mt-1">{item.subtitle}</p>
                 </div>
               ))}
 
-              {/* Revenue card */}
+              {/* Contact card */}
               <div className="bg-card/5 border border-background/10 rounded-2xl p-5">
-                <p className="font-heading font-bold text-h3 text-background mb-1">$580.45.250</p>
-                <p className="text-body-sm text-background/50 mb-3">Total Revenue</p>
-                <div className="flex items-end gap-1 h-12">
-                  {[40, 65, 45, 80, 55, 70, 90, 60, 75, 85, 50, 95].map((h, i) => (
-                    <div
-                      key={i}
-                      className="flex-1 bg-primary/60 rounded-t"
-                      style={{ height: `${h}%` }}
-                    />
-                  ))}
+                <p className="font-heading font-bold text-h5 text-background mb-1">Visit Or Call Our Team</p>
+                <p className="text-body-sm text-background/50 mb-3">Suite 11b/5 Cressall Rd, Balcatta WA 6021</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-primary/15 px-3 py-1 text-caption text-primary-foreground">Software</span>
+                  <span className="rounded-full bg-primary/15 px-3 py-1 text-caption text-primary-foreground">Marketing</span>
+                  <span className="rounded-full bg-primary/15 px-3 py-1 text-caption text-primary-foreground">IT Support</span>
                 </div>
-                <p className="text-caption text-primary mt-2">Growing year on year since 2018</p>
+                <p className="text-caption text-primary mt-3">(08) 6383 9983</p>
               </div>
             </div>
           </div>

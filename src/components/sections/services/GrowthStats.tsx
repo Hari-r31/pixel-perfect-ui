@@ -1,9 +1,9 @@
 import { Lightbulb, TrendingUp, Brain } from "lucide-react";
 
 const stats = [
-  { number: "200+", label: "Projects Delivered" },
-  { number: "96%", label: "Client Satisfaction" },
-  { number: "7+", label: "Years In Business" },
+  { number: "Tailored", label: "Solutions for your workflow" },
+  { number: "Practical", label: "Advice grounded in operations" },
+  { number: "Ongoing", label: "Support after launch" },
 ];
 
 const growthCards = [
@@ -38,7 +38,7 @@ const GrowthStats = () => {
             </h2>
 
             <p className="mt-5 max-w-md text-base leading-relaxed text-primary-foreground/60">
-              Since 2018, TechGigz has helped businesses across Australia grow through custom software, strategic IT management, and digital marketing that drives real results.
+              TechGigz supports businesses with custom software, strategic IT planning, and digital marketing designed around clear business objectives.
             </p>
 
             {/* Stats */}

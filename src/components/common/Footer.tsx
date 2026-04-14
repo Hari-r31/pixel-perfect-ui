@@ -11,10 +11,10 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold text-background">TechGigz<span className="text-primary">.</span></span>
+              <span className="text-xl font-bold text-background">TechGigz Solutions</span>
             </a>
             <p className="text-background/50 text-sm leading-relaxed mb-4">
-              TechGigz is a Perth-based IT consulting firm delivering software development, digital marketing, and managed IT services since 2018.
+              TechGigz Solutions delivers custom software, digital marketing, and practical IT support for businesses across Western Australia.
             </p>
             <div className="flex gap-3">
               {["X", "in", "f", "ig"].map((social) => (
@@ -67,14 +67,14 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">Unit 7/4 Queen St, Bentley WA 6102, Australia</span>
+                <span className="text-sm text-background/50">Suite 11b/5 Cressall Rd, Balcatta WA 6021, Australia</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-background/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-background/40">© 2025 TechGigz. All rights reserved.</p>
+          <p className="text-xs text-background/40">© 2026 TechGigz Solutions. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Privacy</a>
             <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Terms</a>

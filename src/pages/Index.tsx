@@ -2,7 +2,6 @@ import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
 import Header from "@/components/common/Header";
 import Hero from "@/components/sections/homepage/Hero";
 import DashboardPreview from "@/components/sections/homepage/DashboardPreview";
-import TrustedBy from "@/components/sections/homepage/TrustedBy";
 import FeatureStats from "@/components/sections/homepage/FeatureStats";
 import SplitFeature from "@/components/sections/homepage/SplitFeature";
 import CTABanner from "@/components/sections/homepage/CTABanner";
@@ -22,7 +21,6 @@ const Index = () => {
       <Header />
       <Hero />
       <DashboardPreview />
-      <TrustedBy />
       <FeatureStats />
       <SplitFeature />
       <CTABanner />

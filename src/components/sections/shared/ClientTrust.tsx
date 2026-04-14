@@ -13,8 +13,8 @@ const ClientTrust = () => {
         <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-6 md:justify-between">
           {/* Stats */}
           <div className="text-center md:text-left">
-            <p className="text-4xl font-bold text-accent">15k+</p>
-            <p className="mt-0.5 text-sm text-muted-foreground">Customers Trust Us</p>
+            <p className="text-2xl font-bold text-accent">TechGigz Solutions</p>
+            <p className="mt-0.5 text-sm text-muted-foreground">Custom software, marketing, and IT support</p>
           </div>
 
           {/* Divider */}

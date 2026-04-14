@@ -44,7 +44,7 @@ const TrustedBy = () => {
         {/* Heading */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-heading text-h3 lg:text-h2 text-foreground">
-            15k+ Customers Trust Us
+            Technology Support For Modern Australian Businesses
           </h2>
         </div>
 

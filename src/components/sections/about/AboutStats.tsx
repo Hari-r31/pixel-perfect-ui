@@ -1,8 +1,8 @@
 const stats = [
-  { value: "7+", label: "Years In Business" },
-  { value: "200+", label: "Projects Delivered" },
-  { value: "50+", label: "Active Clients" },
-  { value: "96%", label: "Customer Satisfaction" },
+  { value: "Balcatta", label: "Western Australia base" },
+  { value: "Custom", label: "Software-first delivery" },
+  { value: "Practical", label: "Business-led strategy" },
+  { value: "Ongoing", label: "Support and maintenance" },
 ];
 
 const AboutStats = () => {
@@ -14,10 +14,10 @@ const AboutStats = () => {
           <div>
             <div className="sub-heading-pill mb-5 inline-flex">Company History</div>
             <h2 className="font-heading text-h2 lg:text-h1 text-foreground mb-4 leading-tight">
-              Building Technology Solutions Since 2018
+              Technology Support Built Around Real Business Needs
             </h2>
             <p className="text-muted-foreground text-body leading-relaxed">
-              From our base in Bentley, WA, TechGigz has grown into a trusted technology partner for businesses across Australia — delivering software, IT, and digital marketing with expertise and care.
+              From our Balcatta office, we help businesses plan, build, and support the technology they rely on every day.
             </p>
           </div>
 

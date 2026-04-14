@@ -11,7 +11,6 @@ import StatsSection from "@/components/legacy/StatsSection";
 import MissionSection from "@/components/legacy/MissionSection";
 import StrengthSection from "@/components/legacy/StrengthSection";
 import CTASection from "@/components/legacy/CTASection";
-import TestimonialsSection from "@/components/legacy/TestimonialsSection";
 import About from "./About";
 
 const Service_mobile_Page = () => {
@@ -29,7 +28,6 @@ const Service_mobile_Page = () => {
       <MissionSection />
       <StrengthSection />
       <CTASection />
-      <TestimonialsSection />
       <Footer />
     </div>
   );

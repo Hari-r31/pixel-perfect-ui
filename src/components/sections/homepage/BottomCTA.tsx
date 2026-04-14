@@ -50,10 +50,9 @@ const BottomCTA = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Join businesses across Australia that trust TechGigz for custom software, digital marketing, and managed IT services that deliver real outcomes.
+                Work with one team for websites, software, digital marketing, and practical IT support tailored to your business.
               </motion.p>
 
-              {/* Avatars */}
               <motion.div
                 className="flex items-center gap-4 mb-8"
                 initial={{ opacity: 0, x: -20 }}
@@ -61,27 +60,23 @@ const BottomCTA = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-9 h-9 rounded-full border-2 border-foreground flex items-center justify-center text-xs font-bold"
-                      style={{
-                        backgroundColor: ["hsl(var(--primary))", "hsl(var(--accent))", "#22c55e", "#3b82f6"][i],
-                        color: "white",
-                      }}
-                      initial={{ scale: 0, opacity: 0 }}
+                <div className="flex flex-wrap gap-2">
+                  {["Websites", "Software", "Marketing", "IT Support"].map((item, i) => (
+                    <motion.span
+                      key={item}
+                      className="rounded-full border border-background/15 px-3 py-1 text-xs font-semibold text-background"
+                      initial={{ scale: 0.9, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.25 + i * 0.08 }}
                     >
-                      {["J", "A", "S", "M"][i]}
-                    </motion.div>
+                      {item}
+                    </motion.span>
                   ))}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-background">200+ Clients Served</p>
-                  <p className="text-xs text-background/50">Trusted across Australia</p>
+                  <p className="text-sm font-semibold text-background">One team, end-to-end delivery</p>
+                  <p className="text-xs text-background/50">Strategy, build, launch, and support</p>
                 </div>
               </motion.div>
 
@@ -122,7 +117,7 @@ const BottomCTA = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  Total Revenue
+                  Service Snapshot
                 </motion.p>
                 <motion.p
                   className="text-3xl font-bold text-background mb-4"
@@ -131,7 +126,7 @@ const BottomCTA = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.35 }}
                 >
-                  $2,564.00
+                  Website, software, and IT
                 </motion.p>
                 <motion.div
                   className="flex items-end gap-1 h-20"
@@ -168,8 +163,8 @@ const BottomCTA = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.65 }}
                 >
-                  <span className="text-xs text-green-400 font-medium">+18.2%</span>
-                  <span className="text-xs text-background/40">vs last month</span>
+                  <span className="text-xs text-green-400 font-medium">Balcatta WA</span>
+                  <span className="text-xs text-background/40">supporting local businesses</span>
                 </motion.div>
               </motion.div>
             </motion.div>

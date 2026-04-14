@@ -3,7 +3,6 @@ import Footer from "@/components/common/Footer";
 import BusinessProgress from "@/components/sections/services/BusinessProgress";
 import GrowthStats from "@/components/sections/services/GrowthStats";
 import StrategySection from "@/components/sections/services/StrategySection";
-import Testimonials from "@/components/sections/shared/Testimonials";
 import CtaSection from "@/components/sections/shared/CtaSection";
 import { ArrowRight, Zap, Star, Shield, BarChart3, Cpu, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -47,13 +46,6 @@ const serviceCards = [
     title: "System Integration",
     description: "Connect your CRM, email platform, financial tools, and business apps into one automated, error-free workflow.",
   },
-];
-
-const avatars = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face",
 ];
 
 const ServicePage = () => {
@@ -128,22 +120,14 @@ const ServicePage = () => {
                     <Zap className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold font-heading text-card-foreground">85%</p>
-                    <p className="text-body-sm text-muted-foreground">Team Activities</p>
+                    <p className="text-xl font-bold font-heading text-card-foreground">Perth WA</p>
+                    <p className="text-body-sm text-muted-foreground">Local support, tailored delivery</p>
                   </div>
                 </div>
-                <div className="mt-3 flex -space-x-2">
-                  {avatars.map((src, i) => (
-                    <img
-                      key={i}
-                      src={src}
-                      alt=""
-                      className="h-9 w-9 rounded-full border-2 border-card object-cover"
-                      loading="lazy"
-                      width={36}
-                      height={36}
-                    />
-                  ))}
+                <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-muted-foreground">
+                  <span className="rounded-full bg-muted px-2.5 py-1">Software</span>
+                  <span className="rounded-full bg-muted px-2.5 py-1">Marketing</span>
+                  <span className="rounded-full bg-muted px-2.5 py-1">IT Services</span>
                 </div>
               </div>
             </div>
@@ -381,9 +365,6 @@ const ServicePage = () => {
 
       {/* Strategy */}
       <StrategySection />
-
-      {/* Testimonials */}
-      <Testimonials />
 
       {/* CTA Section */}
       <CtaSection />

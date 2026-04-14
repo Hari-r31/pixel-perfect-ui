@@ -7,7 +7,6 @@ import AboutStats from "@/components/sections/about/AboutStats";
 import AboutMissionVision from "@/components/sections/about/AboutMissionVision";
 import AboutCTA from "@/components/sections/about/AboutCTA";
 import AboutProgress from "@/components/sections/about/AboutProgress";
-import AboutTestimonials from "@/components/sections/about/AboutTestimonials";
 import AboutBottomCTA from "@/components/sections/about/AboutBottomCTA";
 import usePageTitle from "@/hooks/usePageTitle";
 
@@ -23,7 +22,6 @@ const About = () => {
       <AboutMissionVision />
       <AboutCTA />
       <AboutProgress />
-      <AboutTestimonials />
       <AboutBottomCTA />
       <Footer />
     </div>
