@@ -1,7 +1,8 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import phoneMockup from "@/assets/phone-mockup.png";
+import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,24 +16,24 @@ const HeroSection = () => {
   const creditCards = [
     {
       id: 1,
-      name: "Physical Card",
-      number: "5234 8765 4321 9876",
-      color: "from-purple-600 to-purple-700",
+      name: "Visa Card",
+      number: "4532 1234 5678 9010",
+      color: "from-blue-600 to-blue-700",
       icon: "💳",
     },
     {
       id: 2,
-      name: "Virtual Card",
-      number: "5234 5678 9012 3456",
-      color: "from-orange-500 to-orange-600",
-      icon: "📱",
+      name: "Mastercard",
+      number: "5425 2334 3010 9903",
+      color: "from-orange-500 to-red-600",
+      icon: "💰",
     },
     {
       id: 3,
-      name: "Business Card",
-      number: "5234 1234 5678 9012",
-      color: "from-slate-800 to-slate-900",
-      icon: "🏢",
+      name: "American Express",
+      number: "3782 822463 10005",
+      color: "from-green-600 to-emerald-700",
+      icon: "🏦",
     },
   ];
 
@@ -58,15 +59,18 @@ const HeroSection = () => {
         <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-12">
           {/* Left - Phone Mockup */}
           <div className="relative flex justify-center lg:justify-start pt-8 sm:pt-10 lg:pt-0 z-10">
-            {/* Floating Stats Card */}
+            {/* Outer Container - Viewport for Cards */}
+            <div className="relative w-[500px] sm:w-[600px] lg:w-[700px] xl:w-[800px] p-6 sm:p-8 lg:p-12 rounded-3xl overflow-hidden ">
+
+              {/* Floating Stats Card */}
             <motion.div
               className="absolute top-0 left-[6%] sm:left-[20%] lg:left-[35%] z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-3.5 sm:px-5 py-3.5 sm:py-4 flex items-center gap-3 sm:gap-4 max-w-[220px] sm:max-w-none"
               {...mobileCardMotion}
             >
               <div>
-                <p className="text-lg sm:text-xl font-bold text-accent">15.52%</p>
+                <p className="text-lg sm:text-xl font-bold text-accent">0% Fees</p>
                 <p className="text-xs sm:text-sm text-muted-foreground font-medium leading-snug">
-                  Your Account Reports
+                  Fast & Secure Payments
                 </p>
               </div>
               <div
@@ -116,9 +120,9 @@ const HeroSection = () => {
               />
 
               {/* Credit Cards ON TOP - Outside Container */}
-              <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none overflow-visible">
+              <div className="absolute inset-0 z-30 flex items-start pt-40 justify-center pointer-events-none overflow-visible">
                 <motion.div
-                  className="relative w-full h-full flex items-center justify-center"
+                  className="relative w-full h-full flex items-start justify-center"
                   style={{ x: cardTranslate }}
                 >
                   {creditCards.map((card, index) => (
@@ -174,6 +178,8 @@ const HeroSection = () => {
 
             </motion.div>
 
+            </div>
+
             {/* AVG Order Value floating card - bottom left */}
             <motion.div
               className="absolute bottom-12 sm:bottom-16 left-[2%] sm:left-0 lg:-left-4 z-10 bg-card rounded-2xl shadow-lg border border-border/30 px-3.5 sm:px-5 py-3.5 sm:py-4 flex items-center gap-3 max-w-[240px] sm:max-w-none"
@@ -183,9 +189,9 @@ const HeroSection = () => {
               transition={{ duration: 0.55, delay: 0.15, ease: "easeOut" }}
             >
               <div>
-                <p className="text-xs sm:text-sm font-medium text-muted-foreground">AVG Order Value</p>
-                <p className="text-accent text-xs sm:text-sm font-semibold">↑ 3.48</p>
-                <p className="text-lg sm:text-xl font-bold text-foreground mt-1">$21,450</p>
+                <p className="text-xs sm:text-sm font-medium text-muted-foreground">Monthly Volume</p>
+                <p className="text-accent text-xs sm:text-sm font-semibold">↑ 45.2%</p>
+                <p className="text-lg sm:text-xl font-bold text-foreground mt-1">$2.5M+</p>
               </div>
               <svg width="72" height="40" viewBox="0 0 80 40" fill="none" className="opacity-60 shrink-0">
                 <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
@@ -204,9 +210,9 @@ const HeroSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              Fueling The Next Wave Of Innovation Through{" "}
+              Seamless Payments Made{" "}
               <span className="relative inline-block text-accent">
-                Advanced
+                Simple
                 <svg
                   className="absolute -bottom-1 left-0 w-full h-3"
                   viewBox="0 0 200 12"
@@ -223,7 +229,7 @@ const HeroSection = () => {
                   />
                 </svg>
               </span>{" "}
-              Tech
+              & Fast
             </motion.h1>
 
             {/* Description */}
@@ -234,10 +240,10 @@ const HeroSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
-              Lorem ipsum dolor sit amet consectetur. Mus in rutrum ornare quam. Sed sed tempus mauris ultricies dignissim ultrices eget dui facilisles nibh donec egesta.
+              Accept payments from multiple card networks instantly. Our secure payment gateway supports all major payment methods with zero transaction fees and instant settlement. Experience hassle-free payments that work worldwide.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <motion.div
               className="flex flex-wrap items-center gap-5 pt-3"
               initial={{ opacity: 0, y: 20 }}
@@ -245,24 +251,13 @@ const HeroSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <a
-                href="#"
-                className="flex items-center gap-3 pl-2 pr-8 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:opacity-90 transition-opacity active:scale-95"
-              >
-                <span className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-                Get Started Today
-              </a>
-
-              <a
-                href="#"
-                className="flex items-center gap-3 text-sm font-semibold text-foreground hover:text-accent transition-colors"
-              >
-                <span className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                  <Play className="w-4 h-4 fill-foreground" />
-                </span>
-                Watch Video
+              <a href="/contact">
+                <CraftButton className="rounded-full">
+                  <CraftButtonLabel>Get Started</CraftButtonLabel>
+                  <CraftButtonIcon>
+                    <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                  </CraftButtonIcon>
+                </CraftButton>
               </a>
             </motion.div>
           </div>
