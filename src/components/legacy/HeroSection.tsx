@@ -59,8 +59,14 @@ const HeroSection = () => {
         <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-12">
           {/* Left - Phone Mockup */}
           <div className="relative flex justify-center lg:justify-start pt-8 sm:pt-10 lg:pt-0 z-10">
-            {/* Outer Container - Viewport for Cards */}
-            <div className="relative w-[500px] sm:w-[600px] lg:w-[700px] xl:w-[800px] p-6 sm:p-8 lg:p-12 rounded-3xl overflow-hidden ">
+            {/* Outer Container - Viewport for Cards - Rotated 45deg Left */}
+            <motion.div
+              className="relative w-[500px] sm:w-[600px] lg:w-[700px] xl:w-[800px] p-6 sm:p-8 lg:p-12 rounded-3xl overflow-hidden"
+              initial={{ opacity: 0, rotate: -45 }}
+              whileInView={{ opacity: 1, rotate: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
 
               {/* Floating Stats Card */}
             <motion.div
@@ -68,7 +74,7 @@ const HeroSection = () => {
               {...mobileCardMotion}
             >
               <div>
-                <p className="text-lg sm:text-xl font-bold text-accent">0% Fees</p>
+                <p className="text-lg sm:text-xl font-bold text-accent">Minimal Fees</p>
                 <p className="text-xs sm:text-sm text-muted-foreground font-medium leading-snug">
                   Fast & Secure Payments
                 </p>
@@ -93,9 +99,7 @@ const HeroSection = () => {
               viewport={{ once: true, amount: 0.45 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="inline-block px-5 py-2.5 rounded-full border border-border text-sm font-medium text-foreground">
-                Expands As You Succeed
-              </span>
+
             </motion.div>
 
             {/* Phone Image Container with Slant */}
@@ -175,10 +179,7 @@ const HeroSection = () => {
                   ))}
                 </motion.div>
               </div>
-
             </motion.div>
-
-            </div>
 
             {/* AVG Order Value floating card - bottom left */}
             <motion.div
@@ -188,15 +189,9 @@ const HeroSection = () => {
               viewport={{ once: true, amount: 0.45 }}
               transition={{ duration: 0.55, delay: 0.15, ease: "easeOut" }}
             >
-              <div>
-                <p className="text-xs sm:text-sm font-medium text-muted-foreground">Monthly Volume</p>
-                <p className="text-accent text-xs sm:text-sm font-semibold">↑ 45.2%</p>
-                <p className="text-lg sm:text-xl font-bold text-foreground mt-1">$2.5M+</p>
-              </div>
-              <svg width="72" height="40" viewBox="0 0 80 40" fill="none" className="opacity-60 shrink-0">
-                <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
-                <path d="M0 30 Q10 25 15 28 T30 20 T45 22 T55 15 T65 18 T80 10 V40 H0 Z" fill="hsl(var(--primary) / 0.08)" />
-              </svg>
+
+            </motion.div>
+
             </motion.div>
           </div>
 
@@ -240,7 +235,7 @@ const HeroSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
-              Accept payments from multiple card networks instantly. Our secure payment gateway supports all major payment methods with zero transaction fees and instant settlement. Experience hassle-free payments that work worldwide.
+              Accept payments from multiple card networks instantly. Our secure payment gateway supports all major payment methods with minimal or zero transaction fees and instant settlement. Experience hassle-free payments that work worldwide.
             </motion.p>
 
             {/* CTA Button */}

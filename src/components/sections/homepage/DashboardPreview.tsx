@@ -67,19 +67,20 @@ const DashboardPreview = () => {
         >
          
         </motion.div>
-        {/* Device frame - Scroll-linked 3D rotation */}
-        <motion.div
-          className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border-4 border-black overflow-hidden"
-          style={enableMotion ? {
-            rotateX,
-            skewY,
-            scaleY,
-            translateY,
-            transformPerspective: "800px",
-            transformStyle: "preserve-3d",
-            transformOrigin: "center top",
-          } : {}}
-        >
+        {/* Device frame - Scroll-linked 3D rotation (Desktop) / Static (Mobile) */}
+        {enableMotion ? (
+          <motion.div
+            className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border-4 border-black overflow-hidden"
+            style={{
+              rotateX,
+              skewY,
+              scaleY,
+              translateY,
+              transformPerspective: "800px",
+              transformStyle: "preserve-3d",
+              transformOrigin: "center top",
+            }}
+          >
           {/* Browser bar */}
           <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-muted/30">
             <div className="flex gap-1.5">
@@ -305,6 +306,130 @@ const DashboardPreview = () => {
             </motion.div>
           </div>
         </motion.div>
+        ) : (
+          <div className="bg-card rounded-2xl lg:rounded-3xl shadow-2xl shadow-foreground/10 border-4 border-black overflow-hidden">
+            {/* Browser bar */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-muted/30">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+              </div>
+              <div className="flex-1 mx-8">
+                <div className="bg-muted rounded-md h-6 max-w-xs mx-auto" />
+              </div>
+            </div>
+
+            {/* Dashboard content - Static (Mobile) */}
+            <div className="m-3 rounded-2xl border border-border/60 bg-card p-4 lg:m-4 lg:rounded-[1.75rem] lg:p-6">
+              {/* Tabs */}
+              <div className="flex gap-2 mb-6">
+                {["Client Performance", "Digital Marketing", "IT Health"].map((tab, i) => (
+                  <button
+                    key={tab}
+                    className={`px-4 py-2 rounded-full text-xs font-medium transition-colors ${
+                      i === 0
+                        ? "bg-foreground text-background"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+
+              {/* Stats grid - No animation - Compact 2 column mobile */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                {[
+                  { title: "Clear Scope", subtitle: "Discovery & Planning", icon: TrendingUp, color: "primary" },
+                  { title: "Custom Fit", subtitle: "Build & Launch", icon: BarChart3, color: "teknify-purple" },
+                  { title: "Actionable", subtitle: "Reporting & Insight", icon: PieChart, color: "green-500" },
+                  { title: "Responsive", subtitle: "Ongoing Support", icon: Users, color: "blue-500" },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-muted/50 rounded-xl p-3">
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <div className={`w-7 h-7 bg-${item.color}/10 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                        <item.icon size={14} className={`text-${item.color}`} />
+                      </div>
+                      <span className="text-[11px] text-muted-foreground line-clamp-1">{item.subtitle}</span>
+                    </div>
+                    <p className="text-lg lg:text-2xl font-bold text-foreground leading-tight">{item.title}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Chart area - Hidden on mobile, visible on lg */}
+              <div className="hidden lg:grid lg:grid-cols-3 gap-4">
+                {/* Line chart */}
+                <div className="lg:col-span-2 bg-muted/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-foreground">Digital Marketing Performance</h4>
+                    <div className="flex gap-3">
+                      {[
+                        { label: "SEO", color: "bg-primary" },
+                        { label: "SEM", color: "bg-teknify-purple" },
+                        { label: "Social", color: "bg-green-500" },
+                      ].map((item) => (
+                        <div key={item.label} className="flex items-center gap-1.5">
+                          <div className={`w-2 h-2 rounded-full ${item.color}`} />
+                          <span className="text-xs text-muted-foreground">{item.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="h-32 flex items-end gap-1">
+                    {[40, 65, 45, 70, 55, 80, 60, 75, 50, 85, 70, 90].map((h, i) => (
+                      <div key={i} className="flex-1 flex flex-col gap-0.5">
+                        <div
+                          className="bg-primary/20 rounded-t"
+                          style={{ height: `${h}%` }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Donut chart area */}
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Service Coverage</h4>
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="relative w-28 h-28">
+                      <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                        <circle
+                          cx="18" cy="18" r="15.9"
+                          fill="none"
+                          stroke="hsl(var(--muted))"
+                          strokeWidth="3"
+                        />
+                        <circle
+                          cx="18" cy="18" r="15.9"
+                          fill="none"
+                          stroke="hsl(var(--primary))"
+                          strokeWidth="3"
+                          strokeDasharray="92, 100"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-base font-bold text-foreground">Tailored</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">Web & App Delivery</span>
+                      <span className="font-medium text-foreground">Custom built</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">IT & Marketing Support</span>
+                      <span className="font-medium text-foreground">Ongoing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

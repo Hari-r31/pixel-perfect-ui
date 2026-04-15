@@ -12,6 +12,7 @@ import Analytics from "@/components/sections/homepage/Analytics";
 import BottomCTA from "@/components/sections/homepage/BottomCTA";
 import Footer from "@/components/common/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
+import HeroSection from "@/components/legacy/HeroSection";
 
 const Index = () => {
   usePageTitle("Home");
@@ -28,6 +29,7 @@ const Index = () => {
       <ProgressSection />
       <GradientStrip />
       <Analytics />
+      <HeroSection />
       <BottomCTA />
       <Footer />
     </div>
