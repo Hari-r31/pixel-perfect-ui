@@ -1,15 +1,44 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
-import { ArrowRight, Send, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Send, Phone, MapPin, CheckCircle } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
+import { useState } from "react";
 
 const ContactPage = () => {
   usePageTitle("Contact Us");
   const shouldReduceMotion = prefersReducedMotion();
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    const formData = new FormData(event.target);
+    formData.append("access_key", "5f359fba-831d-4233-a384-12c2b93d5490");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setResult("success");
+        event.target.reset();
+        setTimeout(() => setResult(""), 5000);
+      } else {
+        setResult("error");
+      }
+    } catch (error) {
+      setResult("error");
+    }
+    setLoading(false);
+  };
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
@@ -146,12 +175,38 @@ const ContactPage = () => {
                 Send A Message
               </motion.h2>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={onSubmit}>
+                {/* Success Message */}
+                {result === "success" && (
+                  <motion.div
+                    className="flex items-center gap-3 rounded-xl bg-green-50 border border-green-200 p-4"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0" />
+                    <p className="text-sm font-medium text-green-800">
+                      ✅ Message sent successfully! We'll be in touch soon.
+                    </p>
+                  </motion.div>
+                )}
+
+                {/* Error Message */}
+                {result === "error" && (
+                  <motion.div
+                    className="flex items-center gap-3 rounded-xl bg-red-50 border border-red-200 p-4"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <p className="text-sm font-medium text-red-800">
+                      ❌ Something went wrong. Please try again.
+                    </p>
+                  </motion.div>
+                )}
+
                 <motion.div
                   className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
                   variants={{
                     hidden: { opacity: 0 },
                     visible: {
@@ -175,8 +230,11 @@ const ContactPage = () => {
                     </label>
                     <motion.input
                       type="text"
+                      name="first_name"
                       placeholder="Jason"
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      required
+                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
+                      disabled={loading}
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
@@ -193,8 +251,11 @@ const ContactPage = () => {
                     </label>
                     <motion.input
                       type="text"
+                      name="last_name"
                       placeholder="Parker"
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      required
+                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
+                      disabled={loading}
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
@@ -203,9 +264,8 @@ const ContactPage = () => {
 
                 <motion.div
                   className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
                   variants={{
                     hidden: { opacity: 0 },
                     visible: {
@@ -229,8 +289,11 @@ const ContactPage = () => {
                     </label>
                     <motion.input
                       type="email"
+                      name="email"
                       placeholder="your@email.com"
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      required
+                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
+                      disabled={loading}
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
@@ -247,8 +310,11 @@ const ContactPage = () => {
                     </label>
                     <motion.input
                       type="tel"
+                      name="phone"
                       placeholder="+61 4XX XXX XXX"
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      required
+                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
+                      disabled={loading}
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
@@ -265,9 +331,12 @@ const ContactPage = () => {
                     Message
                   </label>
                   <motion.textarea
+                    name="message"
                     rows={5}
                     placeholder="Type your text here......."
-                    className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    required
+                    disabled={loading}
+                    className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
                     whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   />
@@ -279,11 +348,13 @@ const ContactPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.66 }}
-                  whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
-                  whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+                  whileHover={shouldReduceMotion || loading ? undefined : { scale: 1.02 }}
+                  whileTap={shouldReduceMotion || loading ? undefined : { scale: 0.98 }}
                 >
-                  <CraftButton type="submit">
-                    <CraftButtonLabel>Inquire Now</CraftButtonLabel>
+                  <CraftButton type="submit" disabled={loading}>
+                    <CraftButtonLabel>
+                      {loading ? "Sending..." : "Inquire Now"}
+                    </CraftButtonLabel>
                     <CraftButtonIcon>
                       <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
                     </CraftButtonIcon>
