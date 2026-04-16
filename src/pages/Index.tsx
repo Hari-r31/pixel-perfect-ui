@@ -25,11 +25,11 @@ const Index = () => {
       <FeatureStats />
       <SplitFeature />
       <CTABanner />
+      <HeroSection />
       <Services />
       <ProgressSection />
       <GradientStrip />
       <Analytics />
-      <HeroSection />
       <BottomCTA />
       <Footer />
     </div>
