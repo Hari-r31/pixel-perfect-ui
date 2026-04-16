@@ -20,16 +20,15 @@ const AboutMission = () => {
     <section className="py-16 lg:py-24">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Image placeholder */}
+          {/* Left - Image */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-muted to-muted/50 overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                <div className="w-20 h-20 rounded-full bg-muted-foreground/10 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              </div>
+            <div className="rounded-2xl overflow-hidden border border-border shadow-card">
+              <img
+                src="/aboutmission.jpg"
+                alt="TechGigz Team - Our Mission"
+                className="w-full h-auto object-cover aspect-[4/3]"
+                loading="lazy"
+              />
             </div>
           </div>
 

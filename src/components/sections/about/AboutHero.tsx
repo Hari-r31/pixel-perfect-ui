@@ -47,18 +47,14 @@ const AboutHero = () => {
             </svg>
           </div>
 
-          {/* Center image placeholder */}
-          <div className="mx-auto w-full max-w-lg lg:max-w-2xl aspect-[4/3] rounded-2xl bg-gradient-to-br from-foreground/80 to-foreground overflow-hidden relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-background/10 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-8 h-8 text-background/40" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <p className="text-background/30 text-body-sm">Team collaboration</p>
-              </div>
-            </div>
+          {/* Center image */}
+          <div className="mx-auto w-full max-w-lg lg:max-w-2xl rounded-2xl overflow-hidden border border-border shadow-card">
+            <img
+              src="/abouthero.png"
+              alt="TechGigz Team - About Us"
+              className="w-full h-auto object-cover aspect-[4/3]"
+              loading="lazy"
+            />
           </div>
 
           {/* Right floating card - John Anderson */}

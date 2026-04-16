@@ -26,7 +26,7 @@ const AboutBottomCTA = () => {
               <p className="text-background/50 text-body mb-8 leading-relaxed">
                 Whether you need a new website, custom software, digital marketing, or day-to-day IT support, our team is ready to help you plan the next step.
               </p>
-              <a href="#" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-full text-body-sm font-semibold hover:bg-primary/90 transition-colors">
+              <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-full text-body-sm font-semibold hover:bg-primary/90 transition-colors">
                 <ArrowRight size={16} /> Contact Us Today
               </a>
             </div>
