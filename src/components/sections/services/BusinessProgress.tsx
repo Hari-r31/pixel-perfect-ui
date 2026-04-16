@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import businessImg from "@/assets/business-progress.jpg";
 
 const steps = [
@@ -60,10 +59,6 @@ const BusinessProgress = () => {
               </div>
             ))}
           </div>
-
-          <button className="mt-8 flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-accent">
-            Learn More <ArrowRight className="h-4 w-4" />
-          </button>
         </div>
       </div>
     </section>

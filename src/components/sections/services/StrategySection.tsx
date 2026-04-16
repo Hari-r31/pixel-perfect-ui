@@ -1,4 +1,4 @@
-import { ArrowRight, Rocket, Brain, Target } from "lucide-react";
+import { Rocket, Brain, Target } from "lucide-react";
 import strategyImg from "@/assets/strategy-section.jpg";
 
 const strategyCards = [
@@ -57,11 +57,6 @@ const StrategySection = () => {
               );
             })}
           </div>
-
-          <button className="mt-8 flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-foreground/90">
-            <ArrowRight className="h-4 w-4" />
-            Learn More
-          </button>
         </div>
 
         {/* Right - Image */}
