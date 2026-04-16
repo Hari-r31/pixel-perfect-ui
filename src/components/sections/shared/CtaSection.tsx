@@ -1,5 +1,6 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
+import { Link } from "react-router-dom";
 
 interface CtaSectionProps {
   heading?: string;
@@ -32,18 +33,22 @@ const CtaSection = ({
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <CraftButton className="border-2 border-primary-foreground/30 bg-transparent text-primary-foreground">
-            <CraftButtonLabel>{primaryButton}</CraftButtonLabel>
-            <CraftButtonIcon>
-              <Phone className="size-4 stroke-2" />
-            </CraftButtonIcon>
-          </CraftButton>
-          <CraftButton className="bg-primary-foreground text-foreground">
-            <CraftButtonLabel>{secondaryButton}</CraftButtonLabel>
-            <CraftButtonIcon>
-              <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
-            </CraftButtonIcon>
-          </CraftButton>
+          <a href="tel:+61386839983">
+            <CraftButton className="border-2 border-primary-foreground/30 bg-transparent text-primary-foreground">
+              <CraftButtonLabel>{primaryButton}</CraftButtonLabel>
+              <CraftButtonIcon>
+                <Phone className="size-4 stroke-2" />
+              </CraftButtonIcon>
+            </CraftButton>
+          </a>
+          <Link to="/contact">
+            <CraftButton className="bg-primary-foreground text-foreground">
+              <CraftButtonLabel>{secondaryButton}</CraftButtonLabel>
+              <CraftButtonIcon>
+                <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+              </CraftButtonIcon>
+            </CraftButton>
+          </Link>
         </div>
       </div>
     </section>

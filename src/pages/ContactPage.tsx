@@ -1,12 +1,14 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import AnnouncementBar from "@/components/sections/global/AnnouncementBar";
-import { ArrowRight, Send, Phone, MapPin, CheckCircle } from "lucide-react";
+import { ArrowRight, Send, Phone, MapPin, CheckCircle, User, Mail, Zap, MessageSquare } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, prefersReducedMotion } from "@/lib/animations";
 import { CraftButton, CraftButtonLabel, CraftButtonIcon } from "@/components/ui/craft-button";
+import { CustomSelect } from "@/components/ui/custom-select";
 import { useState } from "react";
+import { serviceCategories } from "@/data/serviceCategories";
 
 const ContactPage = () => {
   usePageTitle("Contact Us");
@@ -159,23 +161,31 @@ const ContactPage = () => {
 
             {/* Right Side - Form */}
             <motion.div
-              className="rounded-2xl border border-border bg-card p-8 shadow-card lg:p-10"
+              className="rounded-2xl border border-border bg-card p-8 shadow-card lg:p-10 relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <motion.h2
-                className="font-heading text-h4 font-bold text-card-foreground mb-8"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                Send A Message
-              </motion.h2>
+              {/* Decorative gradient background */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-primary/3 to-transparent rounded-full translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+              <div className="relative z-10">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <h2 className="font-heading text-h4 font-bold text-card-foreground mb-2">
+                    Send A Message
+                  </h2>
+                  <p className="text-body-sm text-muted-foreground mb-8">
+                    Fill in your details below and we'll get back to you within one business day.
+                  </p>
+                </motion.div>
 
-              <form className="space-y-6" onSubmit={onSubmit}>
+                <form className="space-y-6" onSubmit={onSubmit}>
                 {/* Success Message */}
                 {result === "success" && (
                   <motion.div
@@ -225,19 +235,22 @@ const ContactPage = () => {
                     }}
                     transition={{ duration: 0.5 }}
                   >
-                    <label className="mb-2 block text-body-sm font-medium text-card-foreground">
+                    <label className="mb-2.5 block text-body-sm font-semibold text-card-foreground">
                       First Name
                     </label>
-                    <motion.input
-                      type="text"
-                      name="first_name"
-                      placeholder="Jason"
-                      required
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
-                      disabled={loading}
-                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    />
+                    <div className="relative">
+                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                      <motion.input
+                        type="text"
+                        name="first_name"
+                        placeholder="Jason"
+                        required
+                        className="w-full rounded-xl border border-input bg-background pl-10 pr-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all disabled:opacity-50"
+                        disabled={loading}
+                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
+                    </div>
                   </motion.div>
                   <motion.div
                     variants={{
@@ -246,19 +259,22 @@ const ContactPage = () => {
                     }}
                     transition={{ duration: 0.5 }}
                   >
-                    <label className="mb-2 block text-body-sm font-medium text-card-foreground">
+                    <label className="mb-2.5 block text-body-sm font-semibold text-card-foreground">
                       Last Name
                     </label>
-                    <motion.input
-                      type="text"
-                      name="last_name"
-                      placeholder="Parker"
-                      required
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
-                      disabled={loading}
-                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    />
+                    <div className="relative">
+                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                      <motion.input
+                        type="text"
+                        name="last_name"
+                        placeholder="Parker"
+                        required
+                        className="w-full rounded-xl border border-input bg-background pl-10 pr-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all disabled:opacity-50"
+                        disabled={loading}
+                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
+                    </div>
                   </motion.div>
                 </motion.div>
 
@@ -284,19 +300,22 @@ const ContactPage = () => {
                     }}
                     transition={{ duration: 0.5 }}
                   >
-                    <label className="mb-2 block text-body-sm font-medium text-card-foreground">
+                    <label className="mb-2.5 block text-body-sm font-semibold text-card-foreground">
                       Email
                     </label>
-                    <motion.input
-                      type="email"
-                      name="email"
-                      placeholder="your@email.com"
-                      required
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
-                      disabled={loading}
-                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    />
+                    <div className="relative">
+                      <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                      <motion.input
+                        type="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        required
+                        className="w-full rounded-xl border border-input bg-background pl-10 pr-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all disabled:opacity-50"
+                        disabled={loading}
+                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
+                    </div>
                   </motion.div>
                   <motion.div
                     variants={{
@@ -305,19 +324,22 @@ const ContactPage = () => {
                     }}
                     transition={{ duration: 0.5 }}
                   >
-                    <label className="mb-2 block text-body-sm font-medium text-card-foreground">
+                    <label className="mb-2.5 block text-body-sm font-semibold text-card-foreground">
                       Phone
                     </label>
-                    <motion.input
-                      type="tel"
-                      name="phone"
-                      placeholder="+61 4XX XXX XXX"
-                      required
-                      className="w-full rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
-                      disabled={loading}
-                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    />
+                    <div className="relative">
+                      <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                      <motion.input
+                        type="tel"
+                        name="phone"
+                        placeholder="+61 4XX XXX XXX"
+                        required
+                        className="w-full rounded-xl border border-input bg-background pl-10 pr-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all disabled:opacity-50"
+                        disabled={loading}
+                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
+                    </div>
                   </motion.div>
                 </motion.div>
 
@@ -327,31 +349,60 @@ const ContactPage = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.58 }}
                 >
-                  <label className="mb-2 block text-body-sm font-medium text-card-foreground">
-                    Message
+                  <label className="mb-2.5 block text-body-sm font-semibold text-card-foreground">
+                    What do you need?
                   </label>
-                  <motion.textarea
-                    name="message"
-                    rows={5}
-                    placeholder="Type your text here......."
-                    required
+                  <CustomSelect
+                    name="service"
+                    placeholder="Select a service..."
+                    icon={<Zap className="h-4 w-4" />}
                     disabled={loading}
-                    className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    required
+                    options={serviceCategories.map((service) => ({
+                      value: service.title,
+                      label: service.title,
+                    }))}
                   />
                 </motion.div>
 
                 <motion.div
-                  className="flex justify-center pt-2"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.66 }}
-                  whileHover={shouldReduceMotion || loading ? undefined : { scale: 1.02 }}
-                  whileTap={shouldReduceMotion || loading ? undefined : { scale: 0.98 }}
                 >
-                  <CraftButton type="submit" disabled={loading}>
+                  <label className="mb-2.5 block text-body-sm font-semibold text-card-foreground">
+                    Message
+                  </label>
+                  <div className="relative">
+                    <MessageSquare className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground pointer-events-none" />
+                    <motion.textarea
+                      name="message"
+                      rows={5}
+                      placeholder="Tell us about your project or needs..."
+                      required
+                      disabled={loading}
+                      className="w-full resize-none rounded-xl border border-input bg-background pl-10 pr-4 py-3.5 text-body-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all disabled:opacity-50"
+                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 4px hsl(var(--primary) / 0.1)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    />
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="flex justify-center pt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.74 }}
+                  whileHover={shouldReduceMotion || loading ? undefined : { scale: 1.05 }}
+                  whileTap={shouldReduceMotion || loading ? undefined : { scale: 0.95 }}
+                >
+                  <CraftButton
+                    type="submit"
+                    disabled={loading}
+                    className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow"
+                  >
                     <CraftButtonLabel>
                       {loading ? "Sending..." : "Inquire Now"}
                     </CraftButtonLabel>
@@ -361,6 +412,7 @@ const ContactPage = () => {
                   </CraftButton>
                 </motion.div>
               </form>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -383,12 +435,14 @@ const ContactPage = () => {
               <p className="text-primary-foreground/70 text-body-sm mb-8">
                 Book a consultation and discuss your website, software, marketing, or IT requirements with the TechGigz team.
               </p>
-              <CraftButton className="bg-primary-foreground text-foreground">
-                <CraftButtonLabel>Book A Call</CraftButtonLabel>
-                <CraftButtonIcon>
-                  <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
-                </CraftButtonIcon>
-              </CraftButton>
+              <a href="https://wa.me/61403499150?text=Hi%20TechGigz%20team%2C%20I%20would%20like%20to%20have%20a%20conversation%20about%20my%20technology%20needs.%20Please%20get%20in%20touch%20with%20me%20soon.">
+                <CraftButton className="bg-primary-foreground text-foreground">
+                  <CraftButtonLabel>Book A Call</CraftButtonLabel>
+                  <CraftButtonIcon>
+                    <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                  </CraftButtonIcon>
+                </CraftButton>
+              </a>
             </div>
           </div>
         </div>

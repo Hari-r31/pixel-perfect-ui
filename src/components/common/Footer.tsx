@@ -1,7 +1,19 @@
 import { Zap, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const usefulLinks = ["About Us", "Our Services", "Case Studies", "Pricing", "FAQs"];
-const quickLinks = ["Blog", "Careers", "Support", "Privacy Policy", "Terms of Service"];
+const usefulLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const quickLinks = [
+  { label: "Support", href: "/contact" },
+  { label: "Web Development", href: "/services/web-development" },
+  { label: "Digital Marketing", href: "/services/digital-marketing" },
+  { label: "IT Support", href: "/services/it-support" },
+];
 
 const Footer = () => {
   return (
@@ -10,9 +22,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <a href="/" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <span className="text-xl font-bold text-background">TechGigz Solutions</span>
-            </a>
+            </Link>
             <p className="text-background/50 text-sm leading-relaxed mb-4">
               TechGigz Solutions delivers custom software, digital marketing, and practical IT support for businesses across Western Australia.
             </p>
@@ -34,8 +46,8 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-background mb-4">Useful Links</h4>
             <ul className="space-y-2.5">
               {usefulLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm text-background/50 hover:text-primary transition-colors">{link}</a>
+                <li key={link.label}>
+                  <Link to={link.href} className="text-sm text-background/50 hover:text-primary transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -46,8 +58,8 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-background mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm text-background/50 hover:text-primary transition-colors">{link}</a>
+                <li key={link.label}>
+                  <Link to={link.href} className="text-sm text-background/50 hover:text-primary transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -59,15 +71,22 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
                 <Mail size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">solutions@techgigz.com.au</span>
+                <a href="mailto:solutions@techgigz.com.au" className="text-sm text-background/50 hover:text-primary transition-colors">solutions@techgigz.com.au</a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">(08) 6383 9983</span>
+                <a href="tel:+61386839983" className="text-sm text-background/50 hover:text-primary transition-colors">(08) 6383 9983</a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-background/50">Suite 11b/5 Cressall Rd, Balcatta WA 6021, Australia</span>
+                <a
+                  href="https://maps.google.com/?q=Suite+11b/5+Cressall+Rd,+Balcatta+WA+6021"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-background/50 hover:text-primary transition-colors"
+                >
+                  Suite 11b/5 Cressall Rd, Balcatta WA 6021, Australia
+                </a>
               </li>
             </ul>
           </div>
@@ -76,9 +95,9 @@ const Footer = () => {
         <div className="border-t border-background/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-background/40">© 2026 TechGigz Solutions. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Privacy</a>
-            <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Terms</a>
-            <a href="#" className="text-xs text-background/40 hover:text-background/60 transition-colors">Cookies</a>
+            <Link to="/contact" className="text-xs text-background/40 hover:text-background/60 transition-colors">Contact</Link>
+            <Link to="/" className="text-xs text-background/40 hover:text-background/60 transition-colors">Home</Link>
+            <a href="https://wa.me/61403499150" target="_blank" rel="noopener noreferrer" className="text-xs text-background/40 hover:text-background/60 transition-colors">WhatsApp</a>
           </div>
         </div>
       </div>

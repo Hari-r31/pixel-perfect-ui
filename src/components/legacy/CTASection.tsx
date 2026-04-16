@@ -12,7 +12,7 @@ const CTASection = () => (
           Book a free consultation with the TechGigz team and get a tailored technology plan that fits your goals and budget.
         </p>
       </div>
-      <a href="#" className="flex items-center gap-3 pl-2 pr-8 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shrink-0"
+      <a href="https://wa.me/61403499150?text=Hi%20TechGigz%20team%2C%20I%20would%20like%20to%20have%20a%20conversation%20about%20my%20technology%20needs.%20Please%20get%20in%20touch%20with%20me%20soon." className="flex items-center gap-3 pl-2 pr-8 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shrink-0"
         style={{ background: 'hsl(30 33% 98%)', color: 'hsl(220 20% 10%)' }}>
         <span className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(220 20% 14%)' }}>
           <ArrowRight className="w-4 h-4" style={{ color: 'hsl(30 33% 98%)' }} />

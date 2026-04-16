@@ -14,10 +14,10 @@ const AboutCTA = () => {
             </p>
           </div>
           <div className="flex gap-3">
-            <a href="#" className="inline-flex items-center gap-2 bg-primary-foreground text-foreground rounded-full px-6 py-3 text-body-sm font-semibold hover:bg-primary-foreground/90 transition-colors whitespace-nowrap">
+            <a href="https://wa.me/61403499150?text=Hi%20TechGigz%20team%2C%20I%20would%20like%20to%20have%20a%20conversation%20about%20my%20technology%20needs.%20Please%20get%20in%20touch%20with%20me%20soon." className="inline-flex items-center gap-2 bg-primary-foreground text-foreground rounded-full px-6 py-3 text-body-sm font-semibold hover:bg-primary-foreground/90 transition-colors whitespace-nowrap">
               <ArrowRight size={16} /> Book A Call
             </a>
-            <a href="#" className="btn-outline-light whitespace-nowrap">
+            <a href="https://wa.me/61403499150?text=Hi%20TechGigz%20team%2C%20I%20would%20like%20to%20have%20a%20conversation%20about%20my%20technology%20needs.%20Please%20get%20in%20touch%20with%20me%20soon." className="btn-outline-light whitespace-nowrap">
               <ArrowRight size={16} /> Book A Call
             </a>
           </div>

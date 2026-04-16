@@ -20,32 +20,38 @@ const serviceCards = [
     icon: Globe,
     title: "Web & App Development",
     description: "Custom-built websites, web applications, and mobile apps designed for performance, scalability, and seamless user experience.",
+    slug: "web-development",
   },
   {
     icon: BarChart3,
     title: "Data & Analytics",
     description: "Live KPI dashboards, custom reports, and data visualisation tools that help you make faster, smarter business decisions.",
     featured: true,
+    slug: "data-analytics",
   },
   {
     icon: Cpu,
     title: "Custom CRM Systems",
     description: "Purpose-built CRM platforms that map your customer journey, automate sales pipelines, and unify your business data.",
+    slug: "additional-services",
   },
   {
     icon: Shield,
     title: "IT Security & Backup",
     description: "Multi-layered security, antivirus management, automated backups, and disaster recovery to keep your data safe.",
+    slug: "it-support",
   },
   {
     icon: Star,
     title: "Digital Marketing",
     description: "SEO, SEM, CRO, social media, and content marketing strategies that grow your brand and generate qualified leads.",
+    slug: "digital-marketing",
   },
   {
     icon: Zap,
     title: "System Integration",
     description: "Connect your CRM, email platform, financial tools, and business apps into one automated, error-free workflow.",
+    slug: "hardware-services",
   },
 ];
 
@@ -164,15 +170,17 @@ const ServicePage = () => {
               </p>
 
               <div className="flex flex-wrap items-center gap-6">
-                <CraftButton>
-                  <CraftButtonLabel>Get a Free Quote</CraftButtonLabel>
-                  <CraftButtonIcon>
-                    <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
-                  </CraftButtonIcon>
-                </CraftButton>
-                <p className="text-body-sm font-semibold text-foreground">
+                <Link to="/contact">
+                  <CraftButton>
+                    <CraftButtonLabel>Get a Free Quote</CraftButtonLabel>
+                    <CraftButtonIcon>
+                      <ArrowRight className="size-4 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
+                    </CraftButtonIcon>
+                  </CraftButton>
+                </Link>
+                <a href="tel:+61386839983" className="text-body-sm font-semibold text-foreground hover:text-primary transition-colors">
                   Call Us: (08) 6383 9983
-                </p>
+                </a>
               </div>
             </div>
           </div>
@@ -240,36 +248,44 @@ const ServicePage = () => {
           >
             {serviceCards.map((card, i) => {
               const Icon = card.icon;
+              const serviceLink = `/services/${card.slug}`;
+
               return (
                 <motion.div
                   key={i}
                   variants={shouldReduceMotion ? undefined : itemVariants}
-                  className={`group rounded-2xl p-8 text-left transition-all hover:shadow-card-hover ${
-                    card.featured
-                      ? "border-2 border-accent bg-card shadow-card"
-                      : "border border-border bg-card"
-                  }`}
+                  whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >
-                  <div
-                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${
-                      card.featured ? "bg-accent/10" : "bg-muted"
+                  <Link
+                    to={serviceLink}
+                    className={`group rounded-2xl p-8 text-left transition-all hover:shadow-card-hover block h-full ${
+                      card.featured
+                        ? "border-2 border-accent bg-card shadow-card hover:-translate-y-1"
+                        : "border border-border bg-card hover:-translate-y-1"
                     }`}
                   >
-                    <Icon
-                      className={`h-6 w-6 ${
-                        card.featured ? "text-accent" : "text-accent"
+                    <div
+                      className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${
+                        card.featured ? "bg-accent/10" : "bg-muted"
                       }`}
-                    />
-                  </div>
-                  <h3 className="mb-2 font-heading text-h5 font-bold text-card-foreground">
-                    {card.title}
-                  </h3>
-                  <p className="text-body-sm leading-relaxed text-muted-foreground">
-                    {card.description}
-                  </p>
-                  <button className="mt-5 flex items-center gap-1 text-body-sm font-semibold text-foreground transition-colors group-hover:text-primary">
-                    Learn More <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
+                    >
+                      <Icon
+                        className={`h-6 w-6 ${
+                          card.featured ? "text-accent" : "text-accent"
+                        }`}
+                      />
+                    </div>
+                    <h3 className="mb-2 font-heading text-h5 font-bold text-card-foreground group-hover:text-primary transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-body-sm leading-relaxed text-muted-foreground">
+                      {card.description}
+                    </p>
+                    <span className="mt-5 flex items-center gap-1 text-body-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                      Learn More <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </Link>
                 </motion.div>
               );
             })}
