@@ -20,7 +20,7 @@ const ContactPage = () => {
     event.preventDefault();
     setLoading(true);
     const formData = new FormData(event.target);
-    formData.append("access_key", "5f359fba-831d-4233-a384-12c2b93d5490");
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
